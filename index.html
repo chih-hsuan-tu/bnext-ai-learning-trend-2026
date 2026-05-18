@@ -2,7 +2,7 @@
 <html lang="zh-Hant"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>企業 AI 學習白皮書 2026｜草稿</title>
+<title>2026 企業 AI 學習趨勢調查白皮書｜新商業學校</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -15,31 +15,7 @@
   }
 
   /* 編輯提示列 */
-  #edit-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: #1a1a1a;
-    color: #f0ede8;
-    font-size: 12px;
-    padding: 8px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    z-index: 999;
-  }
-  #edit-bar span { opacity: 0.6; }
   #save-status { color: #9dff9d; font-weight: 600; min-width: 60px; }
-  #reset-btn {
-    margin-left: auto;
-    background: none;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #f0ede8;
-    padding: 3px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-  }
-  #reset-btn:hover { background: rgba(255,255,255,0.1); }
 
   /* 頁面容器 */
   .deck {
@@ -284,10 +260,6 @@
   }
 
   /* highlight 文字 */
-  [contenteditable]:focus {
-    outline: 2px solid rgba(232, 93, 47, 0.3);
-    border-radius: 4px;
-  }
 
   /* 來源 */
   .src {
@@ -298,17 +270,6 @@
   }
 
   /* ── 下載按鈕 ── */
-  #download-btn {
-    background: #e85d2f;
-    border: none;
-    color: white;
-    padding: 4px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-  }
-  #download-btn:hover { background: #c94d22; }
 
   /* ── 問卷對照 ── */
   .q-ref {
@@ -513,25 +474,18 @@
 <body>
 
 <!-- 編輯提示列 -->
-<div id="edit-bar">
-  <span>點擊任何文字即可直接編輯，內容自動儲存在瀏覽器</span>
-  <span id="save-status"></span>
-  <button id="download-btn" onclick="downloadModified()">下載修改後的版本</button>
-  <button id="reset-btn" onclick="resetAll()">重設為原始內容</button>
-</div>
-
 <div class="deck">
 
   <!-- ════════════════════════════════
        主題一 ｜ 分隔頁
   ════════════════════════════════ -->
   <div class="slide divider">
-    <div class="tag" contenteditable="true" data-id="t1-div-tag">主題一</div>
-    <h1 contenteditable="true" data-id="t1-div-h1">想像的落差</h1>
-    <div class="desc" contenteditable="true" data-id="t1-div-desc">
+    <div class="tag" data-id="t1-div-tag">主題一</div>
+    <h1 data-id="t1-div-h1">想像的落差</h1>
+    <div class="desc" data-id="t1-div-desc">
       AI 已經成為職場的日常工具，<br>但組織對 AI 使用現況的理解還沒跟上。
     </div>
-    <div class="chapter-lead" contenteditable="true" data-id="t1-div-lead">
+    <div class="chapter-lead" data-id="t1-div-lead">
       <div class="chapter-lead-label">本章節</div>
       本次調查發現，台灣職場已有 88.8% 的工作者每週至少使用一次 AI，「要不要用 AI」已不是議題。<div>AI 普及之後浮現的是，決策者對員工 AI 使用情境的想像與工作者實際使用之間的系統性落差。</div><div>本章節將檢視這個落差的樣貌，並說明它如何讓企業在 AI 投入方向與成效衡量上陷入新的困境。
     </div></div>
@@ -542,15 +496,15 @@
        主題一 ｜ 問題設定
   ════════════════════════════════ -->
   <div class="slide content">
-    <div class="slide-label" contenteditable="true" data-id="t1-s2-label">問題意識</div>
-    <h2 contenteditable="true" data-id="t1-s2-h2">越來越多員工每天都在用 AI，<br>但組織看見的，和員工真正在做的，開始不一樣了</h2>
+    <div class="slide-label" data-id="t1-s2-label">問題意識</div>
+    <h2 data-id="t1-s2-h2">越來越多員工每天都在用 AI，<br>但組織看見的，和員工真正在做的，開始不一樣了</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t1-s2-leadin">
+    <div class="lead-in" data-id="t1-s2-leadin">
       <div class="lead-label">調查樣貌</div>
       決策者與一般工作者在 AI 工作情境題上的回答疊在一起後，部分情境的落差超過 20 個百分點。
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t1-s2-body">
+    <div class="body-text" data-id="t1-s2-body">
       <p>決策者對員工 AI 使用情境的認知，與工作者的實際使用呈現系統性偏差。這份落差呈現的雙向性反映出，組織對員工 AI 行為缺乏一份清晰、即時的圖像。</p><p>這層資訊不對稱會成為 AI 組織化推進的隱形阻力。AI 要從個人層級擴散到組織層級，前提是組織能掌握員工在哪些場景使用 AI、產生哪些效益、卡在哪些環節；當組織對員工 AI 行為的判讀本身就有偏差，後續的規範設計、場景盤點與衡量機制都會建立在不準確的基礎上。</p>
     </div>
     <div class="slide-num">2</div>
@@ -560,15 +514,15 @@
        主題一 ｜ 圖表：Q5 vs Q34
   ════════════════════════════════ -->
   <div class="slide chart-slide">
-    <div class="slide-label" contenteditable="true" data-id="t1-s3-label">調查數據</div>
-    <h2 contenteditable="true" data-id="t1-s3-h2">決策者對員工 AI 使用情境的認知，與工作者的實際使用有顯著落差</h2>
+    <div class="slide-label" data-id="t1-s3-label">調查數據</div>
+    <h2 data-id="t1-s3-h2">決策者對員工 AI 使用情境的認知，與工作者的實際使用有顯著落差</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t1-s3-leadin">
+    <div class="lead-in" data-id="t1-s3-leadin">
       <div class="lead-label">調查樣貌</div>
       對照工作者（n=294）的實際使用與決策者（n=886）的觀察，9 個 AI 工作情境中，決策者在四個場景明顯高估、一個場景顯著低估。
     </div>
 
-    <div class="chart-sub" contenteditable="true" data-id="t1-s3-sub">
+    <div class="chart-sub" data-id="t1-s3-sub">
       工作者（n=294）自述實際使用情境 vs 決策者（n=886）認知的員工使用情境｜落差＝決策者認知 − 工作者實際
     </div>
 
@@ -715,7 +669,7 @@
       </div>
     </div><!-- /bar-chart -->
 
-    <div class="body-text" contenteditable="true" data-id="t1-s3-body">
+    <div class="body-text" data-id="t1-s3-body">
       <p>這個認知落差是雙向的，但兩個方向並不對等。</p><p>本次調查發現，決策者在四個場景明顯高估員工 AI 的使用比例：會議整理高估 20.9 個百分點、簡報高估 19.4 個百分點、教育訓練教材高估 13.1 個百分點、文案高估 11.4 個百分點。同時，在另一個場景顯著低估：知識查詢低估了 12.9 個百分點，而這正是工作者使用比例最高的單一場景。</p><p>整體來看，決策者的視線明顯偏向能交付成果、能在會議中被展示的場景，對工作者使用頻率最高、嵌入日常工作流的場景則相對失焦。當組織無法準確指認員工 AI 真正集中的場景，後續的場景盤點、規範設計與成效追蹤就會發生偏移，這也是後續 ROI 為何難以說清楚的源頭之一。</p>
     </div>
     <div class="src">資料來源：2026 企業 AI 學習趨勢調查｜工作者 n=294，決策者 n=886</div>
@@ -748,30 +702,30 @@
        主題一 ｜ ROI 黑洞
   ════════════════════════════════ -->
   <div class="slide content">
-    <div class="slide-label" contenteditable="true" data-id="t1-s4-label">認知落差的後果</div>
-    <h2 contenteditable="true" data-id="t1-s4-h2">成效說不清楚，是這個落差最直接的結果</h2>
+    <div class="slide-label" data-id="t1-s4-label">認知落差的後果</div>
+    <h2 data-id="t1-s4-h2">成效說不清楚，是這個落差最直接的結果</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t1-s4-leadin">
+    <div class="lead-in" data-id="t1-s4-leadin">
       <div class="lead-label">調查樣貌</div>
       在 AI 成效衡量的題目上，61.9% 的企業尚未建立任何 AI 衡量機制；在已建立衡量、且能進入 ROI 計算階段的企業中（n=264），60.6% 仍只能算到節省工時、15.5% 能換算為節省金額，僅 9.5% 能計算出 AI 帶來的額外營收。
     </div>
 
     <div class="callout-row">
       <div class="callout-box">
-        <div class="callout-num" contenteditable="true" data-id="t1-s4-c1-num">61.9%</div>
-        <div class="callout-label" contenteditable="true" data-id="t1-s4-c1-label">的企業尚未建立<br>任何 AI 成效衡量方式</div>
+        <div class="callout-num" data-id="t1-s4-c1-num">61.9%</div>
+        <div class="callout-label" data-id="t1-s4-c1-label">的企業尚未建立<br>任何 AI 成效衡量方式</div>
       </div>
       <div class="callout-box">
-        <div class="callout-num" contenteditable="true" data-id="t1-s4-c2-num">60.6%</div>
-        <div class="callout-label" contenteditable="true" data-id="t1-s4-c2-label">能進入 ROI 計算的企業中<br>仍停留在「節省工時」</div>
+        <div class="callout-num" data-id="t1-s4-c2-num">60.6%</div>
+        <div class="callout-label" data-id="t1-s4-c2-label">能進入 ROI 計算的企業中<br>仍停留在「節省工時」</div>
       </div>
       <div class="callout-box">
-        <div class="callout-num" contenteditable="true" data-id="t1-s4-c3-num">9.5%</div>
-        <div class="callout-label" contenteditable="true" data-id="t1-s4-c3-label">能進入 ROI 計算的企業中<div>能換算 AI 帶來的額外營收</div></div>
+        <div class="callout-num" data-id="t1-s4-c3-num">9.5%</div>
+        <div class="callout-label" data-id="t1-s4-c3-label">能進入 ROI 計算的企業中<div>能換算 AI 帶來的額外營收</div></div>
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t1-s4-body">
+    <div class="body-text" data-id="t1-s4-body">
       <p>當組織對員工 AI 使用現況的掌握存在落差，連帶的後果是「AI 值不值得投入」這個問題愈來愈難在企業內部回答。多數企業即使建立衡量機制，能往更具體財務影響推進的比例仍然有限，AI 在多數企業內部仍處於「投入感覺有用，但拿不出財務帳本」的狀態。</p>
       <p>對企業而言，這條 ROI 黑洞是想像落差的下游後果。當管理層的 AI 圖像不準確，衡量機制即使設計出來，也容易找錯指標、量錯場景。這個 ROI 困境的突破口，與企業如何系統性推進 AI 直接相關，後續章節將進一步檢視。</p>
     </div>
@@ -814,12 +768,12 @@
        主題二 ｜ 分隔頁
   ════════════════════════════════ -->
   <div class="slide divider">
-    <div class="tag" contenteditable="true" data-id="t2-div-tag">主題二</div>
-    <h1 contenteditable="true" data-id="t2-div-h1">你的公司在光譜的哪裡</h1>
-    <div class="desc" contenteditable="true" data-id="t2-div-desc">
+    <div class="tag" data-id="t2-div-tag">主題二</div>
+    <h1 data-id="t2-div-h1">你的公司在光譜的哪裡</h1>
+    <div class="desc" data-id="t2-div-desc">
       2026 企業 AI 學習現況的五個維度。<br>看完之後，你可以知道自己的公司站在哪個位置。
     </div>
-    <div class="chapter-lead" contenteditable="true" data-id="t2-div-lead">
+    <div class="chapter-lead" data-id="t2-div-lead">
       <div class="chapter-lead-label">本章節</div>
       主題一呈現了企業普遍的 AI 組織化困境：決策者對員工 AI 使用的圖像有偏差，衡量機制找錯場景，AI 投入難以換算成商業價值。這些訊號指向一個更根本的問題：企業在 AI 組織化上的進展，正出現相當大的差異。本章節將現況拆解為五個維度，幫助你掌握自身組織在 AI 組織化路徑上的位置，建立判斷下一步的座標。</div>
     <div class="slide-num">5</div>
@@ -829,15 +783,15 @@
        主題二 ｜ 維度一：AI 使用普及現況
   ════════════════════════════════ -->
   <div class="slide chart-slide">
-    <div class="slide-label" contenteditable="true" data-id="t2-s6-label">維度一　AI 使用普及現況</div>
-    <h2 contenteditable="true" data-id="t2-s6-h2">AI 個人使用接近全面普及，企業層面的落差才剛開始拉開</h2>
+    <div class="slide-label" data-id="t2-s6-label">維度一　AI 使用普及現況</div>
+    <h2 data-id="t2-s6-h2">AI 個人使用接近全面普及，企業層面的落差才剛開始拉開</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t2-s6-leadin">
+    <div class="lead-in" data-id="t2-s6-leadin">
       <div class="lead-label">調查樣貌</div>
       2026 年的台灣職場，工作者個人 AI 使用頻率方面，88.8% 每週至少使用一次（其中 69.4% 幾乎每天）；但在企業層面，73.4% 的決策者表示公司 AI 仍以個人自發為主，僅 24.8% 已正式導入推廣。
     </div>
 
-    <div class="chart-sub" contenteditable="true" data-id="t2-s6-sub">
+    <div class="chart-sub" data-id="t2-s6-sub">
       工作者個人使用頻率（Q4，n=294）× 企業 AI 普及狀態（Q30，決策者認知，n=886）
     </div>
 
@@ -920,7 +874,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t2-s6-body">
+    <div class="body-text" data-id="t2-s6-body">
       <p>個人使用與組織導入之間出現了一條清楚的分界：當員工的 AI 使用已接近全面普及，組織層級的正式導入仍屬少數。這意味著企業 AI 成果幾乎完全建立在員工自發摸索之上，這對個人效率有幫助，對組織效益的累積卻是雙面刃。</p>
       <p>資料中可以看見，AI 在企業內部正處於「個人推、組織還沒接」的階段。當「會不會用」退場，下一個浮現的問題是：員工已經把 AI 內化進日常工作流，組織端的回應速度若跟不上，個人累積的使用經驗與組織能利用的成果之間，會逐漸出現脫鉤。</p>
     </div>
@@ -955,15 +909,15 @@
        主題二 ｜ 維度二：組織化推進狀況
   ════════════════════════════════ -->
   <div class="slide chart-slide">
-    <div class="slide-label" contenteditable="true" data-id="t2-s7-label">維度二　組織化推進狀況</div>
-    <h2 contenteditable="true" data-id="t2-s7-h2">四大場景超過半數停在個人各自摸索，AI 規範已制度化的僅 7.8%</h2>
+    <div class="slide-label" data-id="t2-s7-label">維度二　組織化推進狀況</div>
+    <h2 data-id="t2-s7-h2">四大場景超過半數停在個人各自摸索，AI 規範已制度化的僅 7.8%</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t2-s7-leadin">
+    <div class="lead-in" data-id="t2-s7-leadin">
       <div class="lead-label">調查樣貌</div>
       在企業組織化程度上，調查呈現兩個面向：四大場景（日常任務、團隊協作、知識管理、決策規劃）中，超過半數的企業 AI 使用仍停在個人各自摸索；同時，62.3% 企業完全沒有 AI 書面規範，AI 規範已制度化的僅 7.8%。
     </div>
 
-    <div class="chart-sub" contenteditable="true" data-id="t2-s7-sub">
+    <div class="chart-sub" data-id="t2-s7-sub">
       四大場景推進狀態（Q32–Q35）× AI 書面規範完備程度（Q37）｜決策者 n=886
     </div>
 
@@ -1079,7 +1033,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t2-s7-body">
+    <div class="body-text" data-id="t2-s7-body">
       <p>兩組數據合起來呈現出一個明顯的高低落差：四大工作場景的高點都是員工的個人各自摸索，低點則是組織的制度化推進。當員工 AI 使用已在組織內快速累積，全公司能制度化推進的比例卻仍停留在個位數，書面規範端也呈現同樣的圖像，多數企業仍沒有任何 AI 使用的書面依據。</p>
       <p>這個分布呈現了一個典型的組織化困境：員工的 AI 使用速度已遠超過組織能介入、能規範、能標準化的速度。在沒有共通做法、沒有書面依據的狀態下，員工累積的 AI 使用經驗難以跨人傳承，個人效率的提升也難以轉化為團隊或公司層級的能力資產。這條制度落差是個人效益難以擴散到組織的關鍵結構性因素。</p>
     </div>
@@ -1114,15 +1068,15 @@
        主題二 ｜ 維度三：AI 治理現況／風險
   ════════════════════════════════ -->
   <div class="slide chart-slide">
-    <div class="slide-label" contenteditable="true" data-id="t2-s8-label">維度三　AI 治理現況／風險</div>
-    <h2 contenteditable="true" data-id="t2-s8-h2">AI 治理缺乏的成本浮現：18% 企業出過爭議、12.8% 不確定</h2>
+    <div class="slide-label" data-id="t2-s8-label">維度三　AI 治理現況／風險</div>
+    <h2 data-id="t2-s8-h2">AI 治理缺乏的成本浮現：18% 企業出過爭議、12.8% 不確定</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t2-s8-leadin">
+    <div class="lead-in" data-id="t2-s8-leadin">
       <div class="lead-label">調查樣貌</div>
       進入 AI 風險與爭議的回答，69.1% 企業沒有出過爭議事件，18.2% 出過爭議（不嚴重或影響明顯），另有 12.8% 表示「不確定」，對自家 AI 是否出過問題並沒有掌握。
     </div>
 
-    <div class="chart-sub" contenteditable="true" data-id="t2-s8-sub">
+    <div class="chart-sub" data-id="t2-s8-sub">
       公司 AI 使用爭議事件分布（Q38，決策者 n=886）
     </div>
 
@@ -1161,7 +1115,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t2-s8-body">
+    <div class="body-text" data-id="t2-s8-body">
       <p>AI 治理在企業內部仍處於「多數沒事，但少數已出狀況、相當一部分說不清楚」的狀態。六成九的企業表示沒有出過 AI 爭議事件，這個多數的「沒事」看似令人安心；但對照前一頁的觀察（62.3% 企業完全沒有書面 AI 規範），「沒事」更可能反映風險還沒浮現，並不等同於組織具備預防能力。一成八的企業已出過爭議或影響，另有 12.8% 表示「不確定」，對自家 AI 是否出過問題仍沒有清楚的掌握。</p>
       <p>兩個訊號合起來呈現的，是 AI 治理機制的具體缺口。當 62.3% 企業沒有書面 AI 規範（前一頁的觀察），AI 爭議的浮現只是時間問題，更深層的議題是組織本身對風險缺乏察覺與管理能力。對企業而言，治理機制的建立必須早於風險擴大，這也是組織化推進無法跳過的環節。</p>
     </div>
@@ -1187,15 +1141,15 @@
        主題二 ｜ 維度四：培訓意願與推動困難
   ════════════════════════════════ -->
   <div class="slide chart-slide">
-    <div class="slide-label" contenteditable="true" data-id="t2-s9-label">維度四　培訓意願與推動困難</div>
-    <h2 contenteditable="true" data-id="t2-s9-h2">規劃 AI 培訓的企業近七成，但對 AI 推動的核心難題還沒有共識</h2>
+    <div class="slide-label" data-id="t2-s9-label">維度四　培訓意願與推動困難</div>
+    <h2 data-id="t2-s9-h2">規劃 AI 培訓的企業近七成，但對 AI 推動的核心難題還沒有共識</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t2-s9-leadin">
+    <div class="lead-in" data-id="t2-s9-leadin">
       <div class="lead-label">調查樣貌</div>
       68.0% 的企業決策者表示未來 6 個月內有 AI 培訓規劃（已排定 28.0% + 尚在規劃 40.0%）。在這群有規劃的企業中（n=602），前三大推動困難為流程嵌入 17.6%、人才能力落差 17.1%、資源不足 16.4%，合計約五成；其餘困難分散在治理風險、找不到場景、衡量做不起來、主管難以帶動等項目。
     </div>
 
-    <div class="chart-sub" contenteditable="true" data-id="t2-s9-sub">
+    <div class="chart-sub" data-id="t2-s9-sub">
       培訓規劃意願（Q63，決策者 n=886）× 推動最大困難（Q70，有培訓計畫者 n=602）
     </div>
 
@@ -1296,7 +1250,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t2-s9-body">
+    <div class="body-text" data-id="t2-s9-body">
       <p>在規劃 AI 培訓的企業中（n=602），推動端的困難呈現高度分散：前三大困難（流程嵌入 17.6%、人才能力落差 17.1%、資源不足 16.4%）合計僅 51.1%，剩餘比例散落在治理風險、找不到場景、衡量做不起來、主管難以帶動等項目，沒有任何一個困難明顯壓倒性出現，意味著卡點是全面性的。</p>
       <p>這個分散結構指向一個更深的訊號：企業之間對 AI 推動的核心難題還沒有形成共識，AI 培訓的設計起點本身就缺乏共同的參考框架。換句話說，AI 對組織帶來的挑戰高度因企業而異，每家企業需要先釐清自己最關鍵的卡點，才能找到適合的推進方向。</p>
     </div>
@@ -1331,15 +1285,15 @@
        主題二 ｜ 維度五：培訓規劃現況
   ════════════════════════════════ -->
   <div class="slide chart-slide">
-    <div class="slide-label" contenteditable="true" data-id="t2-s10-label">維度五　培訓規劃現況</div>
-    <h2 contenteditable="true" data-id="t2-s10-h2">培訓策略偏向場景與流程，但內容設計尚未完全跟上</h2>
+    <div class="slide-label" data-id="t2-s10-label">維度五　培訓規劃現況</div>
+    <h2 data-id="t2-s10-h2">培訓策略偏向場景與流程，但內容設計尚未完全跟上</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t2-s10-leadin">
+    <div class="lead-in" data-id="t2-s10-leadin">
       <div class="lead-label">調查樣貌</div>
       進一步看企業 AI 培訓的策略選擇與內容設計，兩個面向呈現出值得關注的訊號：策略上，「全員普及」為最主流（42.4%），但「先選關鍵流程」（18.9%）已超越「先選關鍵職能」（14.5%）；內容上，「場景專案實作」（28.4%）為最高重心，「主管帶隊推進」僅 6.0%、是五個選項中最低。
     </div>
 
-    <div class="chart-sub" contenteditable="true" data-id="t2-s10-sub">
+    <div class="chart-sub" data-id="t2-s10-sub">
       培訓推動對象策略（Q64）× AI 學習內容優先重心（Q66）｜限有 AI 培訓計畫者 n=602
     </div>
 
@@ -1436,7 +1390,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t2-s10-body">
+    <div class="body-text" data-id="t2-s10-body">
       <p>即便企業面臨的困難分散，整體分布仍呈現出 AI 培訓策略的共通設計方向。一個關鍵的相對變化是：以「流程／專案團隊」為單位的培訓（18.9%）已超越以「職能」為單位的培訓（14.5%）。背後反映的是 AI 工具本身的特性，已開始打散傳統的職能分野，同一個 AI 工作流可能同時服務行銷、業務、財務，培訓的最小組織單元自然從「職能」往「場景／流程」移動。</p>
       <p>內容設計層面也呼應這個方向：場景專案實作（28.4%）為最高重心、流程標準化（16.1%）緊跟在後。但同時間，「主管帶隊推進與成效管理」作為首要重心的比例僅 6.0%，是五個選項中最低。當企業開始用場景與流程設計培訓，主管在 AI 落地過程中的「推進者」角色該如何設計，仍是被嚴重低估的環節。</p>
     </div>
@@ -1472,12 +1426,12 @@
        主題三 ｜ 分隔頁
   ════════════════════════════════ -->
   <div class="slide divider">
-    <div class="tag" contenteditable="true" data-id="t3-div-tag">主題三</div>
-    <h1 contenteditable="true" data-id="t3-div-h1">組織化已在發生，<br>差距正在擴大</h1>
-    <div class="desc" contenteditable="true" data-id="t3-div-desc">
+    <div class="tag" data-id="t3-div-tag">主題三</div>
+    <h1 data-id="t3-div-h1">組織化已在發生，<br>差距正在擴大</h1>
+    <div class="desc" data-id="t3-div-desc">
       45.6% 的企業 AI 改善已達組織層面，比多數人預期的進展更快。<br>但 54.4% 仍停在個人，兩群企業正走向不同的終點。
     </div>
-    <div class="chapter-lead" contenteditable="true" data-id="t3-div-lead">
+    <div class="chapter-lead" data-id="t3-div-lead">
       <div class="chapter-lead-label">本章節</div>
       在企業 AI 改善層級的分布上，45.6% 的 AI 改善已達組織層面（團隊以上），比多數人預期更快。本章節深入這個翻轉觀察，以四個關鍵指標（衡量能力、改善面向、場景深度、困難本質）呈現個人層級群與組織化群正走向不同終點的訊號。
     </div>
@@ -1488,15 +1442,15 @@
        主題三 ｜ 開場翻轉
   ════════════════════════════════ -->
   <div class="slide chart-slide">
-    <div class="slide-label" contenteditable="true" data-id="t3-s12-label">開場翻轉</div>
-    <h2 contenteditable="true" data-id="t3-s12-h2">45.6% 企業的 AI 改善已達組織層面，比多數人預期更快</h2>
+    <div class="slide-label" data-id="t3-s12-label">開場翻轉</div>
+    <h2 data-id="t3-s12-h2">45.6% 企業的 AI 改善已達組織層面，比多數人預期更快</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t3-s12-leadin">
+    <div class="lead-in" data-id="t3-s12-leadin">
       <div class="lead-label">調查樣貌</div>
       在 AI 為公司帶來的改善上，54.4% 仍停留在「員工各自摸索」的個人層級；合計 45.6% 已將 AI 改善推進到團隊、跨部門或全公司層級。
     </div>
 
-    <div class="chart-sub" contenteditable="true" data-id="t3-s12-sub">
+    <div class="chart-sub" data-id="t3-s12-sub">
       AI 改善主要出現在哪個層級（Q59，限有明確改善企業，n=653）｜團隊 + 跨部門 + 全公司 = 45.6%
     </div>
 
@@ -1546,7 +1500,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t3-s12-body">
+    <div class="body-text" data-id="t3-s12-body">
       <p>即便多數企業仍停留在個人層級，反過來看，有四成以上的企業已經踏上 AI 組織化這條路。這個翻轉揭示出一個值得關注的訊號：台灣企業的 AI 落地，已從「會不會用」進入「個人效益能不能擴散到組織」的新階段。</p>
       <p>這條 45.6% 的分界線把企業帶向兩條完全不同的 AI 落地軌跡。在後續分析中，這兩群企業在衡量能力、改善面向、場景深度與困難本質四個面向上，會一致呈現出走向不同終點的訊號。組織化群已能換算 AI 的營收貢獻、把改善擴散到跨部門流程；個人層級群仍困在「想做卻找不到方向、資源啟動不了」的階段。越晚跨越這條分界線，要追上組織化群的成本就越高。</p>
     </div>
@@ -1572,15 +1526,15 @@
        主題三 ｜ 質的分岔 1+2（衡量、改善面向）
   ════════════════════════════════ -->
   <div class="slide chart-slide">
-    <div class="slide-label" contenteditable="true" data-id="t3-s13-label">質的分岔｜衡量與改善面向</div>
-    <h2 contenteditable="true" data-id="t3-s13-h2">跨入組織層級的企業，衡量能力與硬性指標表現出現跳躍式差距</h2>
+    <div class="slide-label" data-id="t3-s13-label">質的分岔｜衡量與改善面向</div>
+    <h2 data-id="t3-s13-h2">跨入組織層級的企業，衡量能力與硬性指標表現出現跳躍式差距</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t3-s13-leadin">
+    <div class="lead-in" data-id="t3-s13-leadin">
       <div class="lead-label">調查樣貌</div>
       在個人層級群（n=355）與組織化群（n=298）的對照中，衡量機制與改善面向上呈現顯著差距：72.1% vs 30.5% 尚未建立任何衡量；降低營運成本（49.3% vs 24.5%）與提升營收（19.1% vs 9.6%）的硬性指標差距均超過 9 個百分點。
     </div>
 
-    <div class="chart-sub" contenteditable="true" data-id="t3-s13-sub">
+    <div class="chart-sub" data-id="t3-s13-sub">
       個人層級群（n=355）vs 組織化群（n=298）｜衡量機制（Q60）× AI 改善面向（Q58）
     </div>
 
@@ -1683,7 +1637,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t3-s13-body">
+    <div class="body-text" data-id="t3-s13-body">
       <p>第一條分岔線出現在衡量能力上，落差達 41.6 個百分點。這個落差的背後，是兩種完全不同的管理對話：組織化群能拿出 AI 的具體指標進入年度規劃，個人層級群仍停留在「感覺有幫助」的層次。當衡量缺位，AI 投入就難以累積成下一輪資源的依據。</p>
       <p>第二條分岔出現在改善面向上。當談到「降低營運成本」「提升營收」這類硬性指標，組織化群的回報比例幾乎是個人層級群的兩倍。組織化群已能在管理對話中量化 AI 的營收貢獻；個人層級群仍以使用心得為主要回饋。兩群企業正在累積完全不同等級的 AI 商業敘事，這個差距會在後續分析中持續放大。</p>
     </div>
@@ -1718,15 +1672,15 @@
        主題三 ｜ 質的分岔 3+4（場景、困難）
   ════════════════════════════════ -->
   <div class="slide chart-slide">
-    <div class="slide-label" contenteditable="true" data-id="t3-s14-label">質的分岔｜場景與困難</div>
-    <h2 contenteditable="true" data-id="t3-s14-h2">場景深度差距近 2 倍以上，連卡關的本質都不同</h2>
+    <div class="slide-label" data-id="t3-s14-label">質的分岔｜場景與困難</div>
+    <h2 data-id="t3-s14-h2">場景深度差距近 2 倍以上，連卡關的本質都不同</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t3-s14-leadin">
+    <div class="lead-in" data-id="t3-s14-leadin">
       <div class="lead-label">調查樣貌</div>
       在四場景「各自摸索」比例上，個人層級群均高出組織化群 1 倍以上（如日常任務 81.7% vs 37.6%）；同一時間，兩群「最大困難」的結構完全不同：個人層級群卡在「資源不足、流程難調整」，組織化群已進入「能力落差、衡量做不起來」。
     </div>
 
-    <div class="chart-sub" contenteditable="true" data-id="t3-s14-sub">
+    <div class="chart-sub" data-id="t3-s14-sub">
       個人層級群 vs 組織化群｜四場景「各自摸索」比例（Q32–35）× 最大困難（Q70）
     </div>
 
@@ -1819,7 +1773,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t3-s14-body">
+    <div class="body-text" data-id="t3-s14-body">
       <p>第三條分岔是場景深度。在日常任務、知識管理、決策規劃、團隊協作四個場景中，個人層級群的「各自摸索」比例都高出組織化群將近一倍以上：個人層級群的 AI 行為仍是分散、孤立、難以複製；組織化群則已建立起跨人共通做法。這條場景深度的落差，是兩群企業在組織知識資產累積上拉開差距的根本。</p>
       <p>第四條分岔更具洞察意義：困難的本質完全不同。個人層級群最大困難是「資源不足、流程難以調整」，仍卡在啟動階段；組織化群最大困難則是「能力落差、衡量做不起來」，已進入精煉與規模化的下一個關卡。對企業而言，這個卡關點對兩群企業是截然不同的問題，適用於組織化群的策略對個人層級群可能無效，反之亦然。</p>
     </div>
@@ -1854,15 +1808,15 @@
        主題三 ｜ 收束
   ════════════════════════════════ -->
   <div class="slide content">
-    <div class="slide-label" contenteditable="true" data-id="t3-s15-label">小結</div>
-    <h2 contenteditable="true" data-id="t3-s15-h2">兩群企業正在走向不同的終點，越晚跨越，越難追上</h2>
+    <div class="slide-label" data-id="t3-s15-label">小結</div>
+    <h2 data-id="t3-s15-h2">兩群企業正在走向不同的終點，越晚跨越，越難追上</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t3-s15-leadin">
+    <div class="lead-in" data-id="t3-s15-leadin">
       <div class="lead-label">調查樣貌</div>
       四個分岔指標（衡量能力、改善面向、場景深度、困難本質）一致指向：個人層級群與組織化群正走向兩條不同的 AI 落地軌跡。
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t3-s15-body">
+    <div class="body-text" data-id="t3-s15-body">
       <p>2026 年台灣企業的 AI 落地已進入「分岔擴大」的階段。組織化群已能換算 AI 的營收貢獻、把改善擴散到跨部門流程，並進入「衡量做不起來」這個更接近規模化議題的關卡；個人層級群則仍困在「找不到方向、資源啟動不了」的啟動前期。對企業而言，這個分岔最值得警覺的是差距會持續擴大的結構性原因。</p>
       <p>組織化群每跨越一個關卡，累積的衡量數據、跨人共通做法、跨部門流程資產，都會成為下一輪推進的基礎；個人層級群若沒有刻意設計組織化路徑，每多停留一季就要面對更高的追趕成本。後續主題四將深入分析三個結構性課題（起點、角色、衡量），說明為何多數企業在結構上難以將 AI 個人效益擴散到組織層面。</p>
     </div>
@@ -1938,12 +1892,12 @@
        主題四 ｜ 分隔頁
   ════════════════════════════════ -->
   <div class="slide divider">
-    <div class="tag" contenteditable="true" data-id="t4-div-tag">主題四</div>
-    <h1 contenteditable="true" data-id="t4-div-h1">2026 企業 AI 落地的<br>4 個關鍵方向</h1>
-    <div class="desc" contenteditable="true" data-id="t4-div-desc">
+    <div class="tag" data-id="t4-div-tag">主題四</div>
+    <h1 data-id="t4-div-h1">2026 企業 AI 落地的<br>4 個關鍵方向</h1>
+    <div class="desc" data-id="t4-div-desc">
       從這份調查的數據與分岔觀察，<br>整理出對企業經營者最值得思考的 4 個方向。
     </div>
-    <div class="chapter-lead" contenteditable="true" data-id="t4-div-lead">
+    <div class="chapter-lead" data-id="t4-div-lead">
       <div class="chapter-lead-label">本章節</div>
       從主題一到主題三，這份調查呈現的整體樣貌是：AI 個人使用接近全面普及（88.8% 工作者每週使用 AI），但組織化程度仍跟不上。62.3% 企業沒有書面 AI 規範、61.9% 沒有衡量機制、54.4% 改善仍停在個人層級，AI 落地的下一個關卡已從「會不會用」轉到「個人效益能不能擴散到組織」。本章節從這份觀察出發，整理出 4 個對企業經營者最值得思考的方向，協助你在 2026 年的 AI 落地中找到自己的施力點。
     </div>
@@ -1954,15 +1908,15 @@
        主題四 ｜ 方向一：以場景／流程為單位設計 AI 推進
   ════════════════════════════════ -->
   <div class="slide chart-slide">
-    <div class="slide-label" contenteditable="true" data-id="t4-s17-label">方向一　以場景／流程為單位設計 AI 推進</div>
-    <h2 contenteditable="true" data-id="t4-s17-h2">AI 工具跨越職能邊界，推進的起點該從場景／流程啟動</h2>
+    <div class="slide-label" data-id="t4-s17-label">方向一　以場景／流程為單位設計 AI 推進</div>
+    <h2 data-id="t4-s17-h2">AI 工具跨越職能邊界，推進的起點該從場景／流程啟動</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t4-s17-leadin">
+    <div class="lead-in" data-id="t4-s17-leadin">
       <div class="lead-label">調查樣貌</div>
       在 AI 培訓策略上，採「先選關鍵流程或專案團隊」（場景優先 18.9%）的企業已略高於「先選關鍵職能」（職能優先 14.5%）；學習內容的優先重心也呈現同樣方向：「場景專案實作」28.4% 為最高，「流程標準化」16.1% 緊跟在後。
     </div>
 
-    <div class="chart-sub" contenteditable="true" data-id="t4-s17-sub">
+    <div class="chart-sub" data-id="t4-s17-sub">
       培訓推動對象策略（Q64）× AI 學習內容優先重心（Q66）｜限有 AI 培訓計畫者 n=602
     </div>
 
@@ -2059,7 +2013,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t4-s17-body">
+    <div class="body-text" data-id="t4-s17-body">
       <p>企業 AI 推進的設計重心正在發生一次方向性的轉移：以「流程／專案團隊」為單位的推動比例已超過以「職能」為單位的推動。背後原因在 AI 工具本身的特性，一個 AI 工作流可以同時服務行銷、業務、財務、客服，AI 不屬於任何職能。當工具跨越職能邊界，AI 推進設計自然往「場景」這個能跨越部門的單位移動。</p>
       <p>對企業而言，這個方向意味著 AI 推進的最小組織單元，從「誰要學」移到「哪個場景／流程要被優化」。以場景為單位設計推進，產出的是可跨團隊複用的工作流與範本；以職能為單位設計，產出的是隨工具更新而快速過時的技能列表。從場景啟動 AI 推進，學習資產才能持續累積為組織能力。</p>
     </div>
@@ -2072,10 +2026,10 @@
        主題四 ｜ 方向二：為主管設計「推進者」角色
   ════════════════════════════════ -->
   <div class="slide content">
-    <div class="slide-label" contenteditable="true" data-id="t4-s18-label">方向二　為主管設計「推進者」角色</div>
-    <h2 contenteditable="true" data-id="t4-s18-h2">主管在 AI 落地中既是學習者也是推動者，需要為兩種角色設計不同的內容</h2>
+    <div class="slide-label" data-id="t4-s18-label">方向二　為主管設計「推進者」角色</div>
+    <h2 data-id="t4-s18-h2">主管在 AI 落地中既是學習者也是推動者，需要為兩種角色設計不同的內容</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t4-s18-leadin">
+    <div class="lead-in" data-id="t4-s18-leadin">
       <div class="lead-label">調查樣貌</div>
       在 AI 培訓策略中，15.4% 企業選擇「主管先行」（先培訓主管再擴散）；但在 AI 培訓內容規劃中，「主管帶隊推進與成效管理」作為首要重心的比例僅 6.0%，是五個選項中最低的。
     </div>
@@ -2096,7 +2050,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t4-s18-body">
+    <div class="body-text" data-id="t4-s18-body">
       <p>企業 AI 推進設計上的結構性錯位：策略上重視主管，內容上把主管當員工。15.4% 企業選擇「主管先行」，意味著他們認同主管在 AI 落地中的關鍵角色；但實際學習內容中，主管學的仍是場景實作、單點效率、基礎能力，與一般員工沒有本質差異。主管學了 AI 之後，並不會自動具備帶領團隊把 AI 落地的能力。</p>
       <p>為主管設計「推進者」角色的內容，需要包含三類能力：場景翻譯（看出哪些場景值得用 AI 推進）、流程嵌入（讓 AI 嵌進團隊既有工作流）、成效回顧（追蹤與迭代）。對企業而言，主管的角色設計若停在學習者，組織化推進就難以收斂為團隊的共通做法。</p>
     </div>
@@ -2114,10 +2068,10 @@
        主題四 ｜ 方向三：把衡量機制嵌進推進流程
   ════════════════════════════════ -->
   <div class="slide content">
-    <div class="slide-label" contenteditable="true" data-id="t4-s19-label">方向三　把衡量機制嵌進推進流程</div>
-    <h2 contenteditable="true" data-id="t4-s19-h2">衡量是組織化推進的副產品，無法在推進結束後事後補上</h2>
+    <div class="slide-label" data-id="t4-s19-label">方向三　把衡量機制嵌進推進流程</div>
+    <h2 data-id="t4-s19-h2">衡量是組織化推進的副產品，無法在推進結束後事後補上</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t4-s19-leadin">
+    <div class="lead-in" data-id="t4-s19-leadin">
       <div class="lead-label">調查樣貌</div>
       61.9% 企業尚未建立任何 AI 衡量機制；在已建立衡量、且能進入 ROI 計算階段的企業中（n=264），60.6% 仍只能算到節省工時，僅 9.5% 能計算出 AI 帶來的額外營收。在主題三的二分群交叉中，個人層級群 72.1% 沒有衡量，組織化群 30.5%，差距達 41.6 個百分點。
     </div>
@@ -2137,7 +2091,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t4-s19-body">
+    <div class="body-text" data-id="t4-s19-body">
       <p>衡量機制的建立程度，與企業是否進入組織化推進高度相關。個人層級群即使設計指標，也常常無法產生實質的衡量數據，因為個人的 AI 使用沒有共通基準、沒有跨人對比、沒有形成可累積的成果。這條觀察讓「衡量」從事後補上的工程，前移到 AI 落地過程中的基礎建設。</p>
       <p>對企業而言，這個方向意味著衡量機制的設計要早於規模擴散。在 AI 推進啟動時就同步設計「要衡量什麼、誰來看、多久檢視」的回顧節奏，比起等 AI 使用普及後再來補設指標，更能讓 AI 投入的成效具體呈現。衡量能力與組織化推進是同一件事，難以拆開來做。</p>
     </div>
@@ -2150,10 +2104,10 @@
        主題四 ｜ 方向四：設計「擴散效益」的機制
   ════════════════════════════════ -->
   <div class="slide content">
-    <div class="slide-label" contenteditable="true" data-id="t4-s20-label">方向四　設計「擴散效益」的機制</div>
-    <h2 contenteditable="true" data-id="t4-s20-h2">個人效率有天花板，組織效益需要刻意設計擴散機制</h2>
+    <div class="slide-label" data-id="t4-s20-label">方向四　設計「擴散效益」的機制</div>
+    <h2 data-id="t4-s20-h2">個人效率有天花板，組織效益需要刻意設計擴散機制</h2>
 
-    <div class="lead-in" contenteditable="true" data-id="t4-s20-leadin">
+    <div class="lead-in" data-id="t4-s20-leadin">
       <div class="lead-label">調查樣貌</div>
       54.4% 企業 AI 改善仍停在個人層級，組織層面合計 45.6%。在能計算 ROI 的企業中，僅 9.5% 能換算出 AI 帶來的額外營收；換算回全體企業，能說清楚 AI 創造多少新營收的比例極低。
     </div>
@@ -2173,7 +2127,7 @@
       </div>
     </div>
 
-    <div class="body-text" contenteditable="true" data-id="t4-s20-body">
+    <div class="body-text" data-id="t4-s20-body">
       <p>AI 普及之後，個人效率有天花板。當員工 9 成每週都在用 AI、企業 5 成以上 AI 改善仍停在個人層級，意味著個人效率的提升並沒有自動擴散成組織能力。從個人效率走向組織效益，需要組織主動設計擴散的機制，例如把個人成功經驗轉化為可複用的工作流與範本、建立跨團隊的場景共享、規劃從場景試點到全公司推進的階段路徑。</p>
       <p>對企業而言，這個方向意味著 AI 落地的下一個設計重點，已從「擴散使用」轉到「擴散效益」。當「會不會用」已不是議題，AI 落地的競爭差距會從「誰用得多」移到「誰能把個人經驗系統化為組織能力」。從這份調查看到的兩群企業分岔，正是這個差距開始拉開的訊號。</p>
     </div>
@@ -2191,10 +2145,10 @@
        主題四 ｜ 小結
   ════════════════════════════════ -->
   <div class="slide content">
-    <div class="slide-label" contenteditable="true" data-id="t4-s21-label">小結</div>
-    <h2 contenteditable="true" data-id="t4-s21-h2">2026 企業 AI 落地的 4 個關鍵方向</h2>
+    <div class="slide-label" data-id="t4-s21-label">小結</div>
+    <h2 data-id="t4-s21-h2">2026 企業 AI 落地的 4 個關鍵方向</h2>
 
-    <div class="body-text" contenteditable="true" data-id="t4-s21-body">
+    <div class="body-text" data-id="t4-s21-body">
       <p>2026 年企業 AI 落地的競爭差距，已從個人使用率移到組織擴散能力。這份調查呈現的核心觀察是：企業需要把 AI 推進的設計重心從「誰要學什麼」移到「如何讓個人效益擴散到組織」。以下 4 個關鍵方向，提供企業經營者作為 2026 年 AI 落地的施力座標。</p>
     </div>
 
@@ -2227,71 +2181,5 @@
   </div>
 
 </div><!-- /deck -->
-
-<script>
-  // ── 原始內容快照（重設用）──
-  const originals = {};
-  document.querySelectorAll('[contenteditable][data-id]').forEach(el => {
-    originals[el.dataset.id] = el.innerHTML;
-  });
-
-  // ── 載入儲存的內容 ──
-  document.querySelectorAll('[contenteditable][data-id]').forEach(el => {
-    const saved = localStorage.getItem('wb26_' + el.dataset.id);
-    if (saved) el.innerHTML = saved;
-  });
-
-  // ── 自動儲存 ──
-  let saveTimer;
-  const saveStatus = document.getElementById('save-status');
-
-  document.addEventListener('input', function(e) {
-    if (!e.target.hasAttribute('contenteditable')) return;
-    const id = e.target.dataset.id;
-    if (!id) return;
-    clearTimeout(saveTimer);
-    saveStatus.textContent = '儲存中…';
-    saveTimer = setTimeout(() => {
-      localStorage.setItem('wb26_' + id, e.target.innerHTML);
-      saveStatus.textContent = '已儲存 ✓';
-      setTimeout(() => { saveStatus.textContent = ''; }, 2000);
-    }, 600);
-  });
-
-  // ── 重設所有內容 ──
-  function resetAll() {
-    if (!confirm('確定要重設所有文字為原始內容嗎？此動作無法還原。')) return;
-    document.querySelectorAll('[contenteditable][data-id]').forEach(el => {
-      const id = el.dataset.id;
-      el.innerHTML = originals[id];
-      localStorage.removeItem('wb26_' + id);
-    });
-    saveStatus.textContent = '已重設';
-    setTimeout(() => { saveStatus.textContent = ''; }, 2000);
-  }
-
-  // ── 下載修改後版本 ──
-  function downloadModified() {
-    const clone = document.documentElement.cloneNode(true);
-    const editableEls = document.querySelectorAll('[contenteditable][data-id]');
-    const cloneEditables = clone.querySelectorAll('[contenteditable][data-id]');
-    editableEls.forEach((el, i) => {
-      if (cloneEditables[i]) cloneEditables[i].innerHTML = el.innerHTML;
-    });
-    const html = '<!DOCTYPE html>\n' + clone.outerHTML;
-    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    const now = new Date();
-    const ts = `${now.getMonth()+1}${String(now.getDate()).padStart(2,'0')}_${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}`;
-    a.download = `白皮書簡報草稿_v1_${ts}.html`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
-</script>
-
 
 </body></html>
