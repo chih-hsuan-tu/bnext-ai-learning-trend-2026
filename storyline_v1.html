@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>企業 AI 學習白皮書｜2026 報告簡報</title>
+<style>
+:root {
+  --orange: #FF7D09;
+  --orange-bg: #FFF5E6;
+  --dark: #1A1A1A;
+  --gray: #595959;
+  --light: #F5F5F5;
+  --border: #E5E5E5;
+  --green: #059669;
+  --red: #DC2626;
+  --blue: #2563EB;
+  --amber: #D97706;
+  --navy: #1A3A5C;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #CCCCCC;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  color: var(--dark);
+  line-height: 1.5;
+}
+.deck { max-width: 980px; margin: 0 auto; padding: 32px 16px; }
+.slide {
+  background: white;
+  width: 100%;
+  min-height: 540px;
+  margin-bottom: 28px;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.slide-num {
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+  font-size: 10px;
+  color: #BBBBBB;
+}
+
+/* ── Chapter slides ── */
+.slide-chapter {
+  background: var(--orange);
+  color: white;
+  min-height: 280px;
+  flex-direction: row;
+  align-items: stretch;
+}
+.chapter-left {
+  width: 56px;
+  background: rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.8);
+}
+.chapter-body {
+  flex: 1;
+  padding: 48px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.chapter-en {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  opacity: 0.75;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.chapter-title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.chapter-sub {
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+/* ── Cover slide ── */
+.slide-cover {
+  min-height: 540px;
+  background: var(--dark);
+  flex-direction: row;
+  position: relative;
+}
+.cover-orange-block {
+  width: 58%;
+  background: var(--orange);
+  clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56px 52px 56px 48px;
+}
+.cover-survey-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.cover-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.cover-subtitle {
+  font-size: 16px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+.cover-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cover-stat {
+  background: rgba(0,0,0,0.15);
+  border-radius: 6px;
+  padding: 8px 14px;
+  text-align: center;
+}
+.cover-stat-num {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  display: block;
+}
+.cover-stat-lbl {
+  font-size: 10px;
+  color: rgba(255,255,255,0.8);
+}
+.cover-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 40px 36px;
+}
+.cover-logo-text {
+  text-align: right;
+  color: white;
+}
+.cover-logo-main {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.cover-logo-en {
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  margin-bottom: 24px;
+}
+.cover-media-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+.cover-media-logo {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+}
+
+/* ── Regular content slides ── */
+.slide-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
+  border-bottom: 2px solid var(--orange);
+  background: white;
+  flex-shrink: 0;
+}
+.slide-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  background: var(--orange);
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.slide-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dark);
+  flex: 1;
+}
+.slide-body {
+  flex: 1;
+  padding: 20px 32px 16px;
+  display: flex;
+  flex-direction: column;
+}
+.slide-lead {
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+/* ── Bar charts ── */
+.bar-row {
+  display: grid;
+  grid-template-columns: 136px 1fr 52px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+.bar-row.wide {
+  grid-template-columns: 180px 1fr 52px;
+}
+.bar-label {
+  font-size: 12px;
+  color: var(--gray);
+  text-align: right;
+  line-height: 1.3;
+}
+.bar-track {
+  height: 20px;
+  background: var(--light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+.bar-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dark);
+  text-align: right;
+}
+
+/* ── Big number ── */
+.big-num {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+}
+.big-num-label {
+  font-size: 12px;
+  color: var(--gray);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* ── Insight box ── */
+.insight {
+  background: var(--orange-bg);
+  border-left: 4px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #7A3800;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+.insight.green {
+  background: #ECFDF5;
+  border-color: var(--green);
+  color: #064E3B;
+}
+.insight.blue {
+  background: #EFF6FF;
+  border-color: var(--blue);
+  color: #1E3A8A;
+}
+.insight.red {
+  background: #FEF2F2;
+  border-color: var(--red);
+  color: #7F1D1D;
+}
+
+/* ── Columns ── */
+.col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.col3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+/* ── Section sub-head ── */
+.sub-head {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Source note ── */
+.src { font-size: 10px; color: #BBBBBB; margin-top: 8px; }
+
+/* ── Stat cards ── */
+.stat-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  text-align: center;
+}
+.stat-card.orange { border-color: var(--orange); background: var(--orange-bg); }
+.stat-card.green { border-color: var(--green); background: #ECFDF5; }
+.stat-card.red { border-color: var(--red); background: #FEF2F2; }
+.stat-card.blue { border-color: var(--blue); background: #EFF6FF; }
+
+/* ── Agenda slide ── */
+.agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+.agenda-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: var(--light);
+}
+.agenda-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.agenda-text { font-size: 14px; font-weight: 600; }
+.agenda-desc { font-size: 12px; color: var(--gray); }
+
+/* ── Compare bars ── */
+.compare-group { margin-bottom: 12px; }
+.compare-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+.compare-gap {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  margin-left: 6px;
+  background: #FEF2F2;
+  color: var(--red);
+}
+.compare-gap.pos { background: #ECFDF5; color: var(--green); }
+.compare-row-line {
+  display: grid;
+  grid-template-columns: 52px 1fr 44px;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.tag-w {
+  font-size: 10px; font-weight: 700;
+  background: #FEE2E2; color: #991B1B;
+  padding: 2px 6px; border-radius: 4px;
+  text-align: center;
+}
+.tag-d {
+  font-size: 10px; font-weight: 700;
+  background: #DBEAFE; color: #1E40AF;
+  padding: 2px 6px; border-radius: 4px;
+  text-align: center;
+}
+
+/* ── Inflection cards ── */
+.inf-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 12px 0; }
+.inf-card {
+  background: var(--light);
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid var(--border);
+}
+.inf-card h4 { font-size: 11px; color: var(--gray); margin-bottom: 12px; line-height: 1.4; }
+.inf-num { font-size: 36px; font-weight: 800; line-height: 1; }
+.inf-lbl { font-size: 11px; margin-top: 3px; }
+.inf-divider { height: 1px; background: var(--border); margin: 8px 0; }
+.inf-diff { font-size: 11px; color: var(--gray); padding-top: 6px; border-top: 1px solid var(--border); margin-top: 6px; }
+
+/* ── Layer stack ── */
+.layer {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.layer-org { background: #EFF6FF; border: 1px solid #BFDBFE; }
+.layer-mgr { background: #ECFDF5; border: 1px solid #BBF7D0; }
+.layer-wrk { background: #FFFBEB; border: 1px solid #FDE68A; }
+.layer-role { font-size: 11px; font-weight: 700; text-align: center; line-height: 1.4; }
+.layer-desc { font-size: 12px; line-height: 1.5; }
+.layer-prod { font-size: 10px; color: var(--gray); background: rgba(255,255,255,0.8); border-radius: 4px; padding: 4px 8px; min-width: 100px; text-align: center; line-height: 1.5; }
+
+/* ── Industry slides ── */
+.industry-tag {
+  display: inline-block;
+  background: var(--orange);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.industry-stat { text-align: center; }
+.industry-stat .n { font-size: 36px; font-weight: 800; }
+.industry-stat .lbl { font-size: 11px; color: var(--gray); margin-top: 2px; line-height: 1.4; }
+
+/* ── Appendix header ── */
+.slide-appendix {
+  background: var(--dark);
+  min-height: 220px;
+}
+.appendix-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+  color: white;
+}
+
+/* Print / screen toggle hint */
+.deck-note {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 24px;
+}
+</style>
+</head>
+<body>
+<div class="deck">
+<div class="deck-note">2026 企業 AI 學習趨勢調查｜白皮書報告簡報｜共 35 張</div>
+
+<!-- ════ SLIDE 1: COVER ════ -->
+<div class="slide slide-cover" style="position:relative;">
+  <div class="cover-orange-block">
+    <div class="cover-survey-tag">2026 企業 AI 學習趨勢調查</div>
+    <div class="cover-title">用了之後，<br>然後呢？</div>
+    <div class="cover-subtitle">企業 AI 學習的組織化轉折點</div>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <span class="cover-stat-num">1,180</span>
+        <span class="cover-stat-lbl">有效樣本</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-num">886</span>
+        <span class="cover-stat-lbl">企業決策者</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-num">294</span>
+        <span class="cover-stat-lbl">一般工作者</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-right">
+    <div class="cover-logo-text">
+      <div class="cover-logo-main">新商業學校</div>
+      <div class="cover-logo-en">SCHOOL OF BUSINESS NEXT MEDIA</div>
+      <div class="cover-media-logos">
+        <span class="cover-media-logo">Business Next 數位時代</span>
+        <span class="cover-media-logo">經理人</span>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">01</div>
+</div>
+
+<!-- ════ SLIDE 2: 三年演化 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">背景</span>
+    <div class="slide-title">AI 落地的三年演化：我們到了哪裡？</div>
+  </div>
+  <div class="slide-body">
+    <div class="col3" style="margin-bottom:16px;">
+      <div style="background:#F1F5F9;border-radius:8px;padding:18px;border-top:4px solid #94A3B8;">
+        <div style="font-size:11px;font-weight:700;color:#94A3B8;margin-bottom:8px;">2024</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:8px;">觀望期</div>
+        <div style="font-size:12px;color:var(--gray);line-height:1.6;">企業還在評估，員工沒有系統性學習 AI。問題是「要不要用」。</div>
+      </div>
+      <div style="background:#F1F5F9;border-radius:8px;padding:18px;border-top:4px solid #60A5FA;">
+        <div style="font-size:11px;font-weight:700;color:#60A5FA;margin-bottom:8px;">2025</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:8px;">自學期</div>
+        <div style="font-size:12px;color:var(--gray);line-height:1.6;">員工開始自主學習，但流程化少。問題是「組織有沒有支持」。</div>
+      </div>
+      <div style="background:var(--orange-bg);border-radius:8px;padding:18px;border-top:4px solid var(--orange);">
+        <div style="font-size:11px;font-weight:700;color:var(--orange);margin-bottom:8px;">2026</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:8px;">困局期</div>
+        <div style="font-size:12px;color:var(--gray);line-height:1.6;">普及之後出現更難的問題：個人用得多，組織說不清楚成效。</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:24px;padding:16px;background:var(--light);border-radius:8px;">
+      <div style="text-align:center;flex-shrink:0;">
+        <div class="big-num" style="color:var(--orange);font-size:48px;">88.8%</div>
+        <div class="big-num-label">工作者每週至少使用一次 AI</div>
+      </div>
+      <div style="font-size:13px;color:var(--gray);line-height:1.7;border-left:1px solid var(--border);padding-left:20px;">
+        「要不要用」已不再是問題。<br>2026 年的真正挑戰是：<strong style="color:var(--dark);">用了之後，企業能不能讓它從個人效率變成組織能力？</strong>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">02</div>
+</div>
+
+<!-- ════ SLIDE 3: AGENDA ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">議程</span>
+    <div class="slide-title">今天要討論的五個主題</div>
+  </div>
+  <div class="slide-body">
+    <div class="agenda-list">
+      <div class="agenda-item">
+        <div class="agenda-num">1</div>
+        <div>
+          <div class="agenda-text">普及之後的新困局</div>
+          <div class="agenda-desc">認知落差 + ROI 黑洞——兩個同時出現的新挑戰</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">2</div>
+        <div>
+          <div class="agenda-text">你的公司在光譜的哪裡</div>
+          <div class="agenda-desc">五個維度的現況快照——看完就知道自己公司站在哪</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">3</div>
+        <div>
+          <div class="agenda-text">組織化轉折點</div>
+          <div class="agenda-desc">核心論證——高低成熟度企業之間的跳躍式差距從哪裡來</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">4</div>
+        <div>
+          <div class="agenda-text">如何跨越轉折點</div>
+          <div class="agenda-desc">三層學習設計升級——先透過顧問釐清路徑，再系統性選課</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">5</div>
+        <div>
+          <div class="agenda-text">給企業學習決策者的三個優先動作</div>
+          <div class="agenda-desc">可帶走的行動清單</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">03</div>
+</div>
+
+<!-- ════ CHAPTER: 主題一 ════ -->
+<div class="slide slide-chapter" style="position:relative;">
+  <div class="chapter-left">主題一</div>
+  <div class="chapter-body">
+    <div class="chapter-en">Chapter 01</div>
+    <div class="chapter-title">普及之後的新困局</div>
+    <div class="chapter-sub">AI 已不陌生，但企業面對兩個更難處理的問題：<br>管理者「看不見」員工在做什麼，以及投入之後說不清楚成效。</div>
+  </div>
+  <div class="slide-num" style="color:rgba(255,255,255,0.5)">04</div>
+</div>
+
+<!-- ════ SLIDE 5: 困局一-A 工作者實際使用 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">困局一｜認知落差</span>
+    <div class="slide-title">先看第一手數據：工作者實際在用 AI 做什麼？</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">這是 294 位一般工作者的自我回報。他們每天用 AI 做的，和管理者想的不一樣。</div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">工作者 AI 使用情境 Top 8（Q5，n=294，複選）</div>
+        <div class="bar-row">
+          <span class="bar-label">知識查詢</span>
+          <div class="bar-track"><div class="bar-fill" style="width:74.8%;background:var(--red)"></div></div>
+          <span class="bar-pct" style="color:var(--red);">74.8%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">資料整理</span>
+          <div class="bar-track"><div class="bar-fill" style="width:68.7%;background:var(--red)"></div></div>
+          <span class="bar-pct" style="color:var(--red);">68.7%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">文案</span>
+          <div class="bar-track"><div class="bar-fill" style="width:56.1%;background:var(--red)"></div></div>
+          <span class="bar-pct" style="color:var(--red);">56.1%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">簡報</span>
+          <div class="bar-track"><div class="bar-fill" style="width:54.8%;background:var(--red)"></div></div>
+          <span class="bar-pct" style="color:var(--red);">54.8%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">報表或分析</span>
+          <div class="bar-track"><div class="bar-fill" style="width:46.9%;background:var(--red)"></div></div>
+          <span class="bar-pct" style="color:var(--red);">46.9%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">會議整理</span>
+          <div class="bar-track"><div class="bar-fill" style="width:42.9%;background:var(--red)"></div></div>
+          <span class="bar-pct" style="color:var(--red);">42.9%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">程式與自動化</span>
+          <div class="bar-track"><div class="bar-fill" style="width:34.7%;background:var(--red)"></div></div>
+          <span class="bar-pct">34.7%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">教育訓練教材</span>
+          <div class="bar-track"><div class="bar-fill" style="width:20.1%;background:var(--red)"></div></div>
+          <span class="bar-pct">20.1%</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:12px;">
+        <div style="background:var(--light);border-radius:8px;padding:16px;">
+          <div style="font-size:12px;color:var(--gray);margin-bottom:6px;">排名前三的情境是</div>
+          <div style="font-size:14px;font-weight:700;color:var(--dark);line-height:1.6;">知識查詢 74.8%<br>資料整理 68.7%<br>文案 56.1%</div>
+          <div style="font-size:12px;color:var(--gray);margin-top:6px;">這三類都是「看不見的深層應用」——工作過程中持續發生，但不容易被旁邊的人注意到。</div>
+        </div>
+        <div class="insight">
+          簡報排第四（54.8%），會議整理排第六（42.9%）——不是最主要的場景，接下來看管理者的認知。
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q5 工作者 AI 使用情境（複選，n=294）</div>
+  </div>
+  <div class="slide-num">05</div>
+</div>
+
+<!-- ════ SLIDE 6: 困局一-B 決策者認知 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">困局一｜認知落差</span>
+    <div class="slide-title">管理者以為員工在做什麼？（886 位決策者的認知）</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">同樣的問題問決策者：你覺得員工在用 AI 做什麼？答案和工作者的自我回報明顯不同。</div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">決策者認知的員工使用情境 Top 8（Q31，n=886，複選）</div>
+        <div class="bar-row">
+          <span class="bar-label">簡報</span>
+          <div class="bar-track"><div class="bar-fill" style="width:74.2%;background:var(--blue)"></div></div>
+          <span class="bar-pct" style="color:var(--blue);">74.2%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">資料整理</span>
+          <div class="bar-track"><div class="bar-fill" style="width:68.5%;background:var(--blue)"></div></div>
+          <span class="bar-pct" style="color:var(--blue);">68.5%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">文案</span>
+          <div class="bar-track"><div class="bar-fill" style="width:67.5%;background:var(--blue)"></div></div>
+          <span class="bar-pct" style="color:var(--blue);">67.5%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">會議整理</span>
+          <div class="bar-track"><div class="bar-fill" style="width:63.8%;background:var(--blue)"></div></div>
+          <span class="bar-pct" style="color:var(--blue);">63.8%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">知識查詢</span>
+          <div class="bar-track"><div class="bar-fill" style="width:62.0%;background:var(--blue)"></div></div>
+          <span class="bar-pct" style="color:var(--blue);">62.0%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">報表或分析</span>
+          <div class="bar-track"><div class="bar-fill" style="width:48.5%;background:var(--blue)"></div></div>
+          <span class="bar-pct">48.5%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">程式與自動化</span>
+          <div class="bar-track"><div class="bar-fill" style="width:35.3%;background:var(--blue)"></div></div>
+          <span class="bar-pct">35.3%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">教育訓練教材</span>
+          <div class="bar-track"><div class="bar-fill" style="width:33.2%;background:var(--blue)"></div></div>
+          <span class="bar-pct">33.2%</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:12px;">
+        <div style="background:var(--light);border-radius:8px;padding:16px;">
+          <div style="font-size:12px;color:var(--gray);margin-bottom:6px;">決策者認知中排第一的任務是</div>
+          <div style="font-size:22px;font-weight:800;color:var(--blue);">簡報 74.2%</div>
+          <div style="font-size:12px;color:var(--gray);margin-top:6px;">但工作者自我回報，簡報排第四名（54.8%）。<br>差了將近 20 個百分點。</div>
+        </div>
+        <div style="background:var(--light);border-radius:8px;padding:16px;">
+          <div style="font-size:12px;color:var(--gray);margin-bottom:6px;">決策者認知中排第四的是</div>
+          <div style="font-size:22px;font-weight:800;color:var(--blue);">會議整理 63.8%</div>
+          <div style="font-size:12px;color:var(--gray);margin-top:6px;">工作者自我回報：42.9%，差了 21 個百分點。</div>
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q31 決策者認知員工 AI 使用情境（複選，n=886）</div>
+  </div>
+  <div class="slide-num">06</div>
+</div>
+
+<!-- ════ SLIDE 7: 困局一-C 落差 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">困局一｜認知落差</span>
+    <div class="slide-title">兩幅地圖疊在一起：有產出物的任務被高估，看不見的深層應用被低估</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">比較工作者實際回報與決策者認知，出現兩個方向的系統性偏差——不是隨機誤差，而是「可見度」驅動的認知扭曲。</div>
+    <div class="col2">
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:8px;">決策者「高估」有產出物的任務</div>
+        <div class="compare-group">
+          <div class="compare-title">會議整理 <span class="compare-gap">決策者高估 +20.9pp</span></div>
+          <div class="compare-row-line">
+            <span class="tag-w">工作者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:42.9%;background:var(--red)"></div></div>
+            <span class="bar-pct">42.9%</span>
+          </div>
+          <div class="compare-row-line">
+            <span class="tag-d">決策者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:63.8%;background:var(--blue)"></div></div>
+            <span class="bar-pct">63.8%</span>
+          </div>
+        </div>
+        <div class="compare-group">
+          <div class="compare-title">簡報 <span class="compare-gap">決策者高估 +19.4pp</span></div>
+          <div class="compare-row-line">
+            <span class="tag-w">工作者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:54.8%;background:var(--red)"></div></div>
+            <span class="bar-pct">54.8%</span>
+          </div>
+          <div class="compare-row-line">
+            <span class="tag-d">決策者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:74.2%;background:var(--blue)"></div></div>
+            <span class="bar-pct">74.2%</span>
+          </div>
+        </div>
+        <div class="compare-group">
+          <div class="compare-title">教育訓練教材 <span class="compare-gap">決策者高估 +13.1pp</span></div>
+          <div class="compare-row-line">
+            <span class="tag-w">工作者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:20.1%;background:var(--red)"></div></div>
+            <span class="bar-pct">20.1%</span>
+          </div>
+          <div class="compare-row-line">
+            <span class="tag-d">決策者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:33.2%;background:var(--blue)"></div></div>
+            <span class="bar-pct">33.2%</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:0;">決策者「低估」看不見的深層應用</div>
+        <div class="compare-group">
+          <div class="compare-title">知識查詢 <span class="compare-gap pos">決策者低估 −12.8pp</span></div>
+          <div class="compare-row-line">
+            <span class="tag-w">工作者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:74.8%;background:var(--red)"></div></div>
+            <span class="bar-pct">74.8%</span>
+          </div>
+          <div class="compare-row-line">
+            <span class="tag-d">決策者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:62.0%;background:var(--blue)"></div></div>
+            <span class="bar-pct">62.0%</span>
+          </div>
+        </div>
+        <div style="background:var(--light);border-radius:8px;padding:14px;">
+          <div style="font-size:12px;color:var(--gray);line-height:1.7;">知識查詢是工作者最常用的 AI 情境（74.8%），但決策者的認知（62.0%）排在第五名，差了 12.8pp。越是日常深層、沒有產出物可以看見的，越容易被低估。</div>
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q5 工作者 AI 使用情境 × Q31 決策者認知員工使用情境（n=294 vs n=886）</div>
+  </div>
+  <div class="slide-num">07</div>
+</div>
+
+<!-- ════ SLIDE 8: 困局一-D 工具提供認知落差 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">困局一｜認知落差</span>
+    <div class="slide-title">認知落差的第二層：員工感受到的工具支援，比主管以為的少</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">同樣的問題：公司用什麼方式支援員工使用 AI 工具？工作者和決策者的答案出現系統性落差——主管高估了自己提供的支援程度。</div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">AI 工具支援方式（Q6 工作者 vs Q36 決策者，複選）</div>
+        <div class="compare-group">
+          <div class="compare-title">公司未提供任何 AI 工具 <span class="compare-gap">員工感受高 +7.8pp</span></div>
+          <div class="compare-row-line">
+            <span class="tag-w">工作者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:45.9%;background:var(--red)"></div></div>
+            <span class="bar-pct">45.9%</span>
+          </div>
+          <div class="compare-row-line">
+            <span class="tag-d">決策者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:38.1%;background:var(--blue)"></div></div>
+            <span class="bar-pct">38.1%</span>
+          </div>
+        </div>
+        <div class="compare-group">
+          <div class="compare-title">補助員工自選工具 <span class="compare-gap">決策者高估 +9.7pp</span></div>
+          <div class="compare-row-line">
+            <span class="tag-w">工作者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:9.9%;background:var(--red)"></div></div>
+            <span class="bar-pct">9.9%</span>
+          </div>
+          <div class="compare-row-line">
+            <span class="tag-d">決策者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:19.6%;background:var(--blue)"></div></div>
+            <span class="bar-pct">19.6%</span>
+          </div>
+        </div>
+        <div class="compare-group">
+          <div class="compare-title">鼓勵員工自費使用 <span class="compare-gap">決策者高估 +7.9pp</span></div>
+          <div class="compare-row-line">
+            <span class="tag-w">工作者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:11.6%;background:var(--red)"></div></div>
+            <span class="bar-pct">11.6%</span>
+          </div>
+          <div class="compare-row-line">
+            <span class="tag-d">決策者</span>
+            <div class="bar-track"><div class="bar-fill" style="width:19.5%;background:var(--blue)"></div></div>
+            <span class="bar-pct">19.5%</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:14px;">
+        <div style="background:#FEF2F2;border-radius:8px;padding:16px;border:1px solid #FECACA;">
+          <div style="font-size:13px;font-weight:700;color:var(--red);margin-bottom:8px;">45.9% 工作者：公司什麼都沒提供</div>
+          <div style="font-size:12px;color:var(--gray);line-height:1.7;">近半數員工在沒有任何組織工具支援的情況下，自行摸索 AI 的使用方式。</div>
+        </div>
+        <div style="background:var(--light);border-radius:8px;padding:16px;">
+          <div style="font-size:12px;color:var(--gray);line-height:1.7;">決策者以為自己有提供工具補助的比例（19.6%），是工作者實際感受到的近兩倍（9.9%）。這代表「有採購」≠「員工有感受到支援」。</div>
+        </div>
+        <div class="insight red">
+          認知落差不只發生在「員工在做什麼」，也發生在「公司支援了多少」。管理者對兩件事都有系統性的過度樂觀。
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q6 工作者 AI 工具使用方式（n=294）× Q36 決策者認知工具提供方式（n=886）</div>
+  </div>
+  <div class="slide-num">08</div>
+</div>
+
+<!-- ════ SLIDE 9: 困局二 ROI 黑洞 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">困局二｜ROI 黑洞</span>
+    <div class="slide-title">投入了，但說不清楚帶來了什麼——兩層原因疊加</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">說不清楚成效，不是一個問題，而是兩個問題同時存在：改善本身偏向軟性，且多數企業連衡量都沒有建立。</div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">AI 帶來的改善面向（Q58，n=886）</div>
+        <div style="font-size:11px;color:var(--gray);margin-bottom:8px;">越偏感受型，越難計算有說服力的 ROI</div>
+        <div class="bar-row wide">
+          <span class="bar-label">釋放人力投入高價值工作</span>
+          <div class="bar-track"><div class="bar-fill" style="width:42.3%;background:#94A3B8"></div></div>
+          <span class="bar-pct">42.3%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">提升決策速度與管理效率</span>
+          <div class="bar-track"><div class="bar-fill" style="width:41.1%;background:#94A3B8"></div></div>
+          <span class="bar-pct">41.1%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">降低營運成本</span>
+          <div class="bar-track"><div class="bar-fill" style="width:26.4%;background:#94A3B8"></div></div>
+          <span class="bar-pct">26.4%</span>
+        </div>
+        <div class="bar-row wide" style="background:#FFF5E6;border-radius:4px;padding:2px 4px;">
+          <span class="bar-label" style="color:var(--amber);font-weight:700;">尚未有明確改善</span>
+          <div class="bar-track"><div class="bar-fill" style="width:26.3%;background:var(--amber)"></div></div>
+          <span class="bar-pct" style="color:var(--amber);">26.3%</span>
+        </div>
+        <div class="bar-row wide" style="background:#ECFDF5;border-radius:4px;padding:2px 4px;">
+          <span class="bar-label" style="color:var(--green);font-weight:700;">提升營收（最易被預算採用）</span>
+          <div class="bar-track"><div class="bar-fill" style="width:10.3%;background:var(--green)"></div></div>
+          <span class="bar-pct" style="color:var(--green);">10.3%</span>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;gap:14px;margin-bottom:14px;">
+          <div class="stat-card" style="flex:1;text-align:center;border-color:var(--red);background:#FEF2F2;">
+            <div class="big-num" style="color:var(--red);font-size:40px;">61.9%</div>
+            <div style="font-size:12px;color:var(--gray);margin-top:4px;line-height:1.4;">尚未建立任何<br>AI 成效衡量方式</div>
+          </div>
+        </div>
+        <div class="sub-head">有衡量的企業：ROI 計算能力（n=264）</div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--amber);font-weight:600;">僅能計算節省工時</span>
+          <div class="bar-track"><div class="bar-fill" style="width:60.6%;background:var(--amber)"></div></div>
+          <span class="bar-pct" style="color:var(--amber);">60.6%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">能換算為節省金額</span>
+          <div class="bar-track"><div class="bar-fill" style="width:15.5%;background:var(--blue)"></div></div>
+          <span class="bar-pct">15.5%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--green);font-weight:600;">能計算帶來額外營收</span>
+          <div class="bar-track"><div class="bar-fill" style="width:9.5%;background:var(--green)"></div></div>
+          <span class="bar-pct" style="color:var(--green);">9.5%</span>
+        </div>
+        <div class="insight">
+          這還是「有在衡量」的企業的數字。全體中超過六成連工時都沒追蹤。下一輪培訓預算申請，幾乎沒有籌碼。
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q58 AI 改善面向、Q60 衡量機制、Q62 ROI 計算能力（決策者，n=886）</div>
+  </div>
+  <div class="slide-num">09</div>
+</div>
+
+<!-- ════ CHAPTER: 主題二 ════ -->
+<div class="slide slide-chapter" style="position:relative;background:var(--dark);">
+  <div class="chapter-left" style="background:rgba(255,255,255,0.1);">主題二</div>
+  <div class="chapter-body">
+    <div class="chapter-en" style="color:rgba(255,255,255,0.5);">Chapter 02</div>
+    <div class="chapter-title">你的公司在光譜的哪裡</div>
+    <div class="chapter-sub" style="color:rgba(255,255,255,0.75);">五個維度的現況快照。讀完這一章，你會知道自己的公司站在哪個位置。</div>
+  </div>
+  <div style="position:absolute;right:0;top:0;bottom:0;width:8px;background:var(--orange);"></div>
+  <div class="slide-num" style="color:rgba(255,255,255,0.4);">10</div>
+</div>
+
+<!-- ════ SLIDE 11: 維度一 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">維度一</span>
+    <div class="slide-title">AI 個人使用已全面普及——88.8% 工作者每週至少用一次</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">「要不要用」已經不是問題。個人使用率在 2026 年達到接近全面普及的水準。</div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">工作者個人 AI 使用頻率（Q4，n=294）</div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--blue);font-weight:700;">幾乎每天使用</span>
+          <div class="bar-track"><div class="bar-fill" style="width:69.4%;background:var(--blue)"></div></div>
+          <span class="bar-pct" style="color:var(--blue);">69.4%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">每週至少一次</span>
+          <div class="bar-track"><div class="bar-fill" style="width:19.4%;background:#60A5FA"></div></div>
+          <span class="bar-pct">19.4%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">偶爾使用</span>
+          <div class="bar-track"><div class="bar-fill" style="width:7.1%;background:#CBD5E1"></div></div>
+          <span class="bar-pct">7.1%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">幾乎不用</span>
+          <div class="bar-track"><div class="bar-fill" style="width:4.1%;background:#E2E8F0"></div></div>
+          <span class="bar-pct">4.1%</span>
+        </div>
+        <div style="margin-top:12px;padding:12px 16px;background:var(--orange-bg);border-radius:8px;border:1px solid var(--orange);text-align:center;">
+          <div style="font-size:40px;font-weight:800;color:var(--orange);line-height:1;">88.8%</div>
+          <div style="font-size:13px;color:var(--gray);margin-top:4px;">每週至少使用一次 AI（幾乎每天 + 每週一次）</div>
+        </div>
+      </div>
+      <div>
+        <div class="sub-head">企業 AI 普及狀態（Q34，決策者，n=886）</div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--green);font-weight:700;">已正式導入並推廣</span>
+          <div class="bar-track"><div class="bar-fill" style="width:24.8%;background:var(--green)"></div></div>
+          <span class="bar-pct" style="color:var(--green);">24.8%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">多數員工自發使用</span>
+          <div class="bar-track"><div class="bar-fill" style="width:36.2%;background:#86EFAC"></div></div>
+          <span class="bar-pct">36.2%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--amber);font-weight:700;">少數員工自發使用</span>
+          <div class="bar-track"><div class="bar-fill" style="width:37.2%;background:var(--amber)"></div></div>
+          <span class="bar-pct" style="color:var(--amber);">37.2%</span>
+        </div>
+        <div style="margin-top:12px;padding:12px 16px;background:#FFF5E6;border-radius:8px;border:1px solid #FDE68A;">
+          <div style="font-size:13px;font-weight:700;color:var(--amber);">73.4% 仍以個人自發為主</div>
+          <div style="font-size:12px;color:var(--gray);margin-top:4px;line-height:1.6;">多數自發（36.2%）+ 少數自發（37.2%）= 組織未介入管理</div>
+        </div>
+        <div class="insight" style="margin-top:12px;">
+          個人用得很勤，但組織端仍以「個人各自摸索」為主——這個落差，正是下一張要展開的問題。
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q4 工作者 AI 使用頻率（n=294）、Q34 企業 AI 導入現況（決策者，n=886）</div>
+  </div>
+  <div class="slide-num">11</div>
+</div>
+
+<!-- ════ SLIDE 12: 維度二 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">維度二</span>
+    <div class="slide-title">組織化嚴重落後個人使用——四大場景全部停在個人各自摸索</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">無論是日常任務、決策規劃、知識管理還是團隊協作，個人各自摸索的比例都超過五成，書面規範更是近乎空白。</div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">四大場景 AI 使用方式（Q36–39，決策者，n=886）</div>
+        <div style="font-size:11px;color:var(--gray);margin-bottom:10px;">各場景中「個人各自摸索」的比例</div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--amber);font-weight:700;">日常任務</span>
+          <div class="bar-track"><div class="bar-fill" style="width:69.4%;background:var(--amber)"></div></div>
+          <span class="bar-pct" style="color:var(--amber);">69.4%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--amber);font-weight:700;">決策規劃</span>
+          <div class="bar-track"><div class="bar-fill" style="width:59.9%;background:var(--amber)"></div></div>
+          <span class="bar-pct" style="color:var(--amber);">59.9%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--amber);font-weight:700;">知識管理</span>
+          <div class="bar-track"><div class="bar-fill" style="width:56.7%;background:var(--amber)"></div></div>
+          <span class="bar-pct" style="color:var(--amber);">56.7%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--amber);font-weight:700;">團隊協作</span>
+          <div class="bar-track"><div class="bar-fill" style="width:53.6%;background:var(--amber)"></div></div>
+          <span class="bar-pct" style="color:var(--amber);">53.6%</span>
+        </div>
+        <div style="margin-top:10px;font-size:11px;color:var(--gray);padding:8px 12px;background:var(--light);border-radius:6px;line-height:1.6;">
+          四大場景中，全公司制度化推進的比例都在個位數——個人在用，組織沒有設計擴散機制。
+        </div>
+      </div>
+      <div>
+        <div class="sub-head">書面 AI 使用規範（Q37，決策者，n=886）</div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--red);font-weight:700;">完全沒有</span>
+          <div class="bar-track"><div class="bar-fill" style="width:62.3%;background:var(--red)"></div></div>
+          <span class="bar-pct" style="color:var(--red);">62.3%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">有但未定期宣導</span>
+          <div class="bar-track"><div class="bar-fill" style="width:18.6%;background:#94A3B8"></div></div>
+          <span class="bar-pct">18.6%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">有且不定期宣導</span>
+          <div class="bar-track"><div class="bar-fill" style="width:11.3%;background:#60A5FA"></div></div>
+          <span class="bar-pct">11.3%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--green);font-weight:700;">有且固定宣導</span>
+          <div class="bar-track"><div class="bar-fill" style="width:7.8%;background:var(--green)"></div></div>
+          <span class="bar-pct" style="color:var(--green);">7.8%</span>
+        </div>
+        <div class="insight red" style="margin-top:12px;">
+          62.3% 沒有任何書面規範。個人用 AI 的速度遠超過組織建立制度的速度，這個缺口是後面一系列問題的根源。
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q36–39 四大場景 AI 使用方式、Q37 書面規範（決策者，n=886）</div>
+  </div>
+  <div class="slide-num">12</div>
+</div>
+
+<!-- ════ SLIDE 13: 維度三 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">維度三</span>
+    <div class="slide-title">培訓意願強，但學習重心沒有投到最關鍵的地方</div>
+  </div>
+  <div class="slide-body">
+    <div class="col2">
+      <div>
+        <div style="text-align:center;background:var(--orange-bg);border-radius:8px;padding:16px;margin-bottom:14px;border:1px solid var(--orange);">
+          <div class="big-num" style="color:var(--orange);font-size:48px;">67.9%</div>
+          <div style="font-size:12px;color:var(--gray);margin-top:4px;">未來六個月有規劃 AI 相關培訓<br>（已排定或規劃中）</div>
+        </div>
+        <div style="font-size:13px;color:var(--gray);line-height:1.7;padding:12px;background:var(--light);border-radius:6px;">
+          意願是有的。問題在於「學什麼」的選擇——顯示資源沒有集中在最能推動組織化的方向。
+        </div>
+      </div>
+      <div>
+        <div class="sub-head">AI 學習重心選擇（Q66，有培訓計畫者，n=602）</div>
+        <div class="bar-row wide">
+          <span class="bar-label">場景專案實作</span>
+          <div class="bar-track"><div class="bar-fill" style="width:28.4%;background:var(--blue)"></div></div>
+          <span class="bar-pct">28.4%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">基礎能力與使用</span>
+          <div class="bar-track"><div class="bar-fill" style="width:25.6%;background:var(--blue)"></div></div>
+          <span class="bar-pct">25.6%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">單點任務效率提升</span>
+          <div class="bar-track"><div class="bar-fill" style="width:23.9%;background:var(--blue)"></div></div>
+          <span class="bar-pct">23.9%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">流程標準化與協作</span>
+          <div class="bar-track"><div class="bar-fill" style="width:16.1%;background:#60A5FA"></div></div>
+          <span class="bar-pct">16.1%</span>
+        </div>
+        <div class="bar-row wide" style="background:#FFF5E6;border-radius:4px;padding:2px 4px;">
+          <span class="bar-label" style="color:var(--amber);font-weight:700;">主管帶隊推進</span>
+          <div class="bar-track"><div class="bar-fill" style="width:6.0%;background:var(--amber)"></div></div>
+          <span class="bar-pct" style="color:var(--amber);">6.0%</span>
+        </div>
+        <div class="insight">
+          「主管帶隊」是讓個人效率擴散到組織的關鍵機制，卻是學習重心中選擇最少的選項（6%，排名最末）。
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q67 培訓規劃、Q66 AI 學習內容優先重心（決策者）</div>
+  </div>
+  <div class="slide-num">13</div>
+</div>
+
+<!-- ════ SLIDE 14: 維度四 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">維度四</span>
+    <div class="slide-title">卡關的是組織化能力，不是工具問題</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">推動 AI 培訓最大的障礙前三名，都是制度化能力的問題——流程嵌入、能力落差、資源不足，與工具夠不夠好無關。</div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">AI 培訓推動困難排名（Q70，n=592，單選）</div>
+        <div style="font-size:12px;color:var(--gray);margin-bottom:8px;">前三大困難都屬制度化能力範疇，與「工具不夠用」無關</div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--red);font-weight:600;">流程嵌入困難</span>
+          <div class="bar-track"><div class="bar-fill" style="width:17.6%;background:var(--red)"></div></div>
+          <span class="bar-pct">17.6%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--red);font-weight:600;">人才能力落差大</span>
+          <div class="bar-track"><div class="bar-fill" style="width:17.1%;background:var(--red)"></div></div>
+          <span class="bar-pct">17.1%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--red);font-weight:600;">推動資源不足</span>
+          <div class="bar-track"><div class="bar-fill" style="width:16.4%;background:var(--red)"></div></div>
+          <span class="bar-pct">16.4%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">治理與風險疑慮</span>
+          <div class="bar-track"><div class="bar-fill" style="width:14.6%;background:#FCA5A5"></div></div>
+          <span class="bar-pct">14.6%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">找不到優先場景</span>
+          <div class="bar-track"><div class="bar-fill" style="width:11.3%;background:#FCA5A5"></div></div>
+          <span class="bar-pct">11.3%</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:14px;">
+        <div style="background:var(--light);border-radius:8px;padding:16px;">
+          <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:8px;">「不知道從哪裡開始」才是問題</div>
+          <div style="font-size:12px;color:var(--gray);line-height:1.7;">前三大困難——流程嵌入、人才落差、資源不足——都是組織化設計問題，不是工具問題。企業需要的是結構化的推進方法，而不是多採購幾個 AI 工具。</div>
+        </div>
+        <div class="insight red">
+          外部合作的第一需求（35.5%）也印證這點：企業最需要的是「釐清優先場景與導入路徑」，而不是直接買課。
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q70 AI 培訓推動困難（決策者，n=592）、Q71 外部合作需求</div>
+  </div>
+  <div class="slide-num">14</div>
+</div>
+
+<!-- ════ SLIDE 15: 維度五 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">維度五</span>
+    <div class="slide-title">員工和公司的學習期待是錯位的——五個主題都有落差</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">問工作者「你最想學什麼」，再問決策者「你打算安排什麼培訓」——五個主題都出現明顯落差，只有領導管理是反向的。</div>
+    <div>
+      <div class="sub-head">學習期待落差（Q26 工作者需求 × Q78 企業計畫，複選）</div>
+      <div class="compare-group">
+        <div class="compare-title">AI／生成式 AI <span class="compare-gap">員工渴求高 +28.9pp</span></div>
+        <div class="compare-row-line">
+          <span class="tag-w">工作者</span>
+          <div class="bar-track"><div class="bar-fill" style="width:76.2%;background:var(--red)"></div></div>
+          <span class="bar-pct">76.2%</span>
+        </div>
+        <div class="compare-row-line">
+          <span class="tag-d">決策者</span>
+          <div class="bar-track"><div class="bar-fill" style="width:47.3%;background:var(--blue)"></div></div>
+          <span class="bar-pct">47.3%</span>
+        </div>
+      </div>
+      <div class="compare-group">
+        <div class="compare-title">數據分析 <span class="compare-gap">員工渴求高 +25.0pp</span></div>
+        <div class="compare-row-line">
+          <span class="tag-w">工作者</span>
+          <div class="bar-track"><div class="bar-fill" style="width:48.0%;background:var(--red)"></div></div>
+          <span class="bar-pct">48.0%</span>
+        </div>
+        <div class="compare-row-line">
+          <span class="tag-d">決策者</span>
+          <div class="bar-track"><div class="bar-fill" style="width:23.0%;background:var(--blue)"></div></div>
+          <span class="bar-pct">23.0%</span>
+        </div>
+      </div>
+      <div class="compare-group">
+        <div class="compare-title">趨勢型學習 <span class="compare-gap">員工渴求高 +21.0pp</span></div>
+        <div class="compare-row-line">
+          <span class="tag-w">工作者</span>
+          <div class="bar-track"><div class="bar-fill" style="width:29.6%;background:var(--red)"></div></div>
+          <span class="bar-pct">29.6%</span>
+        </div>
+        <div class="compare-row-line">
+          <span class="tag-d">決策者</span>
+          <div class="bar-track"><div class="bar-fill" style="width:8.6%;background:var(--blue)"></div></div>
+          <span class="bar-pct">8.6%</span>
+        </div>
+      </div>
+      <div class="compare-group">
+        <div class="compare-title">工作效率與方法 <span class="compare-gap">員工渴求高 +18.9pp</span></div>
+        <div class="compare-row-line">
+          <span class="tag-w">工作者</span>
+          <div class="bar-track"><div class="bar-fill" style="width:50.7%;background:var(--red)"></div></div>
+          <span class="bar-pct">50.7%</span>
+        </div>
+        <div class="compare-row-line">
+          <span class="tag-d">決策者</span>
+          <div class="bar-track"><div class="bar-fill" style="width:31.8%;background:var(--blue)"></div></div>
+          <span class="bar-pct">31.8%</span>
+        </div>
+      </div>
+      <div class="compare-group">
+        <div class="compare-title">領導管理 <span class="compare-gap pos">企業計畫高 +5.2pp</span></div>
+        <div class="compare-row-line">
+          <span class="tag-w">工作者</span>
+          <div class="bar-track"><div class="bar-fill" style="width:21.8%;background:var(--red)"></div></div>
+          <span class="bar-pct">21.8%</span>
+        </div>
+        <div class="compare-row-line">
+          <span class="tag-d">決策者</span>
+          <div class="bar-track"><div class="bar-fill" style="width:27.0%;background:var(--blue)"></div></div>
+          <span class="bar-pct">27.0%</span>
+        </div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:10px;">
+      唯一企業計畫超過員工需求的是「領導管理」——公司想投資主管，員工反而不覺得最需要這個。這個反向落差，和後面的建議二高度吻合。
+    </div>
+    <div class="src">資料來源：Q26 工作者學習需求（n=294）× Q78 決策者培訓計畫（n=886），複選</div>
+  </div>
+  <div class="slide-num">15</div>
+</div>
+
+<!-- ════ CHAPTER: 主題三 ════ -->
+<div class="slide slide-chapter" style="position:relative;">
+  <div class="chapter-left">主題三</div>
+  <div class="chapter-body">
+    <div class="chapter-en">Chapter 03</div>
+    <div class="chapter-title">組織化轉折點</div>
+    <div class="chapter-sub">為什麼有些企業用 AI 有感，有些沒感？<br>這是本次白皮書的核心論證——差距不是漸進的，而是跳躍式的。</div>
+  </div>
+  <div class="slide-num" style="color:rgba(255,255,255,0.5)">16</div>
+</div>
+
+<!-- ════ SLIDE 14: 前提 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">前提鋪墊</span>
+    <div class="slide-title">有改善，但改善卡在個人——54.4% 的成效沒有擴散</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">在有感受到 AI 帶來改善的企業中（n=653），超過半數的改善仍停留在個人。這不是能力問題——是組織設計問題。</div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">AI 改善主要出現在哪個層級（Q59，n=653）</div>
+        <div class="bar-row wide" style="background:#FFF5E6;border-radius:4px;padding:2px 4px;">
+          <span class="bar-label" style="color:var(--amber);font-weight:700;">個人層級（各自摸索）</span>
+          <div class="bar-track"><div class="bar-fill" style="width:54.4%;background:var(--amber)"></div></div>
+          <span class="bar-pct" style="color:var(--amber);">54.4%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">團隊層級（共通做法）</span>
+          <div class="bar-track"><div class="bar-fill" style="width:26.0%;background:var(--blue)"></div></div>
+          <span class="bar-pct">26.0%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">跨部門流程</span>
+          <div class="bar-track"><div class="bar-fill" style="width:10.4%;background:#60A5FA"></div></div>
+          <span class="bar-pct">10.4%</span>
+        </div>
+        <div class="bar-row wide" style="background:#ECFDF5;border-radius:4px;padding:2px 4px;">
+          <span class="bar-label" style="color:var(--green);font-weight:700;">全公司制度化推進</span>
+          <div class="bar-track"><div class="bar-fill" style="width:9.2%;background:var(--green)"></div></div>
+          <span class="bar-pct" style="color:var(--green);">9.2%</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:14px;">
+        <div style="text-align:center;padding:20px;background:var(--light);border-radius:8px;">
+          <div style="font-size:52px;font-weight:800;color:var(--amber);line-height:1;">54.4%</div>
+          <div style="font-size:13px;color:var(--gray);margin-top:6px;">有改善的企業中，改善停在個人</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:var(--light);border-radius:8px;">
+          <div style="font-size:52px;font-weight:800;color:var(--green);line-height:1;">9.2%</div>
+          <div style="font-size:13px;color:var(--gray);margin-top:6px;">能夠制度化推進到全公司</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight">
+      個人的效益是真實的，但它停在個人——因為沒有人設計讓它擴散。這正是「組織化轉折點」存在的根本原因。
+    </div>
+    <div class="src">資料來源：Q59 AI 改善主要出現在哪個層級（限有明確改善者，n=653）</div>
+  </div>
+  <div class="slide-num">17</div>
+</div>
+
+<!-- ════ SLIDE 15: 六大構面 + 成熟度 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">能力構面 + 分群</span>
+    <div class="slide-title">六大 AI 組織能力構面，整體偏低——尤其是後端的衡量能力</div>
+  </div>
+  <div class="slide-body">
+    <div class="col2">
+      <div>
+        <div class="sub-head">組織 AI 能力六大構面（決策者自評，5 分滿分）</div>
+        <div class="bar-row wide">
+          <span class="bar-label">場景選題能力</span>
+          <div class="bar-track"><div class="bar-fill" style="width:71.0%;background:#7C3AED"></div></div>
+          <span class="bar-pct">3.55</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">治理與風險控管</span>
+          <div class="bar-track"><div class="bar-fill" style="width:65.4%;background:#7C3AED"></div></div>
+          <span class="bar-pct">3.27</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">流程嵌入能力</span>
+          <div class="bar-track"><div class="bar-fill" style="width:64.2%;background:#7C3AED"></div></div>
+          <span class="bar-pct">3.21</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">角色分工與管理機制</span>
+          <div class="bar-track"><div class="bar-fill" style="width:63.0%;background:#7C3AED"></div></div>
+          <span class="bar-pct">3.15</span>
+        </div>
+        <div class="bar-row wide" style="background:#FFF5E6;border-radius:4px;padding:2px 4px;">
+          <span class="bar-label" style="color:var(--amber);font-weight:700;">學習設計與能力建置</span>
+          <div class="bar-track"><div class="bar-fill" style="width:62.8%;background:var(--amber)"></div></div>
+          <span class="bar-pct" style="color:var(--amber);">3.14</span>
+        </div>
+        <div class="bar-row wide" style="background:#FEF2F2;border-radius:4px;padding:2px 4px;">
+          <span class="bar-label" style="color:var(--red);font-weight:700;">成效衡量與擴散</span>
+          <div class="bar-track"><div class="bar-fill" style="width:61.4%;background:var(--red)"></div></div>
+          <span class="bar-pct" style="color:var(--red);">3.07</span>
+        </div>
+      </div>
+      <div>
+        <div class="sub-head">成熟度三分群（雷達總分）</div>
+        <div class="col3" style="margin-bottom:12px;">
+          <div style="background:#ECFDF5;border:1px solid #BBF7D0;border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:800;color:var(--green);">274</div>
+            <div style="font-size:12px;font-weight:700;color:var(--green);">高成熟度</div>
+            <div style="font-size:10px;color:var(--gray);margin-top:2px;">總分 &gt;70<br>占 30.9%</div>
+          </div>
+          <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:800;color:var(--blue);">255</div>
+            <div style="font-size:12px;font-weight:700;color:var(--blue);">中成熟度</div>
+            <div style="font-size:10px;color:var(--gray);margin-top:2px;">58–70分<br>占 28.8%</div>
+          </div>
+          <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:800;color:var(--amber);">357</div>
+            <div style="font-size:12px;font-weight:700;color:var(--amber);">低成熟度</div>
+            <div style="font-size:10px;color:var(--gray);margin-top:2px;">≤57分<br>占 40.3%</div>
+          </div>
+        </div>
+        <div class="insight blue">
+          最弱的兩個構面——「學習設計」與「成效衡量」——恰好是多數企業最少投資的地方，也是轉折點存在的核心原因。
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q39–Q57 組織 AI 能力雷達 19 題（決策者，n=886）</div>
+  </div>
+  <div class="slide-num">18</div>
+</div>
+
+<!-- ════ SLIDE 19: 轉折點論證 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">轉折點論證</span>
+    <div class="slide-title">三群之間的差距不是漸進的——跨過門檻，才有跳躍式質變</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">三個核心指標全部呈現非線性落差：中成熟度與高成熟度之間的跳升幅度，遠大於低→中的進步，說明存在一條決定性的「門檻線」。</div>
+    <div class="inf-grid">
+      <div class="inf-card">
+        <h4>「尚未有明確改善」的比例</h4>
+        <div>
+          <div class="inf-num" style="color:var(--green);">9.5%</div>
+          <div class="inf-lbl" style="color:var(--green);">高成熟度（n=274）</div>
+        </div>
+        <div class="inf-divider"></div>
+        <div>
+          <div class="inf-num" style="color:var(--blue);font-size:26px;">20.4%</div>
+          <div class="inf-lbl" style="color:var(--blue);">中成熟度（n=255）</div>
+        </div>
+        <div class="inf-divider"></div>
+        <div>
+          <div class="inf-num" style="color:var(--amber);">43.4%</div>
+          <div class="inf-lbl" style="color:var(--amber);">低成熟度（n=357）</div>
+        </div>
+        <div class="inf-diff">高低差距 <strong style="color:var(--red);">33.9pp</strong></div>
+      </div>
+      <div class="inf-card">
+        <h4>「全公司制度化推進」的改善比例</h4>
+        <div>
+          <div class="inf-num" style="color:var(--green);">15.7%</div>
+          <div class="inf-lbl" style="color:var(--green);">高成熟度（n=274）</div>
+        </div>
+        <div class="inf-divider"></div>
+        <div>
+          <div class="inf-num" style="color:var(--blue);font-size:26px;">5.5%</div>
+          <div class="inf-lbl" style="color:var(--blue);">中成熟度（n=255）</div>
+        </div>
+        <div class="inf-divider"></div>
+        <div>
+          <div class="inf-num" style="color:var(--amber);">0.8%</div>
+          <div class="inf-lbl" style="color:var(--amber);">低成熟度（n=357）</div>
+        </div>
+        <div class="inf-diff">高低差距 <strong style="color:var(--red);">14.9pp</strong></div>
+      </div>
+      <div class="inf-card">
+        <h4>已建立成效衡量方式的比例</h4>
+        <div>
+          <div class="inf-num" style="color:var(--green);">20.8%</div>
+          <div class="inf-lbl" style="color:var(--green);">高成熟度（n=274）</div>
+        </div>
+        <div class="inf-divider"></div>
+        <div>
+          <div class="inf-num" style="color:var(--blue);font-size:26px;">3.1%</div>
+          <div class="inf-lbl" style="color:var(--blue);">中成熟度（n=255）</div>
+        </div>
+        <div class="inf-divider"></div>
+        <div>
+          <div class="inf-num" style="color:var(--amber);">1.1%</div>
+          <div class="inf-lbl" style="color:var(--amber);">低成熟度（n=357）</div>
+        </div>
+        <div class="inf-diff">高低差距 <strong style="color:var(--red);">19.7pp</strong></div>
+      </div>
+    </div>
+    <div class="insight green">
+      門檻效應的含意：低於門檻的投入很難被組織感知；一旦跨越，成效出現跳躍式提升。如何跨越這條門檻，就是主題四要討論的三層學習設計。
+    </div>
+    <div class="src">資料來源：Q58 AI 改善面向、Q59 改善層級、Q60 成效衡量機制（決策者三群交叉，n=886）</div>
+  </div>
+  <div class="slide-num">19</div>
+</div>
+
+<!-- ════ CHAPTER: 主題四 ════ -->
+<div class="slide slide-chapter" style="position:relative;">
+  <div class="chapter-left">主題四</div>
+  <div class="chapter-body">
+    <div class="chapter-en">Chapter 04</div>
+    <div class="chapter-title">如何跨越轉折點</div>
+    <div class="chapter-sub">先透過顧問釐清路徑，再系統性選課——<br>數據顯示，最關鍵的兩個環節，偏偏是目前最少人投資的。</div>
+  </div>
+  <div class="slide-num" style="color:rgba(255,255,255,0.5)">20</div>
+</div>
+
+<!-- ════ SLIDE 21: 矛盾 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">學習設計矛盾</span>
+    <div class="slide-title">知道什麼重要，但行動沒有跟上——三層矛盾同時存在</div>
+  </div>
+  <div class="slide-body">
+    <div class="col2">
+      <div>
+        <div class="sub-head">外部合作最希望優先協助的成果（Q71，n=602）</div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--navy);font-weight:700;">釐清優先場景與導入路徑</span>
+          <div class="bar-track"><div class="bar-fill" style="width:35.5%;background:var(--navy)"></div></div>
+          <span class="bar-pct">35.5%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">建立流程與範本</span>
+          <div class="bar-track"><div class="bar-fill" style="width:22.6%;background:#94A3B8"></div></div>
+          <span class="bar-pct">22.6%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">建立推進角色與管理機制</span>
+          <div class="bar-track"><div class="bar-fill" style="width:13.1%;background:#94A3B8"></div></div>
+          <span class="bar-pct">13.1%</span>
+        </div>
+        <div style="margin-top:12px;padding:10px 12px;background:var(--light);border-radius:6px;font-size:12px;color:var(--gray);line-height:1.6;">
+          企業最缺的是方向決策支援——先釐清優先場景與導入路徑，再針對三層角色的需求精準選課。
+        </div>
+        <div class="sub-head" style="margin-top:14px;">推動 AI 落地最關鍵的啟動條件（Q74，n=592）</div>
+        <div class="bar-row wide">
+          <span class="bar-label" style="color:var(--green);font-weight:700;">管理層明確定調</span>
+          <div class="bar-track"><div class="bar-fill" style="width:51.2%;background:var(--green)"></div></div>
+          <span class="bar-pct" style="color:var(--green);">51.2%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">明確優先應用場景</span>
+          <div class="bar-track"><div class="bar-fill" style="width:45.5%;background:#60A5FA"></div></div>
+          <span class="bar-pct">45.5%</span>
+        </div>
+        <div class="bar-row wide">
+          <span class="bar-label">有人負責推進角色</span>
+          <div class="bar-track"><div class="bar-fill" style="width:35.9%;background:#94A3B8"></div></div>
+          <span class="bar-pct">35.9%</span>
+        </div>
+        <div style="margin-top:8px;padding:8px 12px;background:#ECFDF5;border-radius:6px;font-size:12px;color:#065F46;line-height:1.6;">
+          51.2% 認為「管理層明確定調」是最關鍵的啟動條件——主管的角色已被高度認可。
+        </div>
+      </div>
+      <div>
+        <div class="sub-head">最希望優先培訓的對象（Q79，n=886）</div>
+        <div class="bar-row wide">
+          <span class="bar-label">一般員工</span>
+          <div class="bar-track"><div class="bar-fill" style="width:24.9%;background:#94A3B8"></div></div>
+          <span class="bar-pct">24.9%</span>
+        </div>
+        <div class="bar-row wide" style="background:#ECFDF5;border-radius:4px;padding:2px 4px;">
+          <span class="bar-label" style="color:var(--green);font-weight:700;">中階主管</span>
+          <div class="bar-track"><div class="bar-fill" style="width:21.2%;background:var(--green)"></div></div>
+          <span class="bar-pct" style="color:var(--green);">21.2%</span>
+        </div>
+        <div class="bar-row wide" style="background:#ECFDF5;border-radius:4px;padding:2px 4px;">
+          <span class="bar-label" style="color:var(--green);font-weight:700;">基層主管</span>
+          <div class="bar-track"><div class="bar-fill" style="width:17.5%;background:var(--green)"></div></div>
+          <span class="bar-pct" style="color:var(--green);">17.5%</span>
+        </div>
+        <div style="margin:10px 0;padding:8px 12px;background:#ECFDF5;border-radius:6px;font-size:13px;color:#065F46;font-weight:600;">
+          中階＋基層主管合計 38.7%，是企業最想優先培訓的對象
+        </div>
+        <div style="text-align:center;padding:12px;background:#FFFBEB;border-radius:8px;border:1px solid #FDE68A;margin-bottom:10px;">
+          <div style="font-size:11px;color:var(--amber);font-weight:600;margin-bottom:4px;">但「主管帶隊推進」的學習方式意圖（Q66）</div>
+          <div style="font-size:40px;font-weight:800;color:var(--amber);line-height:1;">6.0%</div>
+          <div style="font-size:11px;color:var(--gray);margin-top:4px;">學習方式五選一，排名最末</div>
+        </div>
+        <div class="insight red">
+          三層矛盾：51.2% 說主管定調最重要 → 38.7% 想優先培訓主管 → 但只有 6% 選主管帶隊的學習方式。認知到行動之間的落差，必須主動打破。
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q71 外部合作需求、Q74 最關鍵啟動條件、Q66 學習重心、Q79 優先培訓對象（決策者）</div>
+  </div>
+  <div class="slide-num">21</div>
+</div>
+
+<!-- ════ SLIDE 19: 三層架構 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">三層學習架構</span>
+    <div class="slide-title">跨越轉折點需要三層同時升級——工作者、主管、組織，缺一不可</div>
+  </div>
+  <div class="slide-body">
+    <div class="slide-lead">不是讓更多員工上工具課，而是三層角色各自承擔不同的學習任務，形成合力。</div>
+    <div class="layer layer-org">
+      <div class="layer-role" style="color:var(--blue);">組織層<br>HR／經營者</div>
+      <div class="layer-desc">系統設計與推進——建立全公司 AI 推進機制、學習路徑規劃、衡量標準與擴散路徑。沒有組織層的設計，工作者和主管的學習無法形成合力。</div>
+      <div class="layer-prod" style="color:var(--blue);">企業內訓服務<br>量身設計學習路徑</div>
+    </div>
+    <div class="layer layer-mgr">
+      <div class="layer-role" style="color:var(--green);">主管層<br>各級主管</div>
+      <div class="layer-desc">策略轉譯與流程設計——把個人效率轉化為團隊共通做法，建立 AI 使用標準和回顧機制。<strong style="color:var(--green);">主管是三層中承上啟下的關鍵樞紐，也是目前投資最不足的一層。</strong></div>
+      <div class="layer-prod" style="color:var(--green);">【實體】主管必修 AI 管理課<br>帶人的技術雙日課<br>【線上】AI 主管行動指南<br>變速領導力</div>
+    </div>
+    <div class="layer layer-wrk">
+      <div class="layer-role" style="color:#92400E;">工作者層<br>一般員工</div>
+      <div class="layer-desc">場景效率提升——在自己的工作場景中用 AI 產出具體成果，從工具操作升級為場景實作，形成可複製的個人工作方法。</div>
+      <div class="layer-prod" style="color:#92400E;">AI 工作法<br>ChatGPT 應用<br>AI 行銷實戰</div>
+    </div>
+    <div class="insight" style="margin-top:10px;">
+      工作者會用、主管不帶，效率停在個人；主管會帶、組織沒設計，成效難以複製和衡量。
+    </div>
+  </div>
+  <div class="slide-num">22</div>
+</div>
+
+<!-- ════ CHAPTER: 主題五 ════ -->
+<div class="slide slide-chapter" style="position:relative;background:#1A3A5C;">
+  <div class="chapter-left" style="background:rgba(255,255,255,0.1);">主題五</div>
+  <div class="chapter-body">
+    <div class="chapter-en" style="color:rgba(255,255,255,0.5);">Chapter 05</div>
+    <div class="chapter-title">給企業學習決策者的三個優先動作</div>
+    <div class="chapter-sub" style="color:rgba(255,255,255,0.75);">把白皮書論述轉化為可以帶走的行動清單。三個動作有優先順序，也有彼此支撐的邏輯。</div>
+  </div>
+  <div style="position:absolute;right:0;top:0;bottom:0;width:8px;background:var(--orange);"></div>
+  <div class="slide-num" style="color:rgba(255,255,255,0.4);">23</div>
+</div>
+
+<!-- ════ SLIDE 21: 三個建議 ════ -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">行動建議</span>
+    <div class="slide-title">三個優先動作——有順序，有邏輯</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;background:var(--light);border-radius:8px;padding:16px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;flex-shrink:0;">1</div>
+        <div>
+          <div style="font-size:15px;font-weight:700;margin-bottom:4px;">先建立學習路徑架構，再系統性採購課程</div>
+          <div style="font-size:12px;color:var(--gray);line-height:1.6;">35.5% 的企業外部合作第一需求是「釐清優先場景與導入路徑」——最缺的不是課，而是方向決策支援。建議先透過顧問諮詢盤點組織痛點，依三層角色設計學習路徑，再選課。</div>
+          <div style="margin-top:8px;font-size:11px;color:var(--blue);background:#EFF6FF;display:inline-block;padding:3px 10px;border-radius:4px;">新商業學校：企業學習顧問諮詢｜量身設計學習路徑規劃</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;background:var(--light);border-radius:8px;padding:16px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;flex-shrink:0;">2</div>
+        <div>
+          <div style="font-size:15px;font-weight:700;margin-bottom:4px;">把主管培訓列為最優先的投資槓桿</div>
+          <div style="font-size:12px;color:var(--gray);line-height:1.6;">38.7% 的企業想優先培訓主管，但「主管帶隊」學習方式只有 6%。54.4% 的改善停在個人層級——主管是讓個人效益擴散到組織的唯一槓桿。矛盾必須主動打破。</div>
+          <div style="margin-top:8px;font-size:11px;color:var(--green);background:#ECFDF5;display:inline-block;padding:3px 10px;border-radius:4px;">【實體】主管必修 AI 管理課、帶人的技術雙日課｜【線上】AI 主管行動指南、變速領導力</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;background:var(--light);border-radius:8px;padding:16px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:#7C3AED;color:white;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;flex-shrink:0;">3</div>
+        <div>
+          <div style="font-size:15px;font-weight:700;margin-bottom:4px;">AI 時代傳統能力需求升級，別停掉領導力與溝通力的投資</div>
+          <div style="font-size:12px;color:var(--gray);line-height:1.6;">決策者的領導管理培訓計畫（27.0%）高於工作者需求（21.8%）。AI 時代主管需要領導力支撐落地——底層能力不扎實，工具課效益打折。</div>
+          <div style="margin-top:8px;font-size:11px;color:#7C3AED;background:#F5F3FF;display:inline-block;padding:3px 10px;border-radius:4px;">【實體】帶人的技術雙日課、何飛鵬的主管養成之道｜【線上】職場贏家說話課、商業思考框架</div>
+        </div>
+      </div>
+    </div>
+    <div class="src">資料來源：Q71 Q74 Q66 Q79 Q59 Q78（決策者）</div>
+  </div>
+  <div class="slide-num">24</div>
+</div>
+
+<!-- ════ APPENDIX COVER ════ -->
+<div class="slide slide-appendix" style="min-height:200px;position:relative;">
+  <div class="appendix-body">
+    <div style="font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.5);margin-bottom:10px;">APPENDIX</div>
+    <div style="font-size:30px;font-weight:800;color:white;margin-bottom:8px;">附錄：一頁看懂各產業</div>
+    <div style="font-size:14px;color:rgba(255,255,255,0.65);">六大產業樣本排除教育相關後，五個產業的 AI 應用現況快照</div>
+    <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;justify-content:center;">
+      <span style="background:rgba(255,255,255,0.1);color:white;padding:4px 14px;border-radius:20px;font-size:12px;">資通訊／網路服務</span>
+      <span style="background:rgba(255,255,255,0.1);color:white;padding:4px 14px;border-radius:20px;font-size:12px;">傳產製造</span>
+      <span style="background:rgba(255,255,255,0.1);color:white;padding:4px 14px;border-radius:20px;font-size:12px;">電子／光電／半導體</span>
+      <span style="background:rgba(255,255,255,0.1);color:white;padding:4px 14px;border-radius:20px;font-size:12px;">零售通路／民生服務</span>
+      <span style="background:rgba(255,255,255,0.1);color:white;padding:4px 14px;border-radius:20px;font-size:12px;">金融／投顧／保險</span>
+    </div>
+  </div>
+  <div class="slide-num" style="color:rgba(255,255,255,0.3);">25</div>
+</div>
+
+<!-- SLIDE 26: 資通訊 A -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">附錄｜產業快照</span>
+    <div class="slide-title">資通訊｜AI 組織現況</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <span class="industry-tag" style="background:var(--orange);">成效感知最佳、規範跟不上</span>
+      <span style="font-size:11px;color:var(--gray);">總樣本 n=202｜決策者 n=139｜工作者 n=63</span>
+    </div>
+            <div class="sub-head">AI 導入狀態（Q30，決策者）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--green);font-weight:700;">公司已正式導入並推廣</span><div class="bar-track"><div class="bar-fill" style="width:36.0%;background:var(--green)"></div></div><span class="bar-pct">36.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">多數自發使用</span><div class="bar-track"><div class="bar-fill" style="width:36.0%;background:#86EFAC"></div></div><span class="bar-pct">36.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--amber);font-weight:700;">少數自發使用</span><div class="bar-track"><div class="bar-fill" style="width:27.3%;background:var(--amber)"></div></div><span class="bar-pct">27.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">幾乎沒有</span><div class="bar-track"><div class="bar-fill" style="width:0.7%;background:#D1D5DB"></div></div><span class="bar-pct">0.7%</span></div>
+            <div class="sub-head" style="margin-top:10px;">書面 AI 使用規範（Q37）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">尚無書面規範</span><div class="bar-track"><div class="bar-fill" style="width:56.8%;background:var(--red)"></div></div><span class="bar-pct">56.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">有，但未正式公告</span><div class="bar-track"><div class="bar-fill" style="width:19.4%;background:#FCD34D"></div></div><span class="bar-pct">19.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label">已公告，但落實程度不一</span><div class="bar-track"><div class="bar-fill" style="width:15.1%;background:#86EFAC"></div></div><span class="bar-pct">15.1%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--green);font-weight:700;">已公告，且固定宣導更新</span><div class="bar-track"><div class="bar-fill" style="width:8.6%;background:var(--green)"></div></div><span class="bar-pct">8.6%</span></div>
+            <div class="sub-head" style="margin-top:10px;">AI 帶來的改善面向（Q58，複選）</div>
+        <div class="bar-row wide"><span class="bar-label">提升決策速度與管理效率</span><div class="bar-track"><div class="bar-fill" style="width:48.9%;background:var(--green)"></div></div><span class="bar-pct">48.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label">釋放人力投入高價值工作</span><div class="bar-track"><div class="bar-fill" style="width:48.2%;background:var(--green)"></div></div><span class="bar-pct">48.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">加速新產品服務推出</span><div class="bar-track"><div class="bar-fill" style="width:45.3%;background:var(--green)"></div></div><span class="bar-pct">45.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">降低營運成本</span><div class="bar-track"><div class="bar-fill" style="width:35.3%;background:#34D399"></div></div><span class="bar-pct">35.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升交付穩定度</span><div class="bar-track"><div class="bar-fill" style="width:33.1%;background:#34D399"></div></div><span class="bar-pct">33.1%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升客戶滿意度</span><div class="bar-track"><div class="bar-fill" style="width:23.7%;background:#86EFAC"></div></div><span class="bar-pct">23.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升營收表現</span><div class="bar-track"><div class="bar-fill" style="width:14.4%;background:#A7F3D0"></div></div><span class="bar-pct">14.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">尚未有明確改善</span><div class="bar-track"><div class="bar-fill" style="width:13.7%;background:var(--red)"></div></div><span class="bar-pct" style="color:var(--red);">13.7%</span></div>
+            <div class="sub-head" style="margin-top:10px;">推動 AI 培訓的主要困難（Q70，複選，n=105）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);font-weight:700;">人才能力落差</span><div class="bar-track"><div class="bar-fill" style="width:23.8%;background:var(--red)"></div></div><span class="bar-pct" style="color:var(--red);">23.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">資源不足</span><div class="bar-track"><div class="bar-fill" style="width:17.1%;background:var(--red)"></div></div><span class="bar-pct">17.1%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">流程嵌入困難</span><div class="bar-track"><div class="bar-fill" style="width:14.3%;background:var(--red)"></div></div><span class="bar-pct">14.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">主管帶動困難</span><div class="bar-track"><div class="bar-fill" style="width:14.3%;background:var(--red)"></div></div><span class="bar-pct">14.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">治理風險疑慮</span><div class="bar-track"><div class="bar-fill" style="width:12.4%;background:var(--red)"></div></div><span class="bar-pct">12.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">成效衡量困難</span><div class="bar-track"><div class="bar-fill" style="width:9.5%;background:var(--red)"></div></div><span class="bar-pct">9.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">場景目標不明確</span><div class="bar-track"><div class="bar-fill" style="width:8.6%;background:var(--red)"></div></div><span class="bar-pct">8.6%</span></div>
+        <div class="src">資料來源：Q30 Q37 Q58（決策者，n=139）、Q70（n=105，限有推動計畫者）</div>
+  </div>
+  <div class="slide-num">26</div>
+</div>
+
+<!-- SLIDE 27: 資通訊 B -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">附錄｜產業快照</span>
+    <div class="slide-title">資通訊｜合作需求與學習期待</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <span class="industry-tag" style="background:var(--orange);">成效感知最佳、規範跟不上</span>
+      <span style="font-size:11px;color:var(--gray);">決策者 n=139｜工作者 n=63</span>
+    </div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">外部合作首要需求（Q71，複選，n=105）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--navy);font-weight:700;">釐清優先場景</span><div class="bar-track"><div class="bar-fill" style="width:24.8%;background:var(--navy)"></div></div><span class="bar-pct" style="color:var(--navy);font-weight:700;">24.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立流程與範本</span><div class="bar-track"><div class="bar-fill" style="width:22.9%;background:#94A3B8"></div></div><span class="bar-pct">22.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立推進機制</span><div class="bar-track"><div class="bar-fill" style="width:21.0%;background:#94A3B8"></div></div><span class="bar-pct">21.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">設計分層學習方案</span><div class="bar-track"><div class="bar-fill" style="width:14.3%;background:#94A3B8"></div></div><span class="bar-pct">14.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立成效驗證</span><div class="bar-track"><div class="bar-fill" style="width:10.5%;background:#94A3B8"></div></div><span class="bar-pct">10.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立治理規範</span><div class="bar-track"><div class="bar-fill" style="width:6.7%;background:#94A3B8"></div></div><span class="bar-pct">6.7%</span></div>
+      </div>
+      <div>
+        <div class="sub-head">工作者優先學習需求（Q26，複選，n=63）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--blue);font-weight:700;">AI／生成式 AI</span><div class="bar-track"><div class="bar-fill" style="width:85.4%;background:var(--blue)"></div></div><span class="bar-pct">85.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label">工作效率</span><div class="bar-track"><div class="bar-fill" style="width:52.1%;background:#3B82F6"></div></div><span class="bar-pct">52.1%</span></div>
+        <div class="bar-row wide"><span class="bar-label">溝通表達</span><div class="bar-track"><div class="bar-fill" style="width:39.6%;background:#3B82F6"></div></div><span class="bar-pct">39.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label">數據分析</span><div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#60A5FA"></div></div><span class="bar-pct">37.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">經營管理</span><div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#60A5FA"></div></div><span class="bar-pct">37.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">行銷品牌</span><div class="bar-track"><div class="bar-fill" style="width:33.3%;background:#60A5FA"></div></div><span class="bar-pct">33.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">趨勢型學習</span><div class="bar-track"><div class="bar-fill" style="width:33.3%;background:#60A5FA"></div></div><span class="bar-pct">33.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">職涯續航力</span><div class="bar-track"><div class="bar-fill" style="width:31.2%;background:#93C5FD"></div></div><span class="bar-pct">31.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">領導管理</span><div class="bar-track"><div class="bar-fill" style="width:29.2%;background:#93C5FD"></div></div><span class="bar-pct">29.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">財務獲利思維</span><div class="bar-track"><div class="bar-fill" style="width:18.8%;background:#93C5FD"></div></div><span class="bar-pct">18.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">客戶經營</span><div class="bar-track"><div class="bar-fill" style="width:16.7%;background:#93C5FD"></div></div><span class="bar-pct">16.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label">語言職能</span><div class="bar-track"><div class="bar-fill" style="width:12.5%;background:#93C5FD"></div></div><span class="bar-pct">12.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">業務銷售</span><div class="bar-track"><div class="bar-fill" style="width:10.4%;background:#93C5FD"></div></div><span class="bar-pct">10.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label">ESG 永續</span><div class="bar-track"><div class="bar-fill" style="width:10.4%;background:#93C5FD"></div></div><span class="bar-pct">10.4%</span></div>
+      </div>
+    </div>
+    <div class="insight green" style="margin-top:12px;">
+      六產業中成效感知最佳（尚未改善率最低 13.7%），正式導入與多數自發並列第一（各 36%）。書面規範仍有 56.8% 尚未建立——行動速度超過制度化速度，需要機制設計而非使用推動。
+    </div>
+        <div class="src">資料來源：Q71（決策者，n=105）、Q26（工作者，n=63）</div>
+  </div>
+  <div class="slide-num">27</div>
+</div>
+
+<!-- SLIDE 28: 傳產製造 A -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">附錄｜產業快照</span>
+    <div class="slide-title">傳產製造｜AI 組織現況</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <span class="industry-tag" style="background:var(--gray);">少數自發最多、書面規範最缺</span>
+      <span style="font-size:11px;color:var(--gray);">總樣本 n=164｜決策者 n=110｜工作者 n=54</span>
+    </div>
+            <div class="sub-head">AI 導入狀態（Q30，決策者）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--amber);font-weight:700;">少數自發使用</span><div class="bar-track"><div class="bar-fill" style="width:56.4%;background:var(--amber)"></div></div><span class="bar-pct">56.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label">多數自發使用</span><div class="bar-track"><div class="bar-fill" style="width:26.4%;background:#86EFAC"></div></div><span class="bar-pct">26.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--green);font-weight:700;">公司已正式導入並推廣</span><div class="bar-track"><div class="bar-fill" style="width:15.5%;background:var(--green)"></div></div><span class="bar-pct">15.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">幾乎沒有</span><div class="bar-track"><div class="bar-fill" style="width:1.8%;background:#D1D5DB"></div></div><span class="bar-pct">1.8%</span></div>
+            <div class="sub-head" style="margin-top:10px;">書面 AI 使用規範（Q37）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">尚無書面規範</span><div class="bar-track"><div class="bar-fill" style="width:78.2%;background:var(--red)"></div></div><span class="bar-pct">78.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">已公告，但落實程度不一</span><div class="bar-track"><div class="bar-fill" style="width:8.2%;background:#86EFAC"></div></div><span class="bar-pct">8.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">有，但未正式公告</span><div class="bar-track"><div class="bar-fill" style="width:7.3%;background:#FCD34D"></div></div><span class="bar-pct">7.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--green);font-weight:700;">已公告，且固定宣導更新</span><div class="bar-track"><div class="bar-fill" style="width:6.4%;background:var(--green)"></div></div><span class="bar-pct">6.4%</span></div>
+            <div class="sub-head" style="margin-top:10px;">AI 帶來的改善面向（Q58，複選）</div>
+        <div class="bar-row wide"><span class="bar-label">釋放人力投入高價值工作</span><div class="bar-track"><div class="bar-fill" style="width:37.3%;background:#34D399"></div></div><span class="bar-pct">37.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">尚未有明確改善</span><div class="bar-track"><div class="bar-fill" style="width:36.4%;background:var(--red)"></div></div><span class="bar-pct" style="color:var(--red);">36.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升決策速度與管理效率</span><div class="bar-track"><div class="bar-fill" style="width:36.4%;background:#34D399"></div></div><span class="bar-pct">36.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label">降低營運成本</span><div class="bar-track"><div class="bar-fill" style="width:20.0%;background:#86EFAC"></div></div><span class="bar-pct">20.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升交付穩定度</span><div class="bar-track"><div class="bar-fill" style="width:20.0%;background:#86EFAC"></div></div><span class="bar-pct">20.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">加速新產品服務推出</span><div class="bar-track"><div class="bar-fill" style="width:10.0%;background:#A7F3D0"></div></div><span class="bar-pct">10.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升客戶滿意度</span><div class="bar-track"><div class="bar-fill" style="width:10.0%;background:#A7F3D0"></div></div><span class="bar-pct">10.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升營收表現</span><div class="bar-track"><div class="bar-fill" style="width:4.5%;background:#A7F3D0"></div></div><span class="bar-pct">4.5%</span></div>
+            <div class="sub-head" style="margin-top:10px;">推動 AI 培訓的主要困難（Q70，複選，n=68）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);font-weight:700;">治理風險疑慮</span><div class="bar-track"><div class="bar-fill" style="width:20.6%;background:var(--red)"></div></div><span class="bar-pct" style="color:var(--red);">20.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">資源不足</span><div class="bar-track"><div class="bar-fill" style="width:20.6%;background:var(--red)"></div></div><span class="bar-pct">20.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">人才能力落差</span><div class="bar-track"><div class="bar-fill" style="width:17.6%;background:var(--red)"></div></div><span class="bar-pct">17.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">場景目標不明確</span><div class="bar-track"><div class="bar-fill" style="width:11.8%;background:var(--red)"></div></div><span class="bar-pct">11.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">流程嵌入困難</span><div class="bar-track"><div class="bar-fill" style="width:10.3%;background:var(--red)"></div></div><span class="bar-pct">10.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">主管帶動困難</span><div class="bar-track"><div class="bar-fill" style="width:7.4%;background:var(--red)"></div></div><span class="bar-pct">7.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">成效衡量困難</span><div class="bar-track"><div class="bar-fill" style="width:7.4%;background:var(--red)"></div></div><span class="bar-pct">7.4%</span></div>
+        <div class="src">資料來源：Q30 Q37 Q58（決策者，n=110）、Q70（n=68，限有推動計畫者）</div>
+  </div>
+  <div class="slide-num">28</div>
+</div>
+
+<!-- SLIDE 29: 傳產製造 B -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">附錄｜產業快照</span>
+    <div class="slide-title">傳產製造｜合作需求與學習期待</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <span class="industry-tag" style="background:var(--gray);">少數自發最多、書面規範最缺</span>
+      <span style="font-size:11px;color:var(--gray);">決策者 n=110｜工作者 n=54</span>
+    </div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">外部合作首要需求（Q71，複選，n=68）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--navy);font-weight:700;">釐清優先場景</span><div class="bar-track"><div class="bar-fill" style="width:51.5%;background:var(--navy)"></div></div><span class="bar-pct" style="color:var(--navy);font-weight:700;">51.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立流程與範本</span><div class="bar-track"><div class="bar-fill" style="width:11.8%;background:#94A3B8"></div></div><span class="bar-pct">11.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立推進機制</span><div class="bar-track"><div class="bar-fill" style="width:10.3%;background:#94A3B8"></div></div><span class="bar-pct">10.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">設計分層學習方案</span><div class="bar-track"><div class="bar-fill" style="width:10.3%;background:#94A3B8"></div></div><span class="bar-pct">10.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立治理規範</span><div class="bar-track"><div class="bar-fill" style="width:8.8%;background:#94A3B8"></div></div><span class="bar-pct">8.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立成效驗證</span><div class="bar-track"><div class="bar-fill" style="width:7.4%;background:#94A3B8"></div></div><span class="bar-pct">7.4%</span></div>
+      </div>
+      <div>
+        <div class="sub-head">工作者優先學習需求（Q26，複選，n=54）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--blue);font-weight:700;">AI／生成式 AI</span><div class="bar-track"><div class="bar-fill" style="width:80.5%;background:var(--blue)"></div></div><span class="bar-pct">80.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">數據分析</span><div class="bar-track"><div class="bar-fill" style="width:68.3%;background:#3B82F6"></div></div><span class="bar-pct">68.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">工作效率</span><div class="bar-track"><div class="bar-fill" style="width:58.5%;background:#3B82F6"></div></div><span class="bar-pct">58.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">經營管理</span><div class="bar-track"><div class="bar-fill" style="width:43.9%;background:#60A5FA"></div></div><span class="bar-pct">43.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label">職涯續航力</span><div class="bar-track"><div class="bar-fill" style="width:39.0%;background:#60A5FA"></div></div><span class="bar-pct">39.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">領導管理</span><div class="bar-track"><div class="bar-fill" style="width:31.7%;background:#60A5FA"></div></div><span class="bar-pct">31.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label">趨勢型學習</span><div class="bar-track"><div class="bar-fill" style="width:26.8%;background:#93C5FD"></div></div><span class="bar-pct">26.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">溝通表達</span><div class="bar-track"><div class="bar-fill" style="width:22.0%;background:#93C5FD"></div></div><span class="bar-pct">22.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">財務獲利思維</span><div class="bar-track"><div class="bar-fill" style="width:22.0%;background:#93C5FD"></div></div><span class="bar-pct">22.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">行銷品牌</span><div class="bar-track"><div class="bar-fill" style="width:19.5%;background:#93C5FD"></div></div><span class="bar-pct">19.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">ESG 永續</span><div class="bar-track"><div class="bar-fill" style="width:19.5%;background:#93C5FD"></div></div><span class="bar-pct">19.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">客戶經營</span><div class="bar-track"><div class="bar-fill" style="width:12.2%;background:#93C5FD"></div></div><span class="bar-pct">12.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">語言職能</span><div class="bar-track"><div class="bar-fill" style="width:12.2%;background:#93C5FD"></div></div><span class="bar-pct">12.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">業務銷售</span><div class="bar-track"><div class="bar-fill" style="width:7.3%;background:#93C5FD"></div></div><span class="bar-pct">7.3%</span></div>
+      </div>
+    </div>
+    <div class="insight red" style="margin-top:12px;">
+      少數自發比例六產業最高（56.4%）、書面規範最缺（78.2%）。這個產業需要的是「啟動第一步」——先找到一個可落地的場景，建立成功案例，才有後續推進動能。
+    </div>
+        <div class="src">資料來源：Q71（決策者，n=68）、Q26（工作者，n=54）</div>
+  </div>
+  <div class="slide-num">29</div>
+</div>
+
+<!-- SLIDE 30: 電子半導體 A -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">附錄｜產業快照</span>
+    <div class="slide-title">電子半導體｜AI 組織現況</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <span class="industry-tag" style="background:var(--blue);">唯一正式導入最大宗、卡在流程嵌入</span>
+      <span style="font-size:11px;color:var(--gray);">總樣本 n=154｜決策者 n=120｜工作者 n=34</span>
+    </div>
+            <div class="sub-head">AI 導入狀態（Q30，決策者）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--green);font-weight:700;">公司已正式導入並推廣</span><div class="bar-track"><div class="bar-fill" style="width:38.3%;background:var(--green)"></div></div><span class="bar-pct">38.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">多數自發使用</span><div class="bar-track"><div class="bar-fill" style="width:31.7%;background:#86EFAC"></div></div><span class="bar-pct">31.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--amber);font-weight:700;">少數自發使用</span><div class="bar-track"><div class="bar-fill" style="width:29.2%;background:var(--amber)"></div></div><span class="bar-pct">29.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">幾乎沒有</span><div class="bar-track"><div class="bar-fill" style="width:0.8%;background:#D1D5DB"></div></div><span class="bar-pct">0.8%</span></div>
+            <div class="sub-head" style="margin-top:10px;">書面 AI 使用規範（Q37）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">尚無書面規範</span><div class="bar-track"><div class="bar-fill" style="width:51.7%;background:var(--red)"></div></div><span class="bar-pct">51.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--green);font-weight:700;">已公告，且固定宣導更新</span><div class="bar-track"><div class="bar-fill" style="width:20.0%;background:var(--green)"></div></div><span class="bar-pct">20.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">已公告，但落實程度不一</span><div class="bar-track"><div class="bar-fill" style="width:15.0%;background:#86EFAC"></div></div><span class="bar-pct">15.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">有，但未正式公告</span><div class="bar-track"><div class="bar-fill" style="width:13.3%;background:#FCD34D"></div></div><span class="bar-pct">13.3%</span></div>
+            <div class="sub-head" style="margin-top:10px;">AI 帶來的改善面向（Q58，複選）</div>
+        <div class="bar-row wide"><span class="bar-label">提升決策速度與管理效率</span><div class="bar-track"><div class="bar-fill" style="width:47.5%;background:var(--green)"></div></div><span class="bar-pct">47.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">釋放人力投入高價值工作</span><div class="bar-track"><div class="bar-fill" style="width:43.3%;background:var(--green)"></div></div><span class="bar-pct">43.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">降低營運成本</span><div class="bar-track"><div class="bar-fill" style="width:28.3%;background:#34D399"></div></div><span class="bar-pct">28.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">加速新產品服務推出</span><div class="bar-track"><div class="bar-fill" style="width:24.2%;background:#86EFAC"></div></div><span class="bar-pct">24.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">尚未有明確改善</span><div class="bar-track"><div class="bar-fill" style="width:23.3%;background:var(--red)"></div></div><span class="bar-pct" style="color:var(--red);">23.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升交付穩定度</span><div class="bar-track"><div class="bar-fill" style="width:20.8%;background:#86EFAC"></div></div><span class="bar-pct">20.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升客戶滿意度</span><div class="bar-track"><div class="bar-fill" style="width:18.3%;background:#86EFAC"></div></div><span class="bar-pct">18.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升營收表現</span><div class="bar-track"><div class="bar-fill" style="width:11.7%;background:#A7F3D0"></div></div><span class="bar-pct">11.7%</span></div>
+            <div class="sub-head" style="margin-top:10px;">推動 AI 培訓的主要困難（Q70，複選，n=88）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);font-weight:700;">流程嵌入困難</span><div class="bar-track"><div class="bar-fill" style="width:21.6%;background:var(--red)"></div></div><span class="bar-pct" style="color:var(--red);">21.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">資源不足</span><div class="bar-track"><div class="bar-fill" style="width:17.0%;background:var(--red)"></div></div><span class="bar-pct">17.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">治理風險疑慮</span><div class="bar-track"><div class="bar-fill" style="width:15.9%;background:var(--red)"></div></div><span class="bar-pct">15.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">成效衡量困難</span><div class="bar-track"><div class="bar-fill" style="width:14.8%;background:var(--red)"></div></div><span class="bar-pct">14.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">主管帶動困難</span><div class="bar-track"><div class="bar-fill" style="width:12.5%;background:var(--red)"></div></div><span class="bar-pct">12.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">人才能力落差</span><div class="bar-track"><div class="bar-fill" style="width:8.0%;background:var(--red)"></div></div><span class="bar-pct">8.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">場景目標不明確</span><div class="bar-track"><div class="bar-fill" style="width:8.0%;background:var(--red)"></div></div><span class="bar-pct">8.0%</span></div>
+        <div class="src">資料來源：Q30 Q37 Q58（決策者，n=120）、Q70（n=88，限有推動計畫者）</div>
+  </div>
+  <div class="slide-num">30</div>
+</div>
+
+<!-- SLIDE 31: 電子半導體 B -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">附錄｜產業快照</span>
+    <div class="slide-title">電子半導體｜合作需求與學習期待</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <span class="industry-tag" style="background:var(--blue);">唯一正式導入最大宗、卡在流程嵌入</span>
+      <span style="font-size:11px;color:var(--gray);">決策者 n=120｜工作者 n=34</span>
+    </div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">外部合作首要需求（Q71，複選，n=88）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--navy);font-weight:700;">釐清優先場景</span><div class="bar-track"><div class="bar-fill" style="width:29.5%;background:var(--navy)"></div></div><span class="bar-pct" style="color:var(--navy);font-weight:700;">29.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立流程與範本</span><div class="bar-track"><div class="bar-fill" style="width:23.9%;background:#94A3B8"></div></div><span class="bar-pct">23.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立推進機制</span><div class="bar-track"><div class="bar-fill" style="width:17.0%;background:#94A3B8"></div></div><span class="bar-pct">17.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立成效驗證</span><div class="bar-track"><div class="bar-fill" style="width:12.5%;background:#94A3B8"></div></div><span class="bar-pct">12.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">設計分層學習方案</span><div class="bar-track"><div class="bar-fill" style="width:10.2%;background:#94A3B8"></div></div><span class="bar-pct">10.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立治理規範</span><div class="bar-track"><div class="bar-fill" style="width:6.8%;background:#94A3B8"></div></div><span class="bar-pct">6.8%</span></div>
+      </div>
+      <div>
+        <div class="sub-head">工作者優先學習需求（Q26，複選，n=34）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--blue);font-weight:700;">AI／生成式 AI</span><div class="bar-track"><div class="bar-fill" style="width:70.8%;background:var(--blue)"></div></div><span class="bar-pct">70.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">工作效率</span><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#3B82F6"></div></div><span class="bar-pct">50.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">數據分析</span><div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#3B82F6"></div></div><span class="bar-pct">37.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">職涯續航力</span><div class="bar-track"><div class="bar-fill" style="width:33.3%;background:#60A5FA"></div></div><span class="bar-pct">33.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">經營管理</span><div class="bar-track"><div class="bar-fill" style="width:25.0%;background:#60A5FA"></div></div><span class="bar-pct">25.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">趨勢型學習</span><div class="bar-track"><div class="bar-fill" style="width:25.0%;background:#60A5FA"></div></div><span class="bar-pct">25.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">ESG 永續</span><div class="bar-track"><div class="bar-fill" style="width:20.8%;background:#93C5FD"></div></div><span class="bar-pct">20.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">領導管理</span><div class="bar-track"><div class="bar-fill" style="width:20.8%;background:#93C5FD"></div></div><span class="bar-pct">20.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">溝通表達</span><div class="bar-track"><div class="bar-fill" style="width:20.8%;background:#93C5FD"></div></div><span class="bar-pct">20.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">行銷品牌</span><div class="bar-track"><div class="bar-fill" style="width:16.7%;background:#93C5FD"></div></div><span class="bar-pct">16.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label">語言職能</span><div class="bar-track"><div class="bar-fill" style="width:16.7%;background:#93C5FD"></div></div><span class="bar-pct">16.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label">客戶經營</span><div class="bar-track"><div class="bar-fill" style="width:12.5%;background:#93C5FD"></div></div><span class="bar-pct">12.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">財務獲利思維</span><div class="bar-track"><div class="bar-fill" style="width:12.5%;background:#93C5FD"></div></div><span class="bar-pct">12.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">業務銷售</span><div class="bar-track"><div class="bar-fill" style="width:4.2%;background:#93C5FD"></div></div><span class="bar-pct">4.2%</span></div>
+      </div>
+    </div>
+    <div class="insight blue" style="margin-top:12px;">
+      六產業中唯一以「正式導入」為最大宗（38.3%），書面規範宣導率最高（20%）。已過「怎麼用」的階段，現在卡在流程嵌入——需要流程重新設計，而非基礎工具課。
+    </div>
+        <div class="src">資料來源：Q71（決策者，n=88）、Q26（工作者，n=34）</div>
+  </div>
+  <div class="slide-num">31</div>
+</div>
+
+<!-- SLIDE 32: 零售通路 A -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">附錄｜產業快照</span>
+    <div class="slide-title">零售通路｜AI 組織現況</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <span class="industry-tag" style="background:var(--amber);">少數自發高、成效無感第二高</span>
+      <span style="font-size:11px;color:var(--gray);">總樣本 n=70｜決策者 n=54｜工作者 n=16</span>
+    </div>
+            <div class="sub-head">AI 導入狀態（Q30，決策者）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--amber);font-weight:700;">少數自發使用</span><div class="bar-track"><div class="bar-fill" style="width:53.7%;background:var(--amber)"></div></div><span class="bar-pct">53.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label">多數自發使用</span><div class="bar-track"><div class="bar-fill" style="width:35.2%;background:#86EFAC"></div></div><span class="bar-pct">35.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--green);font-weight:700;">公司已正式導入並推廣</span><div class="bar-track"><div class="bar-fill" style="width:11.1%;background:var(--green)"></div></div><span class="bar-pct">11.1%</span></div>
+            <div class="sub-head" style="margin-top:10px;">書面 AI 使用規範（Q37）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">尚無書面規範</span><div class="bar-track"><div class="bar-fill" style="width:72.2%;background:var(--red)"></div></div><span class="bar-pct">72.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">已公告，但落實程度不一</span><div class="bar-track"><div class="bar-fill" style="width:14.8%;background:#86EFAC"></div></div><span class="bar-pct">14.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">有，但未正式公告</span><div class="bar-track"><div class="bar-fill" style="width:11.1%;background:#FCD34D"></div></div><span class="bar-pct">11.1%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--green);font-weight:700;">已公告，且固定宣導更新</span><div class="bar-track"><div class="bar-fill" style="width:1.9%;background:var(--green)"></div></div><span class="bar-pct">1.9%</span></div>
+            <div class="sub-head" style="margin-top:10px;">AI 帶來的改善面向（Q58，複選）</div>
+        <div class="bar-row wide"><span class="bar-label">提升決策速度與管理效率</span><div class="bar-track"><div class="bar-fill" style="width:44.4%;background:var(--green)"></div></div><span class="bar-pct">44.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">尚未有明確改善</span><div class="bar-track"><div class="bar-fill" style="width:37.0%;background:var(--red)"></div></div><span class="bar-pct" style="color:var(--red);">37.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">釋放人力投入高價值工作</span><div class="bar-track"><div class="bar-fill" style="width:35.2%;background:#34D399"></div></div><span class="bar-pct">35.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">降低營運成本</span><div class="bar-track"><div class="bar-fill" style="width:27.8%;background:#34D399"></div></div><span class="bar-pct">27.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升交付穩定度</span><div class="bar-track"><div class="bar-fill" style="width:24.1%;background:#86EFAC"></div></div><span class="bar-pct">24.1%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升客戶滿意度</span><div class="bar-track"><div class="bar-fill" style="width:16.7%;background:#86EFAC"></div></div><span class="bar-pct">16.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label">加速新產品服務推出</span><div class="bar-track"><div class="bar-fill" style="width:14.8%;background:#A7F3D0"></div></div><span class="bar-pct">14.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升營收表現</span><div class="bar-track"><div class="bar-fill" style="width:13.0%;background:#A7F3D0"></div></div><span class="bar-pct">13.0%</span></div>
+            <div class="sub-head" style="margin-top:10px;">推動 AI 培訓的主要困難（Q70，複選，n=32）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);font-weight:700;">資源不足</span><div class="bar-track"><div class="bar-fill" style="width:21.9%;background:var(--red)"></div></div><span class="bar-pct" style="color:var(--red);">21.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">治理風險疑慮</span><div class="bar-track"><div class="bar-fill" style="width:18.8%;background:var(--red)"></div></div><span class="bar-pct">18.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">人才能力落差</span><div class="bar-track"><div class="bar-fill" style="width:15.6%;background:var(--red)"></div></div><span class="bar-pct">15.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">場景目標不明確</span><div class="bar-track"><div class="bar-fill" style="width:15.6%;background:var(--red)"></div></div><span class="bar-pct">15.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">成效衡量困難</span><div class="bar-track"><div class="bar-fill" style="width:12.5%;background:var(--red)"></div></div><span class="bar-pct">12.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">流程嵌入困難</span><div class="bar-track"><div class="bar-fill" style="width:9.4%;background:var(--red)"></div></div><span class="bar-pct">9.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">主管帶動困難</span><div class="bar-track"><div class="bar-fill" style="width:6.2%;background:var(--red)"></div></div><span class="bar-pct">6.2%</span></div>
+        <div class="src">資料來源：Q30 Q37 Q58（決策者，n=54）、Q70（n=32，限有推動計畫者）</div>
+  </div>
+  <div class="slide-num">32</div>
+</div>
+
+<!-- SLIDE 33: 零售通路 B -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">附錄｜產業快照</span>
+    <div class="slide-title">零售通路｜合作需求與學習期待</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <span class="industry-tag" style="background:var(--amber);">少數自發高、成效無感第二高</span>
+      <span style="font-size:11px;color:var(--gray);">決策者 n=54｜工作者 n=16</span>
+    </div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">外部合作首要需求（Q71，複選，n=32）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--navy);font-weight:700;">釐清優先場景</span><div class="bar-track"><div class="bar-fill" style="width:34.4%;background:var(--navy)"></div></div><span class="bar-pct" style="color:var(--navy);font-weight:700;">34.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立流程與範本</span><div class="bar-track"><div class="bar-fill" style="width:31.2%;background:#94A3B8"></div></div><span class="bar-pct">31.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立推進機制</span><div class="bar-track"><div class="bar-fill" style="width:9.4%;background:#94A3B8"></div></div><span class="bar-pct">9.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立成效驗證</span><div class="bar-track"><div class="bar-fill" style="width:9.4%;background:#94A3B8"></div></div><span class="bar-pct">9.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label">設計分層學習方案</span><div class="bar-track"><div class="bar-fill" style="width:6.2%;background:#94A3B8"></div></div><span class="bar-pct">6.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立治理規範</span><div class="bar-track"><div class="bar-fill" style="width:6.2%;background:#94A3B8"></div></div><span class="bar-pct">6.2%</span></div>
+      </div>
+      <div>
+        <div class="sub-head">工作者優先學習需求（Q26，複選，n=16）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--blue);font-weight:700;">AI／生成式 AI</span><div class="bar-track"><div class="bar-fill" style="width:70.0%;background:var(--blue)"></div></div><span class="bar-pct">70.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--blue);font-weight:700;">數據分析</span><div class="bar-track"><div class="bar-fill" style="width:70.0%;background:var(--blue)"></div></div><span class="bar-pct">70.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">溝通表達</span><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#3B82F6"></div></div><span class="bar-pct">50.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">經營管理</span><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#3B82F6"></div></div><span class="bar-pct">50.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">工作效率</span><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#3B82F6"></div></div><span class="bar-pct">50.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">趨勢型學習</span><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#3B82F6"></div></div><span class="bar-pct">50.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">行銷品牌</span><div class="bar-track"><div class="bar-fill" style="width:40.0%;background:#93C5FD"></div></div><span class="bar-pct">40.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">領導管理</span><div class="bar-track"><div class="bar-fill" style="width:40.0%;background:#93C5FD"></div></div><span class="bar-pct">40.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">職涯續航力</span><div class="bar-track"><div class="bar-fill" style="width:40.0%;background:#93C5FD"></div></div><span class="bar-pct">40.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">ESG 永續</span><div class="bar-track"><div class="bar-fill" style="width:30.0%;background:#93C5FD"></div></div><span class="bar-pct">30.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">財務獲利思維</span><div class="bar-track"><div class="bar-fill" style="width:30.0%;background:#93C5FD"></div></div><span class="bar-pct">30.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">客戶經營</span><div class="bar-track"><div class="bar-fill" style="width:10.0%;background:#93C5FD"></div></div><span class="bar-pct">10.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">業務銷售</span><div class="bar-track"><div class="bar-fill" style="width:10.0%;background:#93C5FD"></div></div><span class="bar-pct">10.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">語言職能</span><div class="bar-track"><div class="bar-fill" style="width:10.0%;background:#93C5FD"></div></div><span class="bar-pct">10.0%</span></div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:12px;border-left-color:var(--amber);">
+      尚未改善比例六產業第二高（37.0%），AI 需求比例最低（43.8%）。培訓切入應從具體業務場景的 AI 效益出發，讓成效有感，才能建立後續投資的說服力。
+    </div>
+        <div class="src">資料來源：Q71（決策者，n=32）、Q26（工作者，n=16）</div>
+  </div>
+  <div class="slide-num">33</div>
+</div>
+
+<!-- SLIDE 34: 金融保險 A -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">附錄｜產業快照</span>
+    <div class="slide-title">金融保險｜AI 組織現況</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <span class="industry-tag" style="background:var(--navy);">治理最完善、人才落差最大</span>
+      <span style="font-size:11px;color:var(--gray);">總樣本 n=69｜決策者 n=41｜工作者 n=28</span>
+    </div>
+            <div class="sub-head">AI 導入狀態（Q30，決策者）</div>
+        <div class="bar-row wide"><span class="bar-label">多數自發使用</span><div class="bar-track"><div class="bar-fill" style="width:36.6%;background:#86EFAC"></div></div><span class="bar-pct">36.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--green);font-weight:700;">公司已正式導入並推廣</span><div class="bar-track"><div class="bar-fill" style="width:31.7%;background:var(--green)"></div></div><span class="bar-pct">31.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--amber);font-weight:700;">少數自發使用</span><div class="bar-track"><div class="bar-fill" style="width:31.7%;background:var(--amber)"></div></div><span class="bar-pct">31.7%</span></div>
+            <div class="sub-head" style="margin-top:10px;">書面 AI 使用規範（Q37）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--green);font-weight:700;">已公告，且固定宣導更新</span><div class="bar-track"><div class="bar-fill" style="width:12.2%;background:var(--green)"></div></div><span class="bar-pct">12.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">已公告，但落實程度不一</span><div class="bar-track"><div class="bar-fill" style="width:22.0%;background:#86EFAC"></div></div><span class="bar-pct">22.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">有，但未正式公告</span><div class="bar-track"><div class="bar-fill" style="width:22.0%;background:#FCD34D"></div></div><span class="bar-pct">22.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">尚無書面規範</span><div class="bar-track"><div class="bar-fill" style="width:43.9%;background:var(--red)"></div></div><span class="bar-pct">43.9%</span></div>
+            <div class="sub-head" style="margin-top:10px;">AI 帶來的改善面向（Q58，複選）</div>
+        <div class="bar-row wide"><span class="bar-label">釋放人力投入高價值工作</span><div class="bar-track"><div class="bar-fill" style="width:39.0%;background:#34D399"></div></div><span class="bar-pct">39.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升決策速度與管理效率</span><div class="bar-track"><div class="bar-fill" style="width:39.0%;background:#34D399"></div></div><span class="bar-pct">39.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">尚未有明確改善</span><div class="bar-track"><div class="bar-fill" style="width:29.3%;background:var(--red)"></div></div><span class="bar-pct" style="color:var(--red);">29.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">降低營運成本</span><div class="bar-track"><div class="bar-fill" style="width:26.8%;background:#34D399"></div></div><span class="bar-pct">26.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label">加速新產品服務推出</span><div class="bar-track"><div class="bar-fill" style="width:22.0%;background:#86EFAC"></div></div><span class="bar-pct">22.0%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升客戶滿意度</span><div class="bar-track"><div class="bar-fill" style="width:17.1%;background:#86EFAC"></div></div><span class="bar-pct">17.1%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升交付穩定度</span><div class="bar-track"><div class="bar-fill" style="width:14.6%;background:#A7F3D0"></div></div><span class="bar-pct">14.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label">提升營收表現</span><div class="bar-track"><div class="bar-fill" style="width:9.8%;background:#A7F3D0"></div></div><span class="bar-pct">9.8%</span></div>
+            <div class="sub-head" style="margin-top:10px;">推動 AI 培訓的主要困難（Q70，複選，n=29）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);font-weight:700;">人才能力落差</span><div class="bar-track"><div class="bar-fill" style="width:27.6%;background:var(--red)"></div></div><span class="bar-pct" style="color:var(--red);">27.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">流程嵌入困難</span><div class="bar-track"><div class="bar-fill" style="width:17.2%;background:var(--red)"></div></div><span class="bar-pct">17.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">場景目標不明確</span><div class="bar-track"><div class="bar-fill" style="width:13.8%;background:var(--red)"></div></div><span class="bar-pct">13.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">成效衡量困難</span><div class="bar-track"><div class="bar-fill" style="width:13.8%;background:var(--red)"></div></div><span class="bar-pct">13.8%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">主管帶動困難</span><div class="bar-track"><div class="bar-fill" style="width:10.3%;background:var(--red)"></div></div><span class="bar-pct">10.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">治理風險疑慮</span><div class="bar-track"><div class="bar-fill" style="width:10.3%;background:var(--red)"></div></div><span class="bar-pct">10.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--red);">資源不足</span><div class="bar-track"><div class="bar-fill" style="width:6.9%;background:var(--red)"></div></div><span class="bar-pct">6.9%</span></div>
+        <div class="src">資料來源：Q30 Q37 Q58（決策者，n=41）、Q70（n=29，限有推動計畫者）</div>
+  </div>
+  <div class="slide-num">34</div>
+</div>
+
+<!-- SLIDE 35: 金融保險 B -->
+<div class="slide" style="position:relative;">
+  <div class="slide-header">
+    <span class="slide-tag">附錄｜產業快照</span>
+    <div class="slide-title">金融保險｜合作需求與學習期待</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <span class="industry-tag" style="background:var(--navy);">治理最完善、人才落差最大</span>
+      <span style="font-size:11px;color:var(--gray);">決策者 n=41｜工作者 n=28</span>
+    </div>
+    <div class="col2">
+      <div>
+        <div class="sub-head">外部合作首要需求（Q71，複選，n=29）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--navy);font-weight:700;">釐清優先場景</span><div class="bar-track"><div class="bar-fill" style="width:55.2%;background:var(--navy)"></div></div><span class="bar-pct" style="color:var(--navy);font-weight:700;">55.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立流程與範本</span><div class="bar-track"><div class="bar-fill" style="width:17.2%;background:#94A3B8"></div></div><span class="bar-pct">17.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">設計分層學習方案</span><div class="bar-track"><div class="bar-fill" style="width:6.9%;background:#94A3B8"></div></div><span class="bar-pct">6.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立推進機制</span><div class="bar-track"><div class="bar-fill" style="width:6.9%;background:#94A3B8"></div></div><span class="bar-pct">6.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立成效驗證</span><div class="bar-track"><div class="bar-fill" style="width:6.9%;background:#94A3B8"></div></div><span class="bar-pct">6.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label">建立治理規範</span><div class="bar-track"><div class="bar-fill" style="width:6.9%;background:#94A3B8"></div></div><span class="bar-pct">6.9%</span></div>
+      </div>
+      <div>
+        <div class="sub-head">工作者優先學習需求（Q26，複選，n=28）</div>
+        <div class="bar-row wide"><span class="bar-label" style="color:var(--blue);font-weight:700;">AI／生成式 AI</span><div class="bar-track"><div class="bar-fill" style="width:72.7%;background:var(--blue)"></div></div><span class="bar-pct">72.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label">溝通表達</span><div class="bar-track"><div class="bar-fill" style="width:40.9%;background:#3B82F6"></div></div><span class="bar-pct">40.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label">數據分析</span><div class="bar-track"><div class="bar-fill" style="width:40.9%;background:#3B82F6"></div></div><span class="bar-pct">40.9%</span></div>
+        <div class="bar-row wide"><span class="bar-label">工作效率</span><div class="bar-track"><div class="bar-fill" style="width:36.4%;background:#60A5FA"></div></div><span class="bar-pct">36.4%</span></div>
+        <div class="bar-row wide"><span class="bar-label">領導管理</span><div class="bar-track"><div class="bar-fill" style="width:27.3%;background:#60A5FA"></div></div><span class="bar-pct">27.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">職涯續航力</span><div class="bar-track"><div class="bar-fill" style="width:27.3%;background:#60A5FA"></div></div><span class="bar-pct">27.3%</span></div>
+        <div class="bar-row wide"><span class="bar-label">語言職能</span><div class="bar-track"><div class="bar-fill" style="width:22.7%;background:#93C5FD"></div></div><span class="bar-pct">22.7%</span></div>
+        <div class="bar-row wide"><span class="bar-label">財務獲利思維</span><div class="bar-track"><div class="bar-fill" style="width:18.2%;background:#93C5FD"></div></div><span class="bar-pct">18.2%</span></div>
+        <div class="bar-row wide"><span class="bar-label">行銷品牌</span><div class="bar-track"><div class="bar-fill" style="width:13.6%;background:#93C5FD"></div></div><span class="bar-pct">13.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label">經營管理</span><div class="bar-track"><div class="bar-fill" style="width:13.6%;background:#93C5FD"></div></div><span class="bar-pct">13.6%</span></div>
+        <div class="bar-row wide"><span class="bar-label">客戶經營</span><div class="bar-track"><div class="bar-fill" style="width:9.1%;background:#93C5FD"></div></div><span class="bar-pct">9.1%</span></div>
+        <div class="bar-row wide"><span class="bar-label">趨勢型學習</span><div class="bar-track"><div class="bar-fill" style="width:9.1%;background:#93C5FD"></div></div><span class="bar-pct">9.1%</span></div>
+        <div class="bar-row wide"><span class="bar-label">業務銷售</span><div class="bar-track"><div class="bar-fill" style="width:4.5%;background:#93C5FD"></div></div><span class="bar-pct">4.5%</span></div>
+        <div class="bar-row wide"><span class="bar-label">ESG 永續</span><div class="bar-track"><div class="bar-fill" style="width:4.5%;background:#93C5FD"></div></div><span class="bar-pct">4.5%</span></div>
+      </div>
+    </div>
+    <div class="insight blue" style="margin-top:12px;">
+      書面規範最完善（無規範比例最低 43.9%），但「釐清優先場景」需求最高（39.0%）。規範有了，場景不清楚——需要在合規架構下設計具體的 AI 應用路徑。
+    </div>
+        <div class="src">資料來源：Q71（決策者，n=29）、Q26（工作者，n=28）</div>
+  </div>
+  <div class="slide-num">35</div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center;font-size:11px;color:#AAAAAA;padding:16px 0;">
+  2026 企業 AI 學習趨勢調查（n=1,180）｜新商業學校｜本簡報為內部報告用，未經授權請勿對外分享
+</div>
+
+</div><!-- /deck -->
+</body>
+</html>
