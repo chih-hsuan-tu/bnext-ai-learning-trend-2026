@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企業案例草稿｜2026 企業 AI 學習趨勢調查白皮書</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+    background: #f7f5f2;
+    color: #1a1a1a;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  /* ── 草稿橫幅 ── */
+  .draft-banner {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #b91c1c;
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+  .draft-banner span { opacity: 0.85; font-weight: 500; letter-spacing: 0.02em; }
+
+  /* ── 容器 ── */
+  .doc {
+    max-width: 920px;
+    margin: 0 auto;
+    background: white;
+    padding: 80px 90px 120px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+  }
+
+  /* ── 封面 ── */
+  .cover {
+    background: #1a2949;
+    color: white;
+    padding: 100px 90px 90px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .cover-tag {
+    font-size: 16px; letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.7); font-weight: 700; margin-bottom: 50px;
+  }
+  .cover h1 {
+    font-size: 56px; font-weight: 800; line-height: 1.2;
+    color: white; letter-spacing: -0.01em; margin-bottom: 28px;
+  }
+  .cover .cover-sub {
+    font-size: 22px; color: rgba(255,255,255,0.85);
+    line-height: 1.65; max-width: 720px; margin-bottom: 60px;
+  }
+  .cover .cover-meta {
+    font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.9;
+    border-top: 1px solid rgba(255,255,255,0.2); padding-top: 26px;
+  }
+  .cover .cover-meta strong { color: white; font-weight: 700; }
+
+  /* ── 目錄 ── */
+  .toc {
+    max-width: 920px; margin: 0 auto; background: #fafaf8;
+    padding: 40px 90px; border-bottom: 1px solid #eee;
+  }
+  .toc-title { font-size: 14px; font-weight: 700; letter-spacing: 0.14em; color: #1a4a7a; margin-bottom: 18px; }
+  .toc a {
+    display: inline-block; margin-right: 28px; color: #1a2949;
+    font-size: 18px; font-weight: 700; text-decoration: none;
+    border-bottom: 2px solid transparent; padding-bottom: 2px;
+  }
+  .toc a:hover { border-bottom-color: #e85d2f; }
+
+  /* ── 案例區塊 ── */
+  .case { max-width: 920px; margin: 0 auto; background: white; padding: 0 90px; }
+  .case + .case { border-top: 14px solid #f0ede8; }
+  .case-inner { padding: 80px 0 90px; }
+
+  .case-label {
+    display: inline-block; background: #1a2949; color: white;
+    font-size: 15px; font-weight: 700; letter-spacing: 0.1em;
+    padding: 6px 18px; border-radius: 4px; margin-bottom: 28px;
+  }
+  .case h2 {
+    font-size: 44px; font-weight: 800; line-height: 1.28;
+    color: #1a1a1a; letter-spacing: -0.01em; margin-bottom: 18px;
+  }
+  .case-subtitle {
+    font-size: 21px; font-weight: 500; line-height: 1.6;
+    color: #555; margin-bottom: 30px;
+  }
+  .byline {
+    font-size: 16px; color: #888; font-weight: 600;
+    padding-bottom: 30px; margin-bottom: 10px; border-bottom: 1px solid #eee;
+  }
+
+  /* 摘要框 */
+  .summary-box {
+    background: #fafaf8; border-top: 5px solid #1a4a7a;
+    border-radius: 0 0 12px 12px; padding: 34px 38px; margin: 40px 0 10px;
+  }
+  .summary-row { display: flex; gap: 16px; margin-bottom: 14px; align-items: baseline; }
+  .summary-row:last-child { margin-bottom: 0; }
+  .summary-key {
+    flex: 0 0 56px; font-size: 16px; font-weight: 800; color: #1a4a7a;
+  }
+  .summary-val { font-size: 17px; line-height: 1.7; color: #2a2a2a; }
+
+  /* 內文 */
+  .case p { font-size: 19px; line-height: 1.95; color: #2a2a2a; margin: 0 0 22px; }
+  .case p.lead {
+    font-size: 22px; color: #1a1a1a; font-weight: 500; line-height: 1.75;
+    margin: 40px 0 30px;
+  }
+  .case h3 {
+    font-size: 27px; font-weight: 800; color: #1a1a1a;
+    margin: 56px 0 22px; line-height: 1.4;
+    border-left: 6px solid #e85d2f; padding-left: 18px;
+  }
+  .case p strong {
+    font-weight: 700; color: #1a1a1a;
+    background: linear-gradient(transparent 62%, #fde047 62%); padding: 0 2px;
+  }
+  .inline-num { font-weight: 800; color: #e85d2f; }
+
+  /* 流程圖 */
+  .flow { margin: 50px 0; }
+  .flow-title { font-size: 18px; font-weight: 800; color: #1a4a7a; margin-bottom: 22px; letter-spacing: 0.02em; }
+  .flow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .flow-step {
+    background: #f0f6fb; border-left: 5px solid #1a4a7a;
+    border-radius: 0 12px 12px 0; padding: 24px 26px;
+  }
+  .flow-step .step-num {
+    font-size: 14px; font-weight: 800; color: #1a4a7a; letter-spacing: 0.1em; margin-bottom: 8px;
+  }
+  .flow-step h4 { font-size: 19px; font-weight: 800; color: #1a1a1a; margin: 0 0 8px; }
+  .flow-step p { font-size: 15px; line-height: 1.65; color: #444; margin: 0; }
+
+  /* 成效框 */
+  .impact { background: #1a2949; border-radius: 16px; padding: 46px 48px; margin: 56px 0 20px; color: white; }
+  .impact-title { font-size: 14px; font-weight: 700; letter-spacing: 0.14em; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+  .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 32px; }
+  .impact-num { font-size: 52px; font-weight: 800; color: #ffb27a; line-height: 1; margin-bottom: 10px; letter-spacing: -0.02em; }
+  .impact-label { font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.85); }
+  .impact-key {
+    border-top: 1px solid rgba(255,255,255,0.2); padding-top: 26px;
+    font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.92);
+  }
+  .impact-key strong { color: #ffb27a; }
+
+  /* 編輯註記 */
+  .note {
+    background: #fffbeb; border: 1px dashed #d4a72c; border-radius: 10px;
+    padding: 22px 26px; margin: 40px 0; font-size: 15px; line-height: 1.7; color: #7a5c10;
+  }
+  .note b { color: #92660a; }
+
+  @media (max-width: 720px) {
+    .cover, .doc, .toc, .case { padding-left: 24px; padding-right: 24px; }
+    .cover h1 { font-size: 38px; }
+    .case h2 { font-size: 32px; }
+    .flow-grid, .impact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="draft-banner">草稿．編輯中．種子版本　<span>　本頁為企業案例內部編輯草稿，非定稿，數據與姓名職稱待查核確認</span></div>
+
+<div class="cover">
+  <div class="cover-tag">2026 企業 AI 學習趨勢調查白皮書｜企業見證案例</div>
+  <h1>企業案例草稿</h1>
+  <div class="cover-sub">收錄中鋼、國泰金控兩篇企業 AI 學習與培訓的真實見證。本頁供內部編輯檢閱與修改使用。</div>
+  <div class="cover-meta">
+    新商業學校｜<strong>巨思文化</strong>　·　企業案例編輯草稿　·　種子版本<br>
+    狀態：<strong>編輯中</strong>，內文數據、受訪者姓名職稱、服務著墨比重均待確認
+  </div>
+</div>
+
+<div class="toc">
+  <div class="toc-title">本頁案例</div>
+  <a href="#china-steel">01　中鋼</a>
+  <a href="#cathay">02　國泰金控</a>
+</div>
+
+<!-- ============ 中鋼 ============ -->
+<div class="case" id="china-steel">
+ <div class="case-inner">
+  <div class="case-label">中鋼</div>
+  <h2>人資的基本推廣，帶來超乎預期的學習效益</h2>
+  <div class="case-subtitle">沒有大張旗鼓的活動，一座放在公司內部的線上圖書館，如何被產線主管自然取用</div>
+  <div class="byline">受訪者待確認｜中鋼方人資窗口，或新商業學校企業培訓顧問</div>
+
+  <div class="summary-box">
+    <div class="summary-row"><div class="summary-key">目標</div><div class="summary-val">為中階到基層主管提供低門檻、可自主取用的管理學習資源。</div></div>
+    <div class="summary-row"><div class="summary-key">做法</div><div class="summary-val">自 2021 年起採購 800 組經理人管理知識庫帳號，以內部信、內容連結分享等基本方式推廣。</div></div>
+    <div class="summary-row"><div class="summary-key">成果</div><div class="summary-val">自然使用率約 40%，每月約 300 多位主管穩定登入學習，並在產線主管族群中形成主動使用習慣。</div></div>
+  </div>
+
+  <p class="lead">多數企業導入線上學習平台時，第一個擔心往往是：買了帳號，員工會不會不用？</p>
+
+  <p>於是人資需要設計活動、規畫宣傳、追蹤使用率，想辦法把學習平台推進員工的日常。但對中鋼來說，經理人管理知識庫的落地方式比想像中更單純。</p>
+
+  <p>自 2021 年疫情期間開始，中鋼採購 <span class="inline-num">800</span> 組帳號，提供給中階到基層主管使用。人資沒有大張旗鼓地舉辦推廣活動，也沒有密集追著使用率跑，只是在看到合適的內容時整理連結分享，並透過內部信低頻提醒同仁。</p>
+
+  <p>三年多下來，這座放在公司內部的「線上圖書館」，逐漸被主管們自然取用。平台平均使用率約四成，每個月約有 300 多位主管主動登入，每月穩定累積 30 到 40 分鐘閱讀時間。對一家以產線為重心的傳統製造業來說，這樣的使用表現，已經超出原本對企業學習平台的預期。</p>
+
+  <h3>800 個帳號，基本推廣就帶起使用</h3>
+  <p>中鋼導入經理人管理知識庫的時間點，正好落在 2021 年疫情期間。當時企業開始更積極思考線上學習資源的配置，中鋼一次開設 800 組帳號，主要分發給中階到基層主管使用。</p>
+  <p>對企業人資來說，大規模採購學習平台後，後續常見的挑戰才剛開始。平台如何被看見？內容如何被使用？員工要怎麼養成登入習慣？這些問題，通常都需要搭配一連串推動工作，例如宣傳企畫、內部活動、使用率追蹤，甚至進一步設定學習任務。</p>
+  <p>但中鋼選擇的做法相對輕省。人資端並沒有把平台操作成一個需要高度管理的學習專案，而是把它放在公司內部，成為主管們可以自由取用的知識資源。</p>
+  <p>看到好的專題或文章時，人資會整理連結分享給同仁；一年當中，也會透過幾次內部信提醒大家有這項資源可以使用。推廣動作不複雜，頻率也不密集，學習的主導權仍然留在員工自己手上。</p>
+  <p>這樣的做法，也剛好呼應管理知識庫本身的產品定位。它不像一堂需要固定時間完成的課程，更像一座可隨時進入的線上圖書館。平台依照九大管理學程分類，涵蓋 CEO 管理講堂、名師一堂課、實戰案例、新書快讀、五分鐘學管理等單元，員工可以依照當下需求閱讀、收藏，也能追蹤自己的學習進度。</p>
+  <p>換句話說，中鋼的人資沒有強迫同仁「上課」，而是讓主管在需要管理知識時，知道公司裡有一個可以隨時打開的資源庫。</p>
+
+  <h3>產線主管最愛用的管理知識來源</h3>
+  <p>導入三年多後，中鋼這 800 個帳號的使用狀況，遠比一般人對傳統製造業線上學習平台的想像更活躍。</p>
+  <p>從後台數據來看，平台平均使用率約四成，每個月約有 300 多位主管穩定登入。這些使用者不是為了完成硬性規定而短暫登入，而是自然累積閱讀時間，平均每月約有 30 到 40 分鐘的學習紀錄。</p>
+  <p>更值得注意的是，產線主管成為這座知識庫的重要使用者。</p>
+  <p>對許多產線主管而言，升任管理職後，工作挑戰會從「把事情做好」，逐漸轉向「帶著一群人把事情做好」。他們身邊可能有很多技術熟練、效率很高的同事，也熟悉現場流程與生產節奏；但在管理溝通、團隊帶領、職涯發展、跨部門協作等議題上，未必有足夠的學習資源。</p>
+  <p>管理知識庫剛好補上這個缺口。</p>
+  <p>它提供的不是距離現場很遠的高階經營語言，也不是過度學術化、需要大量背景知識才能理解的管理理論，而是初、中階主管能讀得懂、帶得回工作現場使用的管理內容。</p>
+  <p>這也是許多企業選擇經理人管理知識庫的原因。市面上不乏商管媒體與知識訂閱服務，但有些內容偏向高階經營者視角，有些則使用較強烈的資方語言，對還在第一線面對人員管理、任務分配、現場溝通的主管來說，未必容易轉化成日常管理動作。</p>
+  <p>中鋼的案例顯示，當知識內容的語言足夠貼近使用者，學習就不一定需要被高度推動。只要資源放在對的位置，員工自然會在需要時打開它。</p>
+
+  <h3>學習文化自己長出來</h3>
+  <p>中鋼的使用成果，並不只是後台登入率漂亮而已。更重要的是，這項資源逐漸被員工認得，也慢慢在組織裡形成主動學習的氛圍。</p>
+  <p>有員工會主動詢問：「這個資源是什麼？」「要怎麼使用？」這代表平台已經不只是人資公告中的一項福利，而是開始在同仁之間被看見、被討論。</p>
+  <p>中鋼員工對經理人內容本身也有高度認同。他們是經理人榮譽發行人何飛鵬的忠實讀者，會買書、求簽名，甚至促成何飛鵬到中鋼進行企業內部演講。對中鋼來說，這不只是一次名人講座，而是內部學習熱情被具體看見的一個證明。</p>
+  <p>新商業學校也順勢提供小型激勵機制，例如將當期雜誌送給觀看時數前 10 名的同仁。這樣的獎勵不是為了製造壓力，而是回應既有的學習動能。從使用行為來看，員工並沒有為了衝排名而刻意刷時數，整體使用仍然維持自然狀態。</p>
+  <p>這也讓中鋼的案例更有啟發性。</p>
+  <p>企業導入學習平台，不一定都要用高強度行銷手法推動。當內容本身能回應員工真實需求，平台又足夠低門檻、可隨時取用，人資只需要用適度的提醒與引導，學習文化就有機會自己長出來。</p>
+  <p>對中鋼而言，經理人管理知識庫的價值，不只在於提供 800 多位主管一組帳號，而是讓管理知識被放進日常工作旁邊。當主管遇到帶人、溝通、決策、職涯發展等問題時，公司內部已經有一座可以隨時走進去的知識庫。</p>
+  <p>這種低壓、穩定、長期可取用的學習設計，或許正是大型傳統製造業推動自主學習時，最務實也最能持續的方式。</p>
+
+  <div class="flow">
+    <div class="flow-title">流程圖｜管理知識庫如何在中鋼落地？</div>
+    <div class="flow-grid">
+      <div class="flow-step"><div class="step-num">STEP 1</div><h4>當成線上圖書館使用</h4><p>開設 800 組帳號，分發給中階到基層主管，定位為可自由取用的管理學習資源。</p></div>
+      <div class="flow-step"><div class="step-num">STEP 2</div><h4>以基本方式推廣</h4><p>人資整理合適內容、低頻透過內部信提醒，不用高壓活動推動，把學習主導權留給員工。</p></div>
+      <div class="flow-step"><div class="step-num">STEP 3</div><h4>觀察真實使用樣貌</h4><p>透過後台使用紀錄，看見平均約四成使用率，也掌握產線主管等主要使用族群。</p></div>
+      <div class="flow-step"><div class="step-num">STEP 4</div><h4>順勢強化學習動能</h4><p>透過雜誌等小型獎勵回應使用熱情，讓原本自然發生的學習行為持續沉澱。</p></div>
+    </div>
+  </div>
+
+  <div class="impact">
+    <div class="impact-title">關鍵成效</div>
+    <div class="impact-grid">
+      <div><div class="impact-num">800＋</div><div class="impact-label">帳號自 2021 年採購以來持續使用</div></div>
+      <div><div class="impact-num">約 40%</div><div class="impact-label">自然使用率，約 300 多位主管每月穩定登入學習</div></div>
+      <div><div class="impact-num">30–40<span style="font-size:24px;"> 分</span></div><div class="impact-label">每月平均閱讀時間，使用行為穩定且自然</div></div>
+    </div>
+    <div class="impact-key"><strong>關鍵成果｜</strong>人資僅透過基本推廣，就帶動產線主管等族群自發學習，讓管理知識庫在內部逐漸形成日常學習資源。</div>
+  </div>
+ </div>
+</div>
+
+<!-- ============ 國泰金控 ============ -->
+<div class="case" id="cathay">
+ <div class="case-inner">
+  <div class="case-label">國泰金控</div>
+  <h2>當高階主管願意站上舞台，AI 轉型才真正開始</h2>
+  <div class="case-subtitle">從一場讓經營團隊與第一線員工同台的 AI Demo Day，看國泰金控如何在嚴謹的金融業裡，讓數萬名同仁從觀望走向自然使用</div>
+  <div class="byline">受訪者待確認｜國泰金控人力資源處　Nineus、Selina</div>
+
+  <div class="summary-box">
+    <div class="summary-row"><div class="summary-key">目標</div><div class="summary-val">在受高度監理、節奏謹慎的金融業，推動集團規模的 AI 轉型，讓數萬名同仁從擔憂與觀望，走向把 AI 用進日常工作。</div></div>
+    <div class="summary-row"><div class="summary-key">做法</div><div class="summary-val">以 AI COE 由上而下定策略，搭配持續聆聽員工聲音的 Bottom-up，並透過一場讓高階主管與第一線員工同台的 AI Demo Day，把「公司支持員工用 AI」具體做給整個集團看。</div></div>
+    <div class="summary-row"><div class="summary-key">成果</div><div class="summary-val">兩年之間，員工使用 AI 的擔憂明顯下降、主管支持度與資深同仁的使用意願同步提升，AI Demo Day 也在 2026 年確定續辦。</div></div>
+  </div>
+
+  <p class="lead">多數企業推動 AI 轉型時，第一個動作幾乎都一樣：開課。採購工具、安排培訓、上架線上學習資源，然後期待員工自己跟上。</p>
+
+  <p>但對國泰金控的人力資源團隊來說，有一個比開課更根本的問題擺在前面。當一名員工終於想打開 AI 工具，幫自己處理手上的工作，他心裡可能會閃過幾個念頭：主管會不會覺得我在偷懶？隔壁同事會用什麼眼光看我？還有，公司到底准不准我這樣用，那條看不見的紅線在哪裡？</p>
+
+  <p>這幾個念頭，在一家受高度監理的金融機構裡格外真實。資安規範嚴格、作業流程謹慎，是金融業的日常。在這樣的框架底下推動 AI，如果只是把工具和課程往下發，很可能換來的是一整個組織的觀望。</p>
+
+  <p>國泰金控選擇的做法，是先處理「相信」這件事。在教大家怎麼用 AI 之前，先讓整個組織從上到下都確信一件事：<strong>在工作裡用 AI，是公司支持、甚至樂見的選擇</strong>。</p>
+
+  <p>這個信念，最後凝結成一場特別的活動。一場讓高階主管與第一線員工站上同一個舞台的 AI Demo Day。</p>
+
+  <h3>策略由上而下，節奏由員工決定</h3>
+  <p>國泰金控推動 AI 的力道，源頭來自集團經營團隊的高度重視。</p>
+  <p>不論是早一波的 AI，還是這兩年生成式 AI 的大爆發，集團都選擇正面迎上。為此，國泰金控由上而下設立了 AI COE，也就是 Center of Excellence。這是一個虛擬組織，集中集團與各公司層級的職能專家，在集團的高度上拉起 AI 推動的策略方向，並定期與高階主管對焦進度、蒐集回饋、隨時調整步伐。受訪者形容，正因為有這樣一個由上而下的平台，集團在 AI 上的推進節奏，從外界看來算是相當快的。</p>
+  <p>值得一提的是，AI COE 和大家熟悉的 HR 三支柱並不是同一回事。它涵蓋的範疇不只員工賦能，還包括 IT 領域要怎麼導入 AI、各作業單位在這波浪潮下如何轉型、集團要共同採用哪些工具。這些議題，都在 AI COE 這個平台上一起規劃與討論。</p>
+  <p>策略的更上游，連結到國泰金控 ESG 永續發展的藍圖。在這張藍圖裡，「職場培力」有四大策略主軸：重塑員工技能、升級員工技能、建構領導梯隊，以及多元共融職場。AI 力被明確放在「重塑員工技能」之下，背後的用意，是希望同仁能與時俱進地具備未來趨勢所需的數位能力。</p>
+  <p>這條路，國泰金控其實已經走了好幾年。早在數位轉型的年代，金融業忙著把服務搬上數位通路、導入大數據優化客戶體驗，喊出「要變成科技公司」的口號。那個階段的重點，多半落在面對客戶的產品與服務。</p>
+  <p>真正把目光轉回員工自己，是這兩年的事。隨著生成式 AI 工具一個接一個問世，員工在自己的生活裡早就大量使用，工作現場的需求也跟著浮現。再加上少子化讓人才越來越難找、跨業競爭與高流動的職場環境成為新常態，國泰金控更清楚地意識到，怎麼讓公司核心的業務知識被保存、被延續，怎麼讓同仁的工作方法被最佳化，都得仰賴 AI 與數位工具。</p>
+  <p>於是從 2022 年起，集團幾乎是一年主推一個能力。2022 年是敏捷力，把敏捷的工作方法與思維設為集團同仁必修的現場課；2023 年聚焦數據分析；2024 年起，連續三年把重點放在 AI。從一開始談 AI 素養、還不硬性要求工作產出，到 2025 年要求大家拿出應用場景、站出來分享，再到 2026 年與 OpenAI 展開策略合作、在已導入的 Microsoft M365 Copilot 之外，全面啟動 GPTs、Codex 等工具，節奏一年比一年快。</p>
+  <p>不過，策略雖然由上而下，推動的節奏卻是聽員工的聲音來定。</p>
+  <p>國泰金控並非一年只做一次員工意見調查，而是在許多重要節點都會去聆聽。推動 AI 時也是如此。面對數萬名員工，集團很難讓每個人都坐下來談，於是透過 AI 準備度調查，普遍地了解同仁在 AI 這件事上的疑慮、擔憂、自己的能力狀態，以及他們期待的東西，再進一步比對員工與主管之間的認知落差。先聽懂大家卡在哪裡，再決定下一步怎麼推，是國泰金控在基礎建設階段，做得最不一樣的地方。</p>
+
+  <h3>讓高階主管站上舞台的 AI Demo Day</h3>
+  <p>把能力擴散出去，國泰金控用了不只一種方式。</p>
+  <p>集團內部設有「共享學堂」，員工可以自己舉手發起一場分享，主題不限，平均一場下來，都有將近 1000 名同仁上線旁聽。當中也有員工主動分享，自己如何把 AI 工具用在工作上。除此之外，集團過去推數據、推敏捷時，也辦過數據應用的策展，鼓勵大家把成果秀出來、彼此學習。</p>
+  <p>這些做法有一個共同點，它們大多是由下而上的分享。而 AI Demo Day 真正特別的地方，在於它把高階主管直接帶進了現場。</p>
+  <p>這場活動的起心動念，來自 AI COE 的一場會議。當時大家討論到一個現實的問題：同仁去上了課，後來到底做出什麼成果，旁人其實看不到。於是團隊想到，需要一個舞台、一個 Demo 的場合，跨子公司讓彼此看見實際案例。更重要的是，這也是一個讓經營團隊與高階主管，親眼看到整個集團運用 AI 成果的機會。某種程度上，這是一次集團對「使用 AI」這件事的文化選樹，公司要明確地讓同仁知道，用 AI 工作不是一件見不得人的事。</p>
+  <p>活動當天的景象，連辦過無數場活動的人都覺得驚訝。受訪者用「嚇到」來形容，因為現場來了滿滿的高階主管，而且全是自願出席，集團並沒有要求他們一定要到。其中一位受訪者打了個比方，那天的規格與人數，幾乎像是集團的高階主管聯誼會，差別只在於這一次，沒有人是被點名來的。</p>
+  <p>對人資團隊而言，這個畫面的意義，遠遠超過活動本身。</p>
+  <p>他們很清楚一件事：<strong>做 AI 賦能，最關鍵的角色其實不是 HR，而是高階主管展現出來的支持態度</strong>。這個態度，會直接影響員工怎麼看待「在工作上用 AI」這件事。AI Demo Day 提供的，正是一個讓高階主管近距離、具體展現支持的場景。對平常與經營團隊距離較遠的一般員工來說，這樣的宣示格外有份量。</p>
+  <p>舞台的另一半，留給了員工自己。</p>
+  <p>下半場的形式，很像新創團隊的 demo pitch，只是沒有競賽、沒有排名。最後選出的 8 組已經成功落地的專案小組陸續上台，分享他們怎麼做到、過程中花了多少時間、遇過哪些挫折，以及這個成果最終為工作流程帶來什麼樣的改變。</p>
+  <p>讓受訪者印象最深的，是一位資深同仁的分享。</p>
+  <p>那位同仁的年紀，看起來比受訪者還要再長一些。他不是那種簡報華麗、口條漂亮的講者，站上台，就是一個國泰人壽資深員工最真實的樣子，連說話的方式都是。他誠懇地分享自己如何把 AI 用在工作領域上，那個畫面，受訪者到現在都還記得。</p>
+  <p>正因為他就是這樣一個人，這段分享反而格外動人。受訪者坦言，AI 的學習速度確實會隨著年齡放慢，這無關歧視，而是一種真實的現象。也正因如此，當一位資深員工都做得到，台下的人會忍不住開始相信：這件事，我應該也可以。她說，那一刻帶給現場的，不只是某個 AI 技巧，而是一種「我也做得到」的信心，連同樣身為主管、同樣資深的自己，都被鼓舞了。</p>
+  <p>這場活動的化學效應，還不只在台上。</p>
+  <p>高階主管走進會場時，對現場的專業呈現感到驚豔；坐下來之後，他們也獲得了信心，因為他們親眼看見，原來這些資深專員、這些年輕同仁，早就把 AI 落地在工作裡了。過去那些「我們是不是落後別家銀行」的焦慮，當下顯得多餘。而跨子公司的同仁，則在現場找到了難得的交流機會。一個做證券的主管，原本覺得用 AI 還得擔心被金管會關切，看到別的子公司同樣性質的工作早已用 AI 派上用場，當下就動了念頭，想走過去問個兩句，甚至約對方聊上幾個小時。那種「終於有機會交流」的氛圍，是這場活動最難能可貴的地方。</p>
+
+  <h3>從一個人的反向導師，到整個組織的學習文化</h3>
+  <p>AI Demo Day 是一天的活動，國泰金控更在意的，是它能不能持續發酵成日常。受訪者說得直接，他們要的不是一天的煙火，而是細水長流、滴水穿石，是大家都真的開始用。</p>
+  <p>要讓改變沉澱下來，得回到每一個具體的工作場景。其中一個被反覆提起的做法，是「反向導師」。</p>
+  <p>其中一位受訪者，與一名年輕的 AI 種子同仁配對。兩人相差二、三十歲，每個月固定見一次面，由年輕同仁擔任導師，教她使用 ChatGPT、Copilot 等各種 AI 工具；而她也要帶東西回饋給對方，便在過程中分享起自己在領導與決策上的視角。一來一往，一個資深主管看事情的方式，和一套新工具的用法，就這樣在每個月的對話裡交換。</p>
+  <p>這段關係，最後長出了一個具體的工具。</p>
+  <p>兩人共創出一套協助主管進行一對一面談的應用。系統會從 M365 抓取員工近期的工作狀態與資訊，在面談前，直接幫主管整理出三個可以提問的方向。如此一來，主管不必再從「最近在忙什麼」這種空泛的問題聊起，而是能根據員工實際的工作狀況切入，把一對一面談的時間，真正用在有品質的對談上。這位年輕同仁，後來也在 AI Demo Day 的下午，親自上台 demo 了這個工具。對國泰金控來說，這個舞台還有一層意義：金融業向來年資導向，而 AI 正在打破這件事，讓年輕世代不必等上二、三十年，就有機會展現自己的價值。</p>
+  <p>類似的應用，在組織裡持續發生。人資團隊打造的 HR 知識助手，用生成式 AI 回應同仁關於人資制度的各種問題，準確度超過九成，取代了過去那種條件式的表單機器人；遇到無法解決的問題，後面還銜接了轉人工與追蹤回應的機制。這個專案不只服務員工，也回頭改變了 HR 自己內部的工作流程。</p>
+  <p>而最值得注意的，是員工心態上的轉變。</p>
+  <p>國泰金控觀察到，第一年做 AI 準備度調查時，最明顯的發現是：使用 AI 的意願與能力，會隨著年齡上升而下降，越資深的同仁，意願與能力越低。但兩年比較下來，這群 50 歲以上的資深同仁，在使用 AI 的意願上出現了大幅的提升。同樣大幅改變的，還有員工的擔憂。第一年，許多同仁還很猶豫，到底什麼能用、什麼不能用，會不會被團隊另眼相待；如今，這份擔憂的比例已明顯下降，主管支持的程度，也從近八成提升到接近九成。</p>
+  <p>受訪者還提到一個反直覺的發現。原本他們擔心，給員工框架、訂出 AI 使用指引之後，同仁會不會反而覺得限制太多、抱怨連連。結果恰恰相反，員工用得更自在了。因為在金融業這個本來就不能「隨便你想怎樣就怎樣」的環境裡，先把界線劃清楚，員工才知道哪裡是可以放心發揮的安全範圍。</p>
+  <p>這些累積起來的改變，也成了國泰金控最想分享給其他企業的心得。</p>
+  <p>要不要做 AI 培訓，在他們看來已經不必再問。AI 是不可逆的趨勢，與其花時間糾結要或不要，更該想的是怎麼做才有效益。受訪者建議，企業可以先定清楚自己對 AI 的定位，是想用它放大人的價值，還是取代人力；國泰金控選擇的是前者。定位清楚之後，再用 Top-down 與 Bottom-up 雙向推動，一邊取得高階主管的支持並讓他展現出來，一邊持續聆聽員工的聲音。最後，用小步快跑的敏捷方式迭代，先找一群願意嘗試的團隊做出成功經驗，再讓那份成功，自己擴散出去。</p>
+  <p>對國泰金控而言，AI 轉型從來不是一場由 HR 獨力推動的培訓專案。當策略從上而下站穩、員工的聲音被聽見、高階主管願意站上舞台，學習文化，就有機會自己長出來。</p>
+
+  <div class="flow">
+    <div class="flow-title">流程圖｜國泰金控如何推動集團規模的 AI 轉型？</div>
+    <div class="flow-grid">
+      <div class="flow-step"><div class="step-num">STEP 1</div><h4>由上而下定策略</h4><p>設立 AI COE 虛擬組織，連結 ESG 職場培力藍圖，把 AI 力放進「重塑員工技能」主軸，定期與高階主管對焦方向。</p></div>
+      <div class="flow-step"><div class="step-num">STEP 2</div><h4>由下而上聽需求</h4><p>透過 AI 準備度調查掌握同仁的疑慮、能力與期待，比對員工與主管的落差，再決定推動節奏，先讓大家願意上車。</p></div>
+      <div class="flow-step"><div class="step-num">STEP 3</div><h4>用 AI Demo Day 擴散</h4><p>跨子公司辦成果發表，讓高階主管自願現身展現支持，也讓員工同台分享落地案例，建立「我也做得到」的信心。</p></div>
+      <div class="flow-step"><div class="step-num">STEP 4</div><h4>沉澱成日常文化</h4><p>透過反向導師、HR 知識助手等實際應用，讓 AI 從一次活動，內化成同仁每天解決問題的方法。</p></div>
+    </div>
+  </div>
+
+  <div class="impact">
+    <div class="impact-title">關鍵成效</div>
+    <div class="impact-grid">
+      <div><div class="impact-num">連續 3 年</div><div class="impact-label">AI 力列為集團主推的數位能力（2024–2026）</div></div>
+      <div><div class="impact-num">8 組</div><div class="impact-label">落地專案在 AI Demo Day 登台，跨子公司分享成功經驗</div></div>
+      <div><div class="impact-num">近 9 成</div><div class="impact-label">主管對員工使用 AI 的支持程度（由近八成提升）</div></div>
+    </div>
+    <div class="impact-key"><strong>關鍵成果｜</strong>高階主管自願站上舞台展現支持，帶動資深同仁與第一線員工的使用信心，AI Demo Day 在 2026 年確定續辦。</div>
+  </div>
+
+  <div class="note">
+    <b>編輯註記（不對外）：</b>本篇數字採受訪者口述，部分有出入待查核——資深同仁使用意願（口述 86→93）、整體擔憂（38%→21%）、應用效益高（87%→9X%，疑口誤）、提升工作品質效率（79%→89%）、擔心團隊態度（近 6 成→約 38%／30%）、共享學堂單場近 1000 人、HR 知識助手準確度逾 90%。完稿前須向國泰／新商業學校取得正式數字。另：企業名（國泰金控 vs 國泰世華）、兩位受訪者姓名職稱、新商業學校服務著墨比重，均待吱吱確認。
+  </div>
+ </div>
+</div>
+
+</body>
+</html>
