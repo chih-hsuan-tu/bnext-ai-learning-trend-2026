@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>受訪者層級 × 產業別｜2026 企業 AI 學習趨勢調查</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background: #f4f2ee;
+    color: #2b2b2b;
+    line-height: 1.7;
+    padding: 48px 20px;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+
+  .kicker {
+    font-size: 14px; letter-spacing: 2px; color: #e85d2f;
+    font-weight: 700; margin-bottom: 10px;
+  }
+  h1 { font-size: 30px; line-height: 1.35; margin-bottom: 6px; letter-spacing: .5px; }
+  .sub { font-size: 15px; color: #6a6a6a; margin-bottom: 32px; }
+
+  .card {
+    background: #fff; border-radius: 14px; padding: 30px 34px;
+    box-shadow: 0 2px 18px rgba(0,0,0,.05); margin-bottom: 26px;
+  }
+  .card h2 {
+    font-size: 19px; margin-bottom: 16px; padding-left: 12px;
+    border-left: 4px solid #e85d2f;
+  }
+  .note p { font-size: 15px; color: #43413d; margin-bottom: 12px; }
+  .note p:last-child { margin-bottom: 0; }
+  .def-row { display: flex; gap: 16px; margin: 18px 0 6px; flex-wrap: wrap; }
+  .def {
+    flex: 1; min-width: 240px; border-radius: 10px; padding: 16px 18px;
+  }
+  .def.mgr { background: #fdeee7; border: 1px solid #f6cdb8; }
+  .def.emp { background: #eef1f4; border: 1px solid #ccd5de; }
+  .def .lbl { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .def.mgr .lbl { color: #c8491f; }
+  .def.emp .lbl { color: #4a6178; }
+  .def .big { font-size: 26px; font-weight: 800; letter-spacing: .5px; }
+  .def .desc { font-size: 13.5px; color: #5e5c57; margin-top: 4px; }
+
+  /* legend */
+  .legend { display: flex; gap: 22px; margin-bottom: 22px; font-size: 14px; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .dot { width: 13px; height: 13px; border-radius: 3px; display: inline-block; }
+  .dot.mgr { background: #e85d2f; }
+  .dot.emp { background: #7d96ad; }
+
+  /* bar chart */
+  .row { display: grid; grid-template-columns: 168px 1fr; gap: 14px; align-items: center;
+         padding: 9px 0; border-bottom: 1px solid #f0ede8; }
+  .row:last-child { border-bottom: none; }
+  .ind { font-size: 14px; text-align: right; color: #3a3a3a; }
+  .bars { display: flex; flex-direction: column; gap: 5px; }
+  .bar-line { display: flex; align-items: center; gap: 9px; }
+  .track { flex: 1; height: 16px; background: #f3f0ec; border-radius: 4px; position: relative; }
+  .fill { height: 100%; border-radius: 4px; }
+  .fill.mgr { background: #e85d2f; }
+  .fill.emp { background: #7d96ad; }
+  .val { font-size: 12.5px; color: #5e5c57; white-space: nowrap; min-width: 92px; }
+  .val b { color: #2b2b2b; }
+
+  /* table */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { padding: 9px 10px; text-align: right; border-bottom: 1px solid #eee; }
+  th:first-child, td:first-child { text-align: left; }
+  thead th { background: #faf8f5; color: #555; font-weight: 700; border-bottom: 2px solid #e8e3db; }
+  tbody tr:hover { background: #fcfaf7; }
+  tfoot td { font-weight: 800; border-top: 2px solid #e8e3db; background: #faf8f5; }
+  .mgr-col { color: #c8491f; }
+  .emp-col { color: #4a6178; }
+  .low { color: #b07a2e; }
+
+  .reminder { background: #fdf8ef; border: 1px solid #f0e0bf; }
+  .reminder h2 { border-left-color: #c79a3a; }
+  .reminder li { font-size: 14.5px; color: #54504a; margin-bottom: 9px; list-style: none; padding-left: 20px; position: relative; }
+  .reminder li::before { content: "•"; color: #c79a3a; position: absolute; left: 4px; font-weight: 700; }
+  .reminder li:last-child { margin-bottom: 0; }
+  .star { color: #b07a2e; font-weight: 700; }
+
+  .foot { font-size: 12.5px; color: #9a968e; text-align: center; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">2026 企業 AI 學習趨勢調查｜受訪者結構分析</div>
+  <h1>受訪者層級 × 產業別 交叉分析</h1>
+  <div class="sub">管理者身份（n＝886）與一般員工（n＝294）在 18 個產業的樣本分布</div>
+
+  <!-- 說明區 -->
+  <div class="card note">
+    <h2>怎麼定義「管理者」與「一般員工」</h2>
+    <p>本次調查共回收 1,180 份有效樣本。受訪者層級依問卷的「主要角色（S1）」與「是否負責培訓決策（S2）」兩題交叉判定，分為兩群：</p>
+    <div class="def-row">
+      <div class="def mgr">
+        <div class="lbl">管理者身份</div>
+        <div class="big">886 人<span style="font-size:15px;font-weight:600;color:#9a6a52;">（75.1%）</span></div>
+        <div class="desc">角色為人資（HR／L&D）、企業經營者、部門主管（含中高階）；或角色填「其他」但自述為主要／共同培訓決策者。</div>
+      </div>
+      <div class="def emp">
+        <div class="lbl">一般員工</div>
+        <div class="big">294 人<span style="font-size:15px;font-weight:600;color:#6c8197;">（24.9%）</span></div>
+        <div class="desc">角色填「其他」且未參與培訓決策，視為工作者／一般員工樣本。</div>
+      </div>
+    </div>
+    <p>這份調查的對象設定，本就以企業培訓決策者為主、一般工作者為輔。因此兩群樣本規模差距較大（約 3：1），比較時建議看「群內佔比」而非絕對人數。</p>
+  </div>
+
+  <!-- 主圖 -->
+  <div class="card">
+    <h2>各產業的兩群分布對照（長條＝群內佔比）</h2>
+    <div class="legend">
+      <span><i class="dot mgr"></i>管理者（n＝886）</span>
+      <span><i class="dot emp"></i>一般員工（n＝294）</span>
+    </div>
+    <div id="chart"></div>
+  </div>
+
+  <!-- 數據表 -->
+  <div class="card">
+    <h2>完整數據表</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>產業別</th>
+          <th>管理者 n</th><th>群內%</th>
+          <th>一般員工 n</th><th>群內%</th>
+          <th>合計 n</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+      <tfoot>
+        <tr><td>合計</td><td>886</td><td>100%</td><td>294</td><td>100%</td><td>1,180</td></tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <!-- 提醒 -->
+  <div class="card reminder">
+    <h2>解讀提醒</h2>
+    <ul>
+      <li>一般員工總樣本僅 294，再分到 18 個產業後，多數產業落在個位數（下表與圖中以 <span class="star">※</span> 標示樣本數小於 10 的格子）。這些格子的差距方向可供參考，絕對比例請謹慎解讀，不宜單獨對外引用。</li>
+      <li>兩群佔比結構大致相近：資通訊、傳產製造、教育研究顧問都是兩群的前段產業。較明顯的差異在電子半導體（管理者 14.7% 對一般員工 8.2%）與「其他」類（管理者 3.5% 對一般員工 9.2%）。</li>
+      <li>「群內%」是各產業佔該層級總數的比例（管理者以 886 為分母、一般員工以 294 為分母），兩欄各自加總為 100%。</li>
+      <li>產業別採調查既有的 18 類標準化分類，無缺漏值。</li>
+    </ul>
+  </div>
+
+  <div class="foot">資料來源：2026 企業 AI 學習趨勢調查原始資料（n＝1,180）｜製表：新商業學校</div>
+
+</div>
+
+<script>
+  // 數據（已按合計由大到小排序）
+  const data = [
+    ["資通訊／網路服務", 154, 17.4, 48, 16.3, 202],
+    ["傳產製造", 123, 13.9, 41, 13.9, 164],
+    ["電子／光電／半導體／電腦周邊", 130, 14.7, 24, 8.2, 154],
+    ["教育／研究／顧問", 79, 8.9, 41, 13.9, 120],
+    ["零售通路／民生服務", 60, 6.8, 10, 3.4, 70],
+    ["金融／投顧／保險", 47, 5.3, 22, 7.5, 69],
+    ["其他", 31, 3.5, 27, 9.2, 58],
+    ["醫療／生技／健康", 49, 5.5, 8, 2.7, 57],
+    ["整合行銷／廣告公關", 45, 5.1, 5, 1.7, 50],
+    ["貿易／批發", 33, 3.7, 5, 1.7, 38],
+    ["建築／營造", 27, 3.0, 5, 1.7, 32],
+    ["非營利組織", 19, 2.1, 13, 4.4, 32],
+    ["政府機關／公營事業", 19, 2.1, 12, 4.1, 31],
+    ["出版／媒體", 15, 1.7, 8, 2.7, 23],
+    ["交通運輸／物流倉儲", 14, 1.6, 8, 2.7, 22],
+    ["設計／創意生活產業", 15, 1.7, 7, 2.4, 22],
+    ["觀光旅宿／娛樂", 14, 1.6, 5, 1.7, 19],
+    ["傳播／藝文", 12, 1.4, 5, 1.7, 17],
+  ];
+
+  const maxPct = 17.4; // bar 寬度基準
+  const chart = document.getElementById('chart');
+  const tbody = document.getElementById('tbody');
+
+  data.forEach(d => {
+    const [ind, mn, mp, en, ep, tot] = d;
+    const mLow = mn < 10, eLow = en < 10;
+    // chart row
+    const row = document.createElement('div');
+    row.className = 'row';
+    row.innerHTML = `
+      <div class="ind">${ind}</div>
+      <div class="bars">
+        <div class="bar-line">
+          <div class="track"><div class="fill mgr" style="width:${(mp/maxPct*100).toFixed(1)}%"></div></div>
+          <div class="val"><b>${mn}</b> 人（${mp}%）${mLow?'<span class="star">※</span>':''}</div>
+        </div>
+        <div class="bar-line">
+          <div class="track"><div class="fill emp" style="width:${(ep/maxPct*100).toFixed(1)}%"></div></div>
+          <div class="val"><b>${en}</b> 人（${ep}%）${eLow?'<span class="star">※</span>':''}</div>
+        </div>
+      </div>`;
+    chart.appendChild(row);
+    // table row
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${ind}</td>
+      <td class="mgr-col">${mn}${mLow?'<span class="star">※</span>':''}</td><td>${mp}%</td>
+      <td class="emp-col">${en}${eLow?'<span class="star">※</span>':''}</td><td>${ep}%</td>
+      <td>${tot}</td>`;
+    tbody.appendChild(tr);
+  });
+</script>
+</body>
+</html>
