@@ -75,6 +75,7 @@
   .tab:hover { border-color: #c9c1b4; }
   .tab.active[data-g="mgr"] { background: #e85d2f; border-color: #e85d2f; color: #fff; }
   .tab.active[data-g="emp"] { background: #7d96ad; border-color: #7d96ad; color: #fff; }
+  .tab.active[data-g="both"] { background: #5a5750; border-color: #5a5750; color: #fff; }
   .tab-cap { font-size: 13.5px; color: #8a857c; margin-bottom: 16px; }
 
   /* 單群橫條 */
@@ -135,6 +136,7 @@
     <div class="tabs">
       <button class="tab active" data-g="mgr">決策者　n＝886</button>
       <button class="tab" data-g="emp">一般工作者　n＝294</button>
+      <button class="tab" data-g="both">兩者比較</button>
     </div>
     <div class="tab-cap" id="tabCap"></div>
     <div id="chart"></div>
@@ -219,6 +221,28 @@
     emp: { ni:3, pi:4, max:100, cls:'emp', cap:'長條以 100% 為滿格，呈現各產業佔「一般工作者」總數（n＝294）的比例，由高到低排序。樣本較小的產業以 ※ 標示。' },
   };
   function render(g) {
+    if (g === 'both') {
+      tabCap.textContent = '長條以 100% 為滿格。同一產業上為決策者（橘）、下為一般工作者（藍），按合計人數由多到少排序，方便比較兩個受眾的佔比結構。';
+      chart.innerHTML =
+        `<div class="legend"><span><i class="dot mgr"></i>決策者</span><span><i class="dot emp"></i>一般工作者</span></div>` +
+        data.map(d => {
+          const [ind, mn, mp, en, ep] = d;
+          return `<div class="row">
+            <div class="ind">${ind}</div>
+            <div class="bars">
+              <div class="bar-line">
+                <div class="track"><div class="fill mgr" style="width:${mp}%"></div></div>
+                <div class="val"><b>${mn}</b> 人（${mp}%）${mn<10?'<span class="star">※</span>':''}</div>
+              </div>
+              <div class="bar-line">
+                <div class="track"><div class="fill emp" style="width:${ep}%"></div></div>
+                <div class="val"><b>${en}</b> 人（${ep}%）${en<10?'<span class="star">※</span>':''}</div>
+              </div>
+            </div>
+          </div>`;
+        }).join('');
+      return;
+    }
     const c = CONF[g];
     const sorted = [...data].sort((a, b) => b[c.pi] - a[c.pi]);
     tabCap.textContent = c.cap;
