@@ -44,6 +44,14 @@
   .def .big { font-size: 26px; font-weight: 800; letter-spacing: .5px; }
   .def .desc { font-size: 13.5px; color: #5e5c57; margin-top: 4px; }
 
+  /* 整體佔比堆疊條 */
+  .split-label { font-size: 14px; font-weight: 700; color: #43413d; margin: 18px 0 8px; }
+  .split { display: flex; height: 40px; border-radius: 8px; overflow: hidden;
+           font-size: 14px; font-weight: 700; color: #fff; }
+  .split-seg { display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+  .split-seg.mgr { background: #e85d2f; }
+  .split-seg.emp { background: #7d96ad; }
+
   /* legend */
   .legend { display: flex; gap: 22px; margin-bottom: 22px; font-size: 14px; }
   .legend span { display: inline-flex; align-items: center; gap: 7px; }
@@ -127,6 +135,13 @@
         <div class="desc">角色填「其他」且未參與培訓決策，視為工作者／一般員工樣本。</div>
       </div>
     </div>
+
+    <div class="split-label">整體受眾結構（n＝1,180）</div>
+    <div class="split">
+      <div class="split-seg mgr" style="width:75.1%">決策者　75.1%（886 人）</div>
+      <div class="split-seg emp" style="width:24.9%">一般工作者　24.9%（294 人）</div>
+    </div>
+
     <p>這份調查的對象設定，本就以企業培訓決策者為主、一般工作者為輔。因此兩群樣本規模差距較大（約 3：1），比較時建議看「群內佔比」而非絕對人數。</p>
   </div>
 
